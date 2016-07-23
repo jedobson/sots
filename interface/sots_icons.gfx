@@ -1,0 +1,8 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_ship_part_ewars"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_ewars.dds"
+		noOfFrames = 1
+	}
+}

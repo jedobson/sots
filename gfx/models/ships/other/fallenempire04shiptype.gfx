@@ -1,0 +1,60 @@
+objectTypes = {	
+	pdxmesh = {
+		name = "eventship_01_fallen_mesh"
+		file = "gfx/models/ships/other/eventship_01_fallen.mesh"
+		scale = 1.0
+			animation = { id = "idle"			type = "molluscoid_01_corvette_frame_idle_animation" }
+			animation = { id = "death"			type = "molluscoid_01_corvette_frame_death_animation" }
+			animation = { id = "death2"			type = "molluscoid_01_corvette_frame_death2_animation" }
+			animation = { id = "death3"			type = "molluscoid_01_corvette_frame_death3_animation" }
+		
+		meshsettings = {
+			name = "lp6Shape"
+			index = 0
+			texture_diffuse = "fventship_01_diffuse.dds"
+			texture_normal = "eventship_01_normal.dds"
+			texture_specular = "eventship_01_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+	
+	pdxmesh = {
+		name = "eventship_03_fallen_mesh"
+		file = "gfx/models/ships/other/eventship_03_fallen.mesh"
+		scale = 1.0
+		
+		animation = { id = "idle"			type = "molluscoid_01_corvette_frame_idle_animation" }
+		animation = { id = "death3"			type = "molluscoid_01_corvette_frame_death3_animation" }
+
+		meshsettings = {
+			name = "pCylinder9|pCylinder9Shape"
+			index = 0
+			texture_diffuse = "fventship_01_diffuse.dds"
+			texture_normal = "eventship_01_normal.dds"
+			texture_specular = "eventship_01_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+	
+	pdxmesh = {
+		name = "eventship_08_fallen_mesh"
+		file = "gfx/models/ships/other/eventship_08_fallen.mesh"
+		
+				animation = { id = "idle"			type = "eventship_08_idle_animation" }
+				animation = { id = "death"			type = "eventship_08_death3_animation" }				
+				animation = { id = "moving"			type = "eventship_08_idle_animation" }				
+		
+		scale = 1.0
+
+		meshsettings = {
+			name = "polySurface19Shape"
+			index = 0
+			texture_diffuse = "fventship_08_diffuse.dds"
+			texture_normal = "eventship_08_normal.dds"
+			texture_specular = "eventship_08_specular.dds"
+			shader = "PdxMeshShip"
+			}
+		}
+}
+
+
