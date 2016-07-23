@@ -1,0 +1,110 @@
+###############################
+####mod ethic_rebuild####
+
+utopia_builders = {
+	type = propagator
+
+	aggressiveness = 0.5
+	trade_willingness = 1
+	bravery = 0.75
+	
+	military_spending = 0.9
+	colony_spending = 1.4
+	
+	alliance_acceptance = 75
+	federation_acceptance = 75
+	
+	threat_modifier = 0.5
+	friction_modifier = 0.5
+	
+	behaviour = {
+		conqueror = no
+		subjugator = no
+		liberator = yes
+		opportunist = no
+		slaver = no
+		uplifter = yes
+		purger = no
+		dominator = no
+		infiltrator = no
+		robot_exploiter = yes
+		robot_liberator = no
+		migrator = yes
+                multispecies = yes
+	}
+	
+	allow = {
+		NOT = { is_country_type = fallen_empire }
+
+		NOT = {
+			has_ethic = "ethic_capitalism"
+			has_ethic = "ethic_fanatic_capitalism"			
+		}
+
+		OR = {
+			has_ethic = "ethic_socialism"
+			has_ethic = "ethic_fanatic_socialism"
+			has_ethic = "ethic_xenophile"
+			has_ethic = "ethic_fanatic_xenophile"	
+		}	
+	}
+	
+	weight_modifier = {
+		weight = 2	
+		
+		modifier = {
+			factor = 2
+			OR = {
+			has_ethic = "ethic_socialism"
+			has_ethic = "ethic_fanatic_socialism"
+			}
+		}
+
+		modifier = {
+			factor = 1.5
+			OR = {
+			has_ethic = "ethic_xenophile"
+			has_ethic = "ethic_fanatic_xenophile"	
+			}
+		}
+		
+		modifier = {
+			factor = 1
+			has_trait = "trait_charismatic"
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = "trait_communal"
+		}
+		modifier = {
+			factor = -2
+			has_trait = "trait_thrifty"
+		}	
+
+		modifier = {
+			factor = 2
+			OR = {
+				has_government = social_democracy
+				has_government = social_utopia
+			}
+
+		modifier = {
+			factor = 2
+			OR = {
+				has_government = communist_dictatorship
+				has_government = communist_utopia
+			}	
+				
+				
+	}	
+}
+
+
+###############################
+####mod ethic_rebuild####
+
+
+
+
+
+

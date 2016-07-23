@@ -1,0 +1,5491 @@
+###############
+### BALANCE ###
+###############
+@b0time = 120
+@b0cost = 30
+@b0effect = 1
+@b0upkeep = 1
+@b1time = 210
+@b1cost = 60
+@b1effect = 2
+@b1upkeep = 1
+@b2time = 180
+@b2cost = 90
+@b2effect = 3
+@b2upkeep = 1.5
+@b3time = 180
+@b3cost = 120
+@b3effect = 4
+@b3upkeep = 2
+@b4time = 180
+@b4cost = 150
+@b4effect = 5
+@b4upkeep = 2.5
+@b5time = 180
+@b5cost = 180
+@b5effect = 8
+@b5upkeep = 3
+@feupkeep = 4
+@feproduction = 12
+@science1 = 1
+@science2 = 2
+@science3 = 3
+@science4 = 4
+@science5 = 6
+#####################################
+### Strategic Resource Processing ###
+#####################################
+building_sr_processor_light_gases = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_terraform_gases = 1
+	}
+	country_modifier = {
+		pop_environment_tolerance = 0.03
+		all_technology_research_speed = 0.02
+	}
+	produced_resources = {
+		physics_research = 2
+		society_research = 2
+		engineering_research = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_light_gases_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_natural_liquids = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_terraform_liquids = 1
+	}
+	country_modifier = {
+		tile_resource_food_mult = 0.05
+		tile_resource_minerals_mult = 0.05
+		tile_resource_energy_mult = 0.05
+	}
+	produced_resources = {
+		physics_research = 2
+		society_research = 2
+		engineering_research = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_natural_liquids_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_garanthium_ore = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_garanthium = 1
+	}
+	country_modifier = {
+		planet_building_cost_mult = -0.03
+		building_time_mult = -0.03
+		planet_clear_blocker_time_mult = -0.03
+		planet_clear_blocker_cost_mult = -0.03
+	}
+	produced_resources = {
+		physics_research = 1
+		society_research = 2
+		engineering_research = 2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_garanthium_ore_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_lythuric_gas = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_lythuric = 1
+	}
+	country_modifier = {
+		edict_influence_cost = -0.03
+		edict_length_mult = 0.03
+		ship_shield_hp_mult = 0.15
+		pop_fortification_defense = 0.20
+	}
+	produced_resources = {
+		physics_research = 2
+		society_research = 1
+		engineering_research = 2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_lythuric_gas_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_engos_vapor = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_engos = 1
+	}
+	country_modifier = {
+		planet_army_build_cost_mult = -0.03
+		army_morale = 0.15
+		army_upkeep_mult = -0.03
+		army_damage_mult = 0.09
+		planet_army_build_speed_mult = 0.15
+	}
+	produced_resources = {
+		physics_research = 2
+		society_research = 2
+		engineering_research = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_engos_vapor_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_teldar_crystals = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_teldar = 1
+	}
+	country_modifier = {
+		ship_upkeep_mult = -0.03
+		navy_size_mult = 0.07
+		planet_sensor_range_mult = 0.15
+		#country_core_sector_system_cap = 1
+		#tile_resource_energy_mult = 0.1
+		#country_sector_cap_add  = 1
+	}
+	produced_resources = {
+		physics_research = 1
+		society_research = 2
+		engineering_research = 2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_teldar_crystals_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_pitharan_dust = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_pitharan = 1
+	}
+	country_modifier = {
+		ship_combat_speed_mult = 0.03
+		ship_speed_mult = 0.03
+		weapon_type_strike_craft_weapon_damage_mult = 0.09
+		weapon_type_strike_craft_weapon_fire_rate_mult = 0.05
+	}
+	produced_resources = {
+		physics_research = 2
+		society_research = 1
+		engineering_research = 2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_pitharan_dust_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_orillium_ore = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_orillium = 1
+	}
+	country_modifier = {
+		ship_fire_rate_mult = 0.01
+		ship_weapon_range_mult = 0.02
+		weapon_type_kinetic_weapon_damage_mult = 0.05
+		weapon_type_energy_weapon_damage_mult = 0.05
+		weapon_type_explosive_weapon_damage_mult = 0.05
+		weapon_type_kinetic_weapon_fire_rate_mult = 0.03
+		weapon_type_energy_weapon_fire_rate_mult = 0.03
+		weapon_type_explosive_weapon_fire_rate_mult = 0.03
+	}
+	produced_resources = {
+		physics_research = 1
+		society_research = 2
+		engineering_research = 2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_orillium_ore_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_neutronium_ore = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_neutronium = 1
+	}
+	country_modifier = {
+		ship_armor_mult = 0.15
+		spaceport_ship_build_cost_mult = -0.03
+		spaceport_module_cost_mult = -0.03
+	}
+	produced_resources = {
+		physics_research = 2
+		society_research = 1
+		engineering_research = 2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_neutronium_ore_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_living_metal = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_living_metal = 1
+	}
+	country_modifier = {
+		ship_hitpoints_mult = 0.15
+		spaceport_ship_build_speed_mult = 0.15
+		shipclass_military_station_hit_points_mult = 0.35
+		ship_auto_repair_add = 0.005
+	}
+	produced_resources = {
+		physics_research = 2
+		society_research = 1
+		engineering_research = 2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_living_metal_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_dark_matter = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_dark_matter = 1
+	}
+	country_modifier = {
+		tile_resource_physics_research_mult = 0.03
+		tile_resource_society_research_mult = 0.03
+		tile_resource_engineering_research_mult = 0.03
+		shipclass_military_station_damage_mult = 0.10
+	}
+	produced_resources = {
+		physics_research = 2
+		society_research = 1
+		engineering_research = 2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_dark_matter_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_betharian_stones = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_betharian = 1
+	}
+	country_modifier = {
+		science_ship_survey_speed = 0.10
+		ship_anomaly_fail_risk = -0.05
+		ship_anomaly_research_speed_mult = 0.10
+		ship_anomaly_generation_chance_mult = 0.07
+	}
+	produced_resources = {
+		physics_research = 1
+		society_research = 2
+		engineering_research = 2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_betharian_stones_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_alien_pets = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_alien_pets = 1
+	}
+	country_modifier = {
+		pop_happiness = 0.03
+		country_leader_pool_size = 1
+		pop_ethic_shift = -0.03
+		#country_leader_cap = 1
+	}
+	produced_resources = {
+		physics_research = 2
+		society_research = 2
+		engineering_research = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_alien_pets_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_satramene_gas = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_satramene = 1
+	}
+	country_modifier = {
+		pop_growth_req_mult = -0.03
+		ship_accuracy_add = 1
+		ship_evasion_add = 0.5
+		leader_age = 12
+	}
+	produced_resources = {
+		physics_research = 1
+		society_research = 2
+		engineering_research = 2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_satramene_gas_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+building_sr_processor_zro_particles = {
+	base_buildtime = 240
+	cost = {
+		minerals = 150
+		influence = 5
+	}
+	required_resources = {
+		energy = 5
+		minerals = 1
+		sr_zro = 1
+	}
+	country_modifier = {
+		ship_interstellar_speed_mult = 0.10
+		ship_sensor_range_mult = 0.15
+		ship_winddown_mult = -0.03
+		ship_windup_mult = -0.03
+		ship_emergency_ftl_mult = -0.03
+	}
+	produced_resources = {
+		physics_research = 2
+		society_research = 2
+		engineering_research = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_no_sr_tile"
+			tile = {
+				AND = {
+					has_resource = { type = sr_terraform_gases amount = 0 }
+					has_resource = { type = sr_terraform_liquids amount = 0 }
+					has_resource = { type = sr_garanthium amount = 0 }
+					has_resource = { type = sr_lythuric amount = 0 }
+					has_resource = { type = sr_engos amount = 0 }
+					has_resource = { type = sr_teldar amount = 0 }
+					has_resource = { type = sr_pitharan amount = 0 }
+					has_resource = { type = sr_orillium amount = 0 }
+					has_resource = { type = sr_neutronium amount = 0 }
+					has_resource = { type = sr_living_metal amount = 0 }
+					has_resource = { type = sr_dark_matter amount = 0 }
+					has_resource = { type = sr_betharian amount = 0 }
+					has_resource = { type = sr_alien_pets amount = 0 }
+					has_resource = { type = sr_satramene amount = 0 }
+					has_resource = { type = sr_zro amount = 0 }
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_processing_zro_particles_01"
+	}
+	ai_special_building = yes
+	ai_allow = {
+		has_any_resource = no
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+#####################################
+### Strategic Resource Extraction ###
+#####################################
+building_sr_extractor_light_gases = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_terraform_gases = 1
+		physics_research = 3
+		society_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_light_gases_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_terraforming_gas"
+			tile = {
+				has_resource = { type = sr_terraform_gases amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_light_gases_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_natural_liquids = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_terraform_liquids = 1
+		physics_research = 3
+		society_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_natural_liquids_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_terraforming_fluid"
+			tile = {
+				has_resource = { type = sr_terraform_liquids amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_natural_liquids_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_garanthium_ore = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_garanthium = 1
+		society_research = 3
+		engineering_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_garanthium_ore_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_garanthium"
+			tile = {
+				has_resource = { type = sr_garanthium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_garanthium_ore_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_lythuric_gas = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_lythuric = 1
+		physics_research = 3
+		engineering_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_lythuric_gas_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_lythuric"
+			tile = {
+				has_resource = { type = sr_lythuric amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_lythuric_gas_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_engos_vapor = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_engos = 1
+		physics_research = 3
+		society_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_engos_vapor_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_engos"
+			tile = {
+				has_resource = { type = sr_engos amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_engos_vapor_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_teldar_crystals = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_teldar = 1
+		society_research = 3
+		engineering_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_teldar_crystals_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_teldar"
+			tile = {
+				has_resource = { type = sr_teldar amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_teldar_crystals_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_pitharan_dust = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_pitharan = 1
+		physics_research = 3
+		engineering_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_pitharan_dust_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_pitharan"
+			tile = {
+				has_resource = { type = sr_pitharan amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_pitharan_dust_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_orillium_ore = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_orillium = 1
+		society_research = 3
+		engineering_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_orillium_ore_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_orillium"
+			tile = {
+				has_resource = { type = sr_orillium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_orillium_ore_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_neutronium_ore = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_neutronium = 1
+		physics_research = 3
+		engineering_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_neutronium_ore_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_neutronium"
+			tile = {
+				has_resource = { type = sr_neutronium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_neutronium_ore_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_living_metal = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_living_metal = 1
+		physics_research = 3
+		engineering_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_living_metal_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_living_metal"
+			tile = {
+				has_resource = { type = sr_living_metal amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_living_metal_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_dark_matter = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_dark_matter = 1
+		physics_research = 3
+		engineering_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_dark_matter_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_dark_matter"
+			tile = {
+				has_resource = { type = sr_dark_matter amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_dark_matter_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_betharian_stones = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_betharian = 1
+		society_research = 3
+		engineering_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_betharian_stones_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_betharian"
+			tile = {
+				has_resource = { type = sr_betharian amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_betharian_stones_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_alien_pets = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_alien_pets = 1
+		physics_research = 3
+		society_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_alien_pets_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_alien_pets"
+			tile = {
+				has_resource = { type = sr_alien_pets amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_alien_pets_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_satramene_gas = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_satramene = 1
+		society_research = 3
+		engineering_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_satramene_gas_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_satramene"
+			tile = {
+				has_resource = { type = sr_satramene amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_satramene_gas_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_zro_particles = {
+	base_buildtime = 360
+	cost = {
+		minerals = 250
+		influence = 25
+	}
+	required_resources = {
+		energy = 10
+		minerals = 2
+	}
+	produced_resources = {
+		sr_zro = 1
+		physics_research = 3
+		society_research = 3
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_zro_particles_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_zro"
+			tile = {
+				has_resource = { type = sr_zro amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_zro_particles_01"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_light_gases_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_terraform_gases = 2
+		physics_research = 5
+		society_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_light_gases_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_terraforming_gas"
+			tile = {
+				has_resource = { type = sr_terraform_gases amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_light_gases_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_natural_liquids_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_terraform_liquids = 2
+		physics_research = 5
+		society_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_natural_liquids_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_terraforming_fluid"
+			tile = {
+				has_resource = { type = sr_terraform_liquids amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_natural_liquids_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_garanthium_ore_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_garanthium = 2
+		society_research = 5
+		engineering_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_garanthium_ore_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_garanthium"
+			tile = {
+				has_resource = { type = sr_garanthium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_garanthium_ore_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_lythuric_gas_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_lythuric = 2
+		physics_research = 5
+		engineering_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_lythuric_gas_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_lythuric"
+			tile = {
+				has_resource = { type = sr_lythuric amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_lythuric_gas_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_engos_vapor_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_engos = 2
+		physics_research = 5
+		society_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_engos_vapor_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_engos"
+			tile = {
+				has_resource = { type = sr_engos amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_engos_vapor_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_teldar_crystals_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_teldar = 2
+		society_research = 5
+		engineering_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_teldar_crystals_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_teldar"
+			tile = {
+				has_resource = { type = sr_teldar amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_teldar_crystals_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_pitharan_dust_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_pitharan = 2
+		physics_research = 5
+		engineering_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_pitharan_dust_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_pitharan"
+			tile = {
+				has_resource = { type = sr_pitharan amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_pitharan_dust_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_orillium_ore_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_orillium = 2
+		society_research = 5
+		engineering_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_orillium_ore_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_orillium"
+			tile = {
+				has_resource = { type = sr_orillium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_orillium_ore_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_neutronium_ore_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_neutronium = 2
+		physics_research = 5
+		engineering_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_neutronium_ore_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_neutronium"
+			tile = {
+				has_resource = { type = sr_neutronium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_neutronium_ore_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_living_metal_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_living_metal = 2
+		physics_research = 5
+		engineering_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_living_metal_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_living_metal"
+			tile = {
+				has_resource = { type = sr_living_metal amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_living_metal_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_dark_matter_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_dark_matter = 2
+		physics_research = 5
+		engineering_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_dark_matter_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_dark_matter"
+			tile = {
+				has_resource = { type = sr_dark_matter amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_dark_matter_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_betharian_stones_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_betharian = 2
+		society_research = 5
+		engineering_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_betharian_stones_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_betharian"
+			tile = {
+				has_resource = { type = sr_betharian amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_betharian_stones_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_alien_pets_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_alien_pets = 2
+		physics_research = 5
+		society_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_alien_pets_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_alien_pets"
+			tile = {
+				has_resource = { type = sr_alien_pets amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_alien_pets_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_satramene_gas_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_satramene = 2
+		society_research = 5
+		engineering_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_satramene_gas_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_satramene"
+			tile = {
+				has_resource = { type = sr_satramene amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_satramene_gas_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_zro_particles_2 = {
+	base_buildtime = 480
+	is_listed = no
+	cost = {
+		minerals = 400
+		influence = 30
+	}
+	required_resources = {
+		energy = 20
+		minerals = 4
+	}
+	produced_resources = {
+		sr_zro = 2
+		physics_research = 5
+		society_research = 5
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_zro_particles_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_zro"
+			tile = {
+				has_resource = { type = sr_zro amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_zro_particles_02"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_light_gases_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_terraform_gases = 3
+		physics_research = 8
+		society_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_light_gases_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_terraforming_gas"
+			tile = {
+				has_resource = { type = sr_terraform_gases amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_light_gases_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_natural_liquids_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_terraform_liquids = 3
+		physics_research = 8
+		society_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_natural_liquids_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_terraforming_fluid"
+			tile = {
+				has_resource = { type = sr_terraform_liquids amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_natural_liquids_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_garanthium_ore_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_garanthium = 3
+		society_research = 8
+		engineering_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_garanthium_ore_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_garanthium"
+			tile = {
+				has_resource = { type = sr_garanthium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_garanthium_ore_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_lythuric_gas_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_lythuric = 3
+		physics_research = 8
+		engineering_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_lythuric_gas_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_lythuric"
+			tile = {
+				has_resource = { type = sr_lythuric amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_lythuric_gas_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_engos_vapor_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_engos = 3
+		physics_research = 8
+		society_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_engos_vapor_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_engos"
+			tile = {
+				has_resource = { type = sr_engos amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_engos_vapor_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_teldar_crystals_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_teldar = 3
+		society_research = 8
+		engineering_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_teldar_crystals_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_teldar"
+			tile = {
+				has_resource = { type = sr_teldar amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_teldar_crystals_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_pitharan_dust_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_pitharan = 3
+		physics_research = 8
+		engineering_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_pitharan_dust_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_pitharan"
+			tile = {
+				has_resource = { type = sr_pitharan amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_pitharan_dust_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_orillium_ore_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_orillium = 3
+		society_research = 8
+		engineering_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_orillium_ore_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_orillium"
+			tile = {
+				has_resource = { type = sr_orillium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_orillium_ore_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_neutronium_ore_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_neutronium = 3
+		physics_research = 8
+		engineering_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_neutronium_ore_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_neutronium"
+			tile = {
+				has_resource = { type = sr_neutronium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_neutronium_ore_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_living_metal_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_living_metal = 3
+		physics_research = 8
+		engineering_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_living_metal_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_living_metal"
+			tile = {
+				has_resource = { type = sr_living_metal amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_living_metal_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_dark_matter_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_dark_matter = 3
+		physics_research = 8
+		engineering_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_dark_matter_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_dark_matter"
+			tile = {
+				has_resource = { type = sr_dark_matter amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_dark_matter_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_betharian_stones_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_betharian = 3
+		society_research = 8
+		engineering_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_betharian_stones_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_betharian"
+			tile = {
+				has_resource = { type = sr_betharian amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_betharian_stones_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_alien_pets_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_alien_pets = 3
+		physics_research = 8
+		society_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_alien_pets_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_alien_pets"
+			tile = {
+				has_resource = { type = sr_alien_pets amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_alien_pets_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_satramene_gas_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_satramene = 3
+		society_research = 8
+		engineering_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_satramene_gas_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_satramene"
+			tile = {
+				has_resource = { type = sr_satramene amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_satramene_gas_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_zro_particles_3 = {
+	base_buildtime = 600
+	is_listed = no
+	cost = {
+		minerals = 550
+		influence = 35
+	}
+	required_resources = {
+		energy = 30
+		minerals = 6
+	}
+	produced_resources = {
+		sr_zro = 3
+		physics_research = 8
+		society_research = 8
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_zro_particles_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_zro"
+			tile = {
+				has_resource = { type = sr_zro amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_zro_particles_03"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_light_gases_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_terraform_gases = 5
+		physics_research = 13
+		society_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_light_gases_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_terraforming_gas"
+			tile = {
+				has_resource = { type = sr_terraform_gases amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_light_gases_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_natural_liquids_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_terraform_liquids = 5
+		physics_research = 13
+		society_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_natural_liquids_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_terraforming_fluid"
+			tile = {
+				has_resource = { type = sr_terraform_liquids amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_natural_liquids_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_garanthium_ore_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_garanthium = 5
+		society_research = 13
+		engineering_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_garanthium_ore_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_garanthium"
+			tile = {
+				has_resource = { type = sr_garanthium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_garanthium_ore_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_lythuric_gas_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_lythuric = 5
+		physics_research = 13
+		engineering_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_lythuric_gas_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_lythuric"
+			tile = {
+				has_resource = { type = sr_lythuric amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_lythuric_gas_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_engos_vapor_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_engos = 5
+		physics_research = 13
+		society_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_engos_vapor_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_engos"
+			tile = {
+				has_resource = { type = sr_engos amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_engos_vapor_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_teldar_crystals_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_teldar = 5
+		society_research = 13
+		engineering_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_teldar_crystals_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_teldar"
+			tile = {
+				has_resource = { type = sr_teldar amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_teldar_crystals_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_pitharan_dust_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_pitharan = 5
+		physics_research = 13
+		engineering_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_pitharan_dust_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_pitharan"
+			tile = {
+				has_resource = { type = sr_pitharan amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_pitharan_dust_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_orillium_ore_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_orillium = 5
+		society_research = 13
+		engineering_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_orillium_ore_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_orillium"
+			tile = {
+				has_resource = { type = sr_orillium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_orillium_ore_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_neutronium_ore_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_neutronium = 5
+		physics_research = 13
+		engineering_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_neutronium_ore_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_neutronium"
+			tile = {
+				has_resource = { type = sr_neutronium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_neutronium_ore_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_living_metal_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_living_metal = 5
+		physics_research = 13
+		engineering_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_living_metal_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_living_metal"
+			tile = {
+				has_resource = { type = sr_living_metal amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_living_metal_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_dark_matter_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_dark_matter = 5
+		physics_research = 13
+		engineering_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_dark_matter_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_dark_matter"
+			tile = {
+				has_resource = { type = sr_dark_matter amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_dark_matter_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_betharian_stones_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_betharian = 5
+		society_research = 13
+		engineering_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_betharian_stones_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_betharian"
+			tile = {
+				has_resource = { type = sr_betharian amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_betharian_stones_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_alien_pets_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_alien_pets = 5
+		physics_research = 13
+		society_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_alien_pets_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_alien_pets"
+			tile = {
+				has_resource = { type = sr_alien_pets amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_alien_pets_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_satramene_gas_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_satramene = 5
+		society_research = 13
+		engineering_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_satramene_gas_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_satramene"
+			tile = {
+				has_resource = { type = sr_satramene amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_satramene_gas_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_zro_particles_4 = {
+	base_buildtime = 840
+	is_listed = no
+	cost = {
+		minerals = 850
+		influence = 40
+	}
+	required_resources = {
+		energy = 40
+		minerals = 8
+	}
+	produced_resources = {
+		sr_zro = 5
+		physics_research = 13
+		society_research = 13
+		influence = 1
+	}
+	upgrades = {
+		building_sr_extractor_zro_particles_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_zro"
+			tile = {
+				has_resource = { type = sr_zro amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_zro_particles_04"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_light_gases_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_terraform_gases = 8
+		physics_research = 20
+		society_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_terraforming_gas"
+			tile = {
+				has_resource = { type = sr_terraform_gases amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_light_gases_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_natural_liquids_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_terraform_liquids = 8
+		physics_research = 20
+		society_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_terraforming_fluid"
+			tile = {
+				has_resource = { type = sr_terraform_liquids amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_natural_liquids_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_garanthium_ore_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_garanthium = 8
+		society_research = 20
+		engineering_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_garanthium"
+			tile = {
+				has_resource = { type = sr_garanthium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_garanthium_ore_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_lythuric_gas_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_lythuric = 8
+		physics_research = 20
+		engineering_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_lythuric"
+			tile = {
+				has_resource = { type = sr_lythuric amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_lythuric_gas_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_engos_vapor_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_engos = 8
+		physics_research = 20
+		society_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_engos"
+			tile = {
+				has_resource = { type = sr_engos amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_engos_vapor_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_teldar_crystals_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_teldar = 8
+		society_research = 20
+		engineering_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_teldar"
+			tile = {
+				has_resource = { type = sr_teldar amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_teldar_crystals_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_pitharan_dust_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_pitharan = 8
+		physics_research = 20
+		engineering_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_pitharan"
+			tile = {
+				has_resource = { type = sr_pitharan amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_pitharan_dust_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_orillium_ore_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_orillium = 8
+		society_research = 20
+		engineering_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_orillium"
+			tile = {
+				has_resource = { type = sr_orillium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_orillium_ore_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_neutronium_ore_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_neutronium = 8
+		physics_research = 20
+		engineering_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_neutronium"
+			tile = {
+				has_resource = { type = sr_neutronium amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_neutronium_ore_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_living_metal_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_living_metal = 8
+		physics_research = 20
+		engineering_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_living_metal"
+			tile = {
+				has_resource = { type = sr_living_metal amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_living_metal_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_dark_matter_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_dark_matter = 8
+		physics_research = 20
+		engineering_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_dark_matter"
+			tile = {
+				has_resource = { type = sr_dark_matter amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_dark_matter_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_betharian_stones_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_betharian = 8
+		society_research = 20
+		engineering_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_betharian"
+			tile = {
+				has_resource = { type = sr_betharian amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_betharian_stones_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_alien_pets_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_alien_pets = 8
+		physics_research = 20
+		society_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_alien_pets"
+			tile = {
+				has_resource = { type = sr_alien_pets amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_alien_pets_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_satramene_gas_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_satramene = 8
+		society_research = 20
+		engineering_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_satramene"
+			tile = {
+				has_resource = { type = sr_satramene amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_satramene_gas_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+building_sr_extractor_zro_particles_5 = {
+	base_buildtime = 1200
+	is_listed = no
+	cost = {
+		minerals = 1300
+		influence = 45
+	}
+	required_resources = {
+		energy = 50
+		minerals = 10
+	}
+	produced_resources = {
+		sr_zro = 8
+		physics_research = 20
+		society_research = 20
+		influence = 1
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_tile_zro"
+			tile = {
+				has_resource = { type = sr_zro amount > 0 }
+			}
+		}
+	}
+	prerequisites = {
+		"tech_sr_extraction_zro_particles_05"
+	}
+	ai_special_building = yes
+	ai_weight = {
+		factor = 1000
+	}
+}
+##############################
+### Food Export Spaceports ###
+##############################
+spaceport_export_foodsupplies_1 = {
+	base_buildtime = 360
+	cost = {
+		minerals = 125
+		energy = 75
+		influence = 5
+	}
+	required_resources = {
+		energy = 3
+	}
+	produced_resources = {
+		sr_foodsupplies = 1
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = -5
+	}
+	upgrades = {
+		spaceport_export_foodsupplies_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_interplanetary_logistics"
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+spaceport_export_foodsupplies_1a = {
+	base_buildtime = 120
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 3
+	}
+	produced_resources = {
+		sr_foodsupplies = 1
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = -5
+	}
+	upgrades = {
+		spaceport_export_foodsupplies_2
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+spaceport_export_foodsupplies_2 = {
+	base_buildtime = 120
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 3
+	}
+	produced_resources = {
+		sr_foodsupplies = 2
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = -10
+	}
+	upgrades = {
+		spaceport_export_foodsupplies_1a
+		spaceport_export_foodsupplies_3
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+spaceport_export_foodsupplies_3 = {
+	base_buildtime = 120
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 3
+	}
+	produced_resources = {
+		sr_foodsupplies = 3
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = -15
+	}
+	upgrades = {
+		spaceport_export_foodsupplies_2
+		spaceport_export_foodsupplies_4
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+spaceport_export_foodsupplies_4 = {
+	base_buildtime = 120
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 3
+	}
+	produced_resources = {
+		sr_foodsupplies = 4
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = -20
+	}
+	upgrades = {
+		spaceport_export_foodsupplies_3
+		spaceport_export_foodsupplies_5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+spaceport_export_foodsupplies_5 = {
+	base_buildtime = 120
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 3
+	}
+	produced_resources = {
+		sr_foodsupplies = 5
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = -25
+	}
+	upgrades = {
+		spaceport_export_foodsupplies_4
+		spaceport_export_foodsupplies_6
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+spaceport_export_foodsupplies_6 = {
+	base_buildtime = 120
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 3
+	}
+	produced_resources = {
+		sr_foodsupplies = 6
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = -30
+	}
+	upgrades = {
+		spaceport_export_foodsupplies_5
+		spaceport_export_foodsupplies_7
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+spaceport_export_foodsupplies_7 = {
+	base_buildtime = 120
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 3
+	}
+	produced_resources = {
+		sr_foodsupplies = 7
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = -35
+	}
+	upgrades = {
+		spaceport_export_foodsupplies_6
+		spaceport_export_foodsupplies_8
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+spaceport_export_foodsupplies_8 = {
+	base_buildtime = 120
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 3
+	}
+	produced_resources = {
+		sr_foodsupplies = 8
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = -40
+	}
+	upgrades = {
+		spaceport_export_foodsupplies_7
+		spaceport_export_foodsupplies_9
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+spaceport_export_foodsupplies_9 = {
+	base_buildtime = 120
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 3
+	}
+	produced_resources = {
+		sr_foodsupplies = 9
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = -45
+	}
+	upgrades = {
+		spaceport_export_foodsupplies_8
+		spaceport_export_foodsupplies_X
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+spaceport_export_foodsupplies_X = {
+	base_buildtime = 120
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 3
+	}
+	produced_resources = {
+		sr_foodsupplies = 10
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = -50
+	}
+	upgrades = {
+		spaceport_export_foodsupplies_9
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+##############################
+### Food Import Spaceports ###
+##############################
+spaceport_import_foodsupplies_1 = {
+	base_buildtime = 60
+	cost = {
+		minerals = 50
+		energy = 15
+	}
+	required_resources = {
+		energy = 0.75
+		sr_foodsupplies = 1
+	}
+	produced_resources = {
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = 5
+	}
+	upgrades = {
+		spaceport_import_foodsupplies_2
+	}
+	prerequisites = {
+		"tech_interplanetary_logistics"
+	}
+}
+spaceport_import_foodsupplies_1a = {
+	base_buildtime = 20
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 0.75
+		sr_foodsupplies = 1
+	}
+	produced_resources = {
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = 5
+	}
+	upgrades = {
+		spaceport_import_foodsupplies_2
+	}
+}
+spaceport_import_foodsupplies_2 = {
+	base_buildtime = 20
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 0.75
+		sr_foodsupplies = 2
+	}
+	produced_resources = {
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = 10
+	}
+	upgrades = {
+		spaceport_import_foodsupplies_1a
+		spaceport_import_foodsupplies_3
+	}
+}
+spaceport_import_foodsupplies_3 = {
+	base_buildtime = 20
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 0.75
+		sr_foodsupplies = 3
+	}
+	produced_resources = {
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = 15
+	}
+	upgrades = {
+		spaceport_import_foodsupplies_2
+		spaceport_import_foodsupplies_4
+	}
+}
+spaceport_import_foodsupplies_4 = {
+	base_buildtime = 20
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 0.75
+		sr_foodsupplies = 4
+	}
+	produced_resources = {
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = 20
+	}
+	upgrades = {
+		spaceport_import_foodsupplies_3
+		spaceport_import_foodsupplies_5
+	}
+}
+spaceport_import_foodsupplies_5 = {
+	base_buildtime = 20
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 0.75
+		sr_foodsupplies = 5
+	}
+	produced_resources = {
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = 25
+	}
+	upgrades = {
+		spaceport_import_foodsupplies_4
+		spaceport_import_foodsupplies_6
+	}
+}
+spaceport_import_foodsupplies_6 = {
+	base_buildtime = 20
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 0.75
+		sr_foodsupplies = 6
+	}
+	produced_resources = {
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = 30
+	}
+	upgrades = {
+		spaceport_import_foodsupplies_5
+		spaceport_import_foodsupplies_7
+	}
+}
+spaceport_import_foodsupplies_7 = {
+	base_buildtime = 20
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 0.75
+		sr_foodsupplies = 7
+	}
+	produced_resources = {
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = 35
+	}
+	upgrades = {
+		spaceport_import_foodsupplies_6
+		spaceport_import_foodsupplies_8
+	}
+}
+spaceport_import_foodsupplies_8 = {
+	base_buildtime = 20
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 0.75
+		sr_foodsupplies = 8
+	}
+	produced_resources = {
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = 40
+	}
+	upgrades = {
+		spaceport_import_foodsupplies_7
+		spaceport_import_foodsupplies_9
+	}
+}
+spaceport_import_foodsupplies_9 = {
+	base_buildtime = 20
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 0.75
+		sr_foodsupplies = 9
+	}
+	produced_resources = {
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = 45
+	}
+	upgrades = {
+		spaceport_import_foodsupplies_8
+		spaceport_import_foodsupplies_X
+	}
+}
+spaceport_import_foodsupplies_X = {
+	base_buildtime = 20
+	is_listed = no
+	cost = {
+	}
+	required_resources = {
+		energy = 0.75
+		sr_foodsupplies = 10
+	}
+	produced_resources = {
+		#food = 0.0000000001
+	}
+	planet_modifier = {
+		planet_resource_food_add = 50
+	}
+	upgrades = {
+		spaceport_import_foodsupplies_9
+	}
+}
+#####################################
+### Strategic Resource Enrichment ###
+#####################################
+building_enrichment_project_01 = {
+	base_buildtime = 720
+	cost = {
+		minerals = 2500
+		energy = 1250
+		influence = 50
+	}
+	required_resources = {
+		energy = 5
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	upgrades = {
+		building_enrichment_project_01_init
+		building_enrichment_project_02
+	}
+	prerequisites = {
+		"tech_enrichment_gen_01"
+	}
+}
+building_enrichment_project_01_init = {
+	is_listed = no
+	base_buildtime = 0
+}
+building_enrichment_project_02 = {
+	is_listed = no
+	base_buildtime = 1080
+	cost = {
+		minerals = 5000
+		energy = 2500
+		influence = 100
+	}
+	required_resources = {
+		energy = 15
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	upgrades = {
+		building_enrichment_project_02_init
+		building_enrichment_project_03
+	}
+	prerequisites = {
+		"tech_enrichment_gen_02"
+	}
+}
+building_enrichment_project_02_init = {
+	is_listed = no
+	base_buildtime = 0
+}
+building_enrichment_project_03 = {
+	is_listed = no
+	base_buildtime = 1800
+	cost = {
+		minerals = 7500
+		energy = 3750
+		influence = 150
+	}
+	required_resources = {
+		energy = 30
+	}
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	upgrades = {
+		building_enrichment_project_03_init
+	}
+	prerequisites = {
+		"tech_enrichment_gen_03"
+	}
+}
+building_enrichment_project_03_init = {
+	is_listed = no
+	base_buildtime = 0
+}
+
+
+
+building_biofuel_plant = {
+	base_buildtime = 360
+	
+	cost = {
+		minerals = 350
+	}
+
+	produced_resources = {
+		energy = 4
+		food = 4
+                society_research = 4
+	}
+
+	planet_modifier = {
+                pop_environment_tolerance = 0.01
+	}
+
+	adjacency_bonus = {
+		resource_food_add = 1
+                resource_society_research_add = 1
+	}
+	
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+
+
+                custom_tooltip = {
+			text = "requirement_farmland"
+			tile = {
+			         OR = {
+					has_deposit = "d_farmland_deposit"
+					has_deposit = "d_mineral_food_deposit"
+					has_deposit = "d_rich_mineral_food_deposit"
+					has_deposit = "d_rich_food_mineral_deposit"
+					has_deposit = "d_rich_farmland_deposit"
+					has_deposit = "d_vast_farmland_deposit"
+				}
+			}
+		}		
+	}
+	
+	prerequisites = {
+		"tech_bioreactor"
+	}
+	
+	ai_special_building = yes
+}
+
+
+
+
+
+
+building_thermal_borehole = {
+	base_buildtime = 180
+	
+	cost = {
+		minerals = 400
+		energy = 50
+	}
+	
+	produced_resources = {
+		energy = 9
+		minerals = 9
+                engineering_research = 9
+	}
+
+	adjacency_bonus = {
+		resource_engineering_research_add = 1
+		resource_food_add = -3
+	}
+
+	planet_modifier = {
+                pop_environment_tolerance = -0.05
+                tile_resource_food_mult = -0.05
+	}
+	
+
+	prerequisites = {
+		"tech_thermal_borehole"
+	}		
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+
+
+                custom_tooltip = {
+			text = "requirement_energy"
+			tile = {
+			         OR = {
+					has_deposit = "d_mineral_energy_deposit"
+					has_deposit = "d_energy_deposit"
+					has_deposit = "d_rich_energy_deposit"
+					has_deposit = "d_vast_energy_deposit"
+					has_deposit = "d_immense_energy_deposit"
+				}
+			}
+		}
+
+
+	}
+}
+
+
+
+
+########################
+### Empire Unique buildings ###
+########################
+
+
+
+
+
+
+building_ministry_of_equality = {
+	base_buildtime = 920
+	empire_unique = yes
+	
+	cost = {
+		minerals = 850
+                energy = 150
+		influence = 25
+	}
+	
+	required_resources = {
+		energy = 15
+	}
+	
+	country_modifier = {
+		pop_happiness = 0.05
+                pop_growth_req_mult = -0.05
+                influence_gain_mult = 0.25
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_2"
+			planet = {
+				OR = {
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	
+	prerequisites = {
+		"tech_ministry_of_equality"
+	}
+	
+	ai_weight = {
+		weight = 110
+	}
+	
+	ai_special_building = yes
+}
+
+
+
+
+
+
+building_pan_galactic_forum = {
+	base_buildtime = 760
+	empire_unique = yes
+	
+	cost = {
+		minerals = 850
+                energy = 150
+		influence = 25
+	}
+	
+	required_resources = {
+		energy = 15
+	}
+	
+
+	country_modifier = {
+                pop_xenophobia = -0.15
+                influence_gain_mult = 0.25
+		country_society_tech_research_speed = 0.1
+                pop_other_species_happiness = 0.1
+                planet_migration_xeno_pull = 0.25
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_2"
+			planet = {
+				OR = {
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	
+	prerequisites = {
+		"tech_multicultural_integration"
+	}
+	
+	ai_special_building = yes
+}
+
+
+
+
+
+
+building_diplomacy_academy = {
+	base_buildtime = 460
+	empire_unique = yes
+	
+	cost = {
+		minerals = 850
+                energy = 250
+		influence = 25
+	}
+	
+	required_resources = {
+		energy = 10
+	}
+	
+	country_modifier = {
+		country_trust_growth = 0.25
+		diplomacy_influence_cost = -0.30
+                influence_gain_add = 1
+                country_trade_attractiveness = 0.2
+                category_statecraft_research_speed_mult = 0.15
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_2"
+			planet = {
+				OR = {
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	
+	prerequisites = {
+		"tech_new_diplomacy_standarts"
+	}
+	
+	ai_special_building = yes
+}

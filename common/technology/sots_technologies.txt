@@ -1,0 +1,3352 @@
+##################
+### TECH COSTS ###
+##################
+
+@tier1cost1 = 240
+@tier1cost2 = 360
+@tier1cost3 = 480
+@tier1cost4 = 600
+
+@tier2cost1 = 900
+@tier2cost2 = 1200
+@tier2cost3 = 1500
+@tier2cost4 = 1800
+
+@tier3cost1 = 2320
+@tier3cost2 = 2840
+@tier3cost3 = 3360
+@tier3cost4 = 3880
+
+@tier4cost1 = 4800
+@tier4cost2 = 5200
+@tier4cost3 = 5600
+@tier4cost4 = 6000
+
+@tier5cost1 = 6800
+@tier5cost2 = 7600
+@tier5cost3 = 8400
+@tier5cost4 = 9200
+
+@tier6cost1 = 10400
+@tier6cost2 = 11600
+@tier6cost3 = 12800
+@tier6cost4 = 14000
+
+@tier7cost1 = 15800
+@tier7cost2 = 17600
+@tier7cost3 = 19400
+@tier7cost4 = 21200
+
+@tier8cost1 = 23600
+@tier8cost2 = 26000
+@tier8cost3 = 28400
+@tier8cost4 = 30800
+
+@tier9cost1 = 34400
+@tier9cost2 = 38000
+@tier9cost3 = 41600
+@tier9cost4 = 45200
+@tier9cost5 = 50000
+
+@tierXcost1 = 60000
+@tierXcost2 = 72000
+@tierXcost3 = 84000
+@tierXcost4 = 96000
+
+####################
+### TECH WEIGHTS ###
+####################
+
+@tier1weight1 = 100
+@tier1weight2 = 95
+@tier1weight3 = 90
+@tier1weight4 = 85
+
+@tier2weight1 = 75
+@tier2weight2 = 70
+@tier2weight3 = 65
+@tier2weight4 = 60
+
+@tier3weight1 = 50
+@tier3weight2 = 45
+@tier3weight3 = 40
+@tier3weight4 = 35
+
+@tier4weight1 = 30
+@tier4weight2 = 26
+@tier4weight3 = 22
+@tier4weight4 = 18
+
+@tier5weight1 = 15
+@tier5weight2 = 13
+@tier5weight3 = 11
+@tier5weight4 = 9
+
+@tier6weight1 = 8
+@tier6weight2 = 7
+@tier6weight3 = 6
+@tier6weight4 = 5
+
+@tier7weight1 = 4
+@tier7weight2 = 3
+@tier7weight3 = 2
+@tier7weight4 = 1
+
+@tier8weight1 = 0.8
+@tier8weight2 = 0.6
+@tier8weight3 = 0.4
+@tier8weight4 = 0.2
+
+@tier9weight1 = 0.10
+@tier9weight2 = 0.08
+@tier9weight3 = 0.05
+@tier9weight4 = 0.03
+@tier9weight5 = 0.01
+
+@tierXweight1 = 0.008
+@tierXweight2 = 0.005
+@tierXweight3 = 0.003
+@tierXweight4 = 0.001
+
+#######################################
+### Celestial Upgrades/Terraforming ###
+#######################################
+tech_interplanetary_logistics = {
+	cost = @tier1cost1
+	area = society
+	tier = 1
+	category = { new_worlds }
+	prerequisites = { "tech_colonization_1" }
+	weight = @tier1weight1
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.15
+			NOT = {
+				research_leader = {
+					area = society
+					has_trait = "leader_trait_expertise_new_worlds"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = 3.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+}
+
+###############################
+### Celestial Manipulations ###
+###############################
+tech_perfect_ecosystem_integration = {
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { new_worlds }
+	prerequisites = { "tech_terrestrial_sculpting" "tech_atmospheric_manipulation" }
+	weight = @tier4weight2
+	
+	prereqfor_desc = {
+		feature = {
+			title = "sots_gaia_terraforming_title"
+			desc = "sots_gaia_terraforming_desc"
+		}
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.15
+			NOT = {
+				research_leader = {
+					area = society
+					has_trait = "leader_trait_expertise_new_worlds"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+}
+tech_superstructural_reassembly = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	category = { industry }
+	prerequisites = { "tech_mine_living_metal" }
+	weight = @tier5weight1
+	is_rare = yes
+	
+	prereqfor_desc = {
+		feature = {
+			title = "sots_ringworld_wreck_to_conduit_title"
+			desc = "sots_ringworld_wreck_to_conduit_desc"
+		}
+	}
+	prereqfor_desc = {
+		custom = {
+			title = "sots_tech_required_terraforming_station_title"
+			desc = "sots_tech_required_terraforming_station_desc"
+		}
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOT = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_industry"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_superdurable_support_bulkheads = {
+	cost = @tier5cost2
+	area = engineering
+	tier = 5
+	category = { industry }
+	prerequisites = { "tech_superstructural_reassembly" }
+	weight = @tier5weight2
+	is_rare = yes
+	
+	prereqfor_desc = {
+		feature = {
+			title = "sots_ringworld_conduit_to_support_title"
+			desc = "sots_ringworld_conduit_to_support_desc"
+		}
+	}
+	prereqfor_desc = {
+		custom = {
+			title = "sots_tech_required_terraforming_station_title"
+			desc = "sots_tech_required_terraforming_station_desc"
+		}
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.15
+			NOT = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_industry"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_perpetual_dyson_cores = {
+	cost = @tier6cost1
+	area = engineering
+	tier = 6
+	category = { industry }	
+	prerequisites = { "tech_superstructural_reassembly" "tech_superdurable_support_bulkheads" }
+	weight = @tier6weight1
+	is_rare = yes
+	
+	prereqfor_desc = {
+		feature = {
+			title = "sots_ringworld_support_to_habitat_title"
+			desc = "sots_ringworld_support_to_habitat_desc"
+		}
+	}
+	prereqfor_desc = {
+		custom = {
+			title = "sots_tech_required_terraforming_station_title"
+			desc = "sots_tech_required_terraforming_station_desc"
+		}
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.10
+			NOT = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_industry"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_artificial_ecosystem_construction = {
+	cost = @tier6cost1
+	area = society
+	tier = 6
+	category = { new_worlds }
+	prerequisites = { "tech_terrestrial_sculpting" "tech_atmospheric_manipulation" "tech_perfect_ecosystem_integration" "tech_superdurable_support_bulkheads" }
+	weight = @tier6weight1
+	is_rare = yes
+	
+	prereqfor_desc = {
+		feature = {
+			title = "sots_ringworld_support_to_habitat_title"
+			desc = "sots_ringworld_support_to_habitat_desc"
+		}
+	}
+	prereqfor_desc = {
+		custom = {
+			title = "sots_tech_required_terraforming_station_title"
+			desc = "sots_tech_required_terraforming_station_desc"
+		}
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.15
+			NOT = {
+				research_leader = {
+					area = society
+					has_trait = "leader_trait_expertise_new_worlds"
+				}
+			}
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+}
+
+########################
+### Ringworld Summon ###
+########################
+tech_quantum_wave_manifold_amplification = {
+	cost = @tier7cost2
+	area = physics
+	tier = 7
+	category = { particles }	
+	prerequisites = { "tech_wormhole_generation_3" "tech_warp_drive_3" }
+	weight = @tier7weight2
+	is_rare = yes
+	is_dangerous = yes
+	
+	prereqfor_desc = {
+		feature = {
+			title = "sots_ringworld_dim_augering_title"
+			desc = "sots_ringworld_dim_augering_desc"
+		}
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "sots_tech_is_not_implemented_title"
+			desc = "sots_tech_is_not_implemented_desc"
+		}
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.15
+			NOT = {
+				research_leader = {
+					area = physics
+					has_trait = "leader_trait_expertise_particles"
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				has_technology = "tech_jump_drive_1"
+				has_technology = "tech_psi_jump_drive_1"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			has_technology = "tech_jump_drive_1"
+		}
+		modifier = {
+			factor = 1.5
+			has_technology = "tech_psi_jump_drive_1"
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+}
+
+######################################
+### Strategic Resources Processing ###
+######################################
+tech_sr_processing_light_gases_01 = {
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_light_gases" }
+	weight = @tier3weight1
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_sr_processing_natural_liquids_01 = {
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_natural_liquids" }
+	weight = @tier3weight1
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_sr_processing_garanthium_ore_01 = {
+	cost = @tier3cost1
+	area = engineering
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_mine_garanthium" }
+	weight = @tier3weight1
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_sr_processing_lythuric_gas_01 = {
+	cost = @tier3cost2
+	area = physics
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_lythuric_gas" }
+	weight = @tier3weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_sr_processing_engos_vapor_01 = {
+	cost = @tier3cost2
+	area = society
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_engos_vapor" }
+	weight = @tier3weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_sr_processing_teldar_crystals_01 = {
+	cost = @tier3cost3
+	area = physics
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_mine_teldar" }
+	weight = @tier3weight3
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_sr_processing_pitharan_dust_01 = {
+	cost = @tier3cost3
+	area = engineering
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_pitharan_dust" }
+	weight = @tier3weight3
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_sr_processing_orillium_ore_01 = {
+	cost = @tier3cost3
+	area = engineering
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_mine_orillium" }
+	weight = @tier3weight3
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_sr_processing_neutronium_ore_01 = {
+	cost = @tier3cost3
+	area = engineering
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_mine_neutronium" }
+	weight = @tier3weight3
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_sr_processing_living_metal_01 = {
+	cost = @tier3cost4
+	area = engineering
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_mine_living_metal" }
+	weight = @tier3weight4
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_sr_processing_dark_matter_01 = {
+	cost = @tier3cost4
+	area = physics
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_mine_dark_matter" }
+	weight = @tier3weight4
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_sr_processing_betharian_stones_01 = {
+	cost = @tier3cost1
+	area = physics
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_mine_betharian" }
+	weight = @tier3weight1
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_sr_processing_alien_pets_01 = {
+	cost = @tier3cost2
+	area = society
+	tier = 3
+	category = { biology }	
+	prerequisites = { "tech_alien_pets" }
+	weight = @tier3weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+tech_sr_processing_satramene_gas_01 = {
+	cost = @tier3cost4
+	area = society
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_mine_satramene" }
+	weight = @tier3weight4
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+tech_sr_processing_zro_particles_01 = {
+	cost = @tier3cost4
+	area = physics
+	tier = 3
+	category = { industry }	
+	prerequisites = { "tech_mine_zro" }
+	weight = @tier3weight4
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+
+######################################
+### Strategic Resources Extraction ###
+######################################
+tech_sr_extraction_light_gases_01 = {
+	cost = @tier4cost2
+	area = society
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_light_gases" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_natural_liquids_01 = {
+	cost = @tier4cost2
+	area = society
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_natural_liquids" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_garanthium_ore_01 = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_mine_garanthium" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_lythuric_gas_01 = {
+	cost = @tier4cost2
+	area = physics
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_lythuric_gas" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_engos_vapor_01 = {
+	cost = @tier4cost2
+	area = society
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_engos_vapor" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_teldar_crystals_01 = {
+	cost = @tier4cost2
+	area = physics
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_mine_teldar" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_pitharan_dust_01 = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_pitharan_dust" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_orillium_ore_01 = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_mine_orillium" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_neutronium_ore_01 = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_mine_neutronium" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_living_metal_01 = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_mine_living_metal" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_dark_matter_01 = {
+	cost = @tier4cost2
+	area = physics
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_mine_dark_matter" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_betharian_stones_01 = {
+	cost = @tier4cost2
+	area = physics
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_mine_betharian" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_alien_pets_01 = {
+	cost = @tier4cost2
+	area = society
+	tier = 4
+	category = { biology }	
+	prerequisites = { "tech_alien_pets" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+tech_sr_extraction_satramene_gas_01 = {
+	cost = @tier4cost2
+	area = society
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_mine_satramene" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_zro_particles_01 = {
+	cost = @tier4cost2
+	area = physics
+	tier = 4
+	category = { materials }	
+	prerequisites = { "tech_mine_zro" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_light_gases_02 = {
+	cost = @tier5cost2
+	area = society
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_light_gases" "tech_sr_extraction_light_gases_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_natural_liquids_02 = {
+	cost = @tier5cost2
+	area = society
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_natural_liquids" "tech_sr_extraction_natural_liquids_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_garanthium_ore_02 = {
+	cost = @tier5cost2
+	area = engineering
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_mine_garanthium" "tech_sr_extraction_garanthium_ore_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_lythuric_gas_02 = {
+	cost = @tier5cost2
+	area = physics
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_lythuric_gas" "tech_sr_extraction_lythuric_gas_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_engos_vapor_02 = {
+	cost = @tier5cost2
+	area = society
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_engos_vapor" "tech_sr_extraction_engos_vapor_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_teldar_crystals_02 = {
+	cost = @tier5cost2
+	area = physics
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_mine_teldar" "tech_sr_extraction_teldar_crystals_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_pitharan_dust_02 = {
+	cost = @tier5cost2
+	area = engineering
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_pitharan_dust" "tech_sr_extraction_pitharan_dust_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_orillium_ore_02 = {
+	cost = @tier5cost2
+	area = engineering
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_mine_orillium" "tech_sr_extraction_orillium_ore_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_neutronium_ore_02 = {
+	cost = @tier5cost2
+	area = engineering
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_mine_neutronium" "tech_sr_extraction_neutronium_ore_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_living_metal_02 = {
+	cost = @tier5cost2
+	area = engineering
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_mine_living_metal" "tech_sr_extraction_living_metal_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_dark_matter_02 = {
+	cost = @tier5cost2
+	area = physics
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_mine_dark_matter" "tech_sr_extraction_dark_matter_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_betharian_stones_02 = {
+	cost = @tier5cost2
+	area = physics
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_mine_betharian" "tech_sr_extraction_betharian_stones_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_alien_pets_02 = {
+	cost = @tier5cost2
+	area = society
+	tier = 5
+	category = { biology }	
+	prerequisites = { "tech_alien_pets" "tech_sr_extraction_alien_pets_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+tech_sr_extraction_satramene_gas_02 = {
+	cost = @tier5cost2
+	area = society
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_mine_satramene" "tech_sr_extraction_satramene_gas_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_zro_particles_02 = {
+	cost = @tier5cost2
+	area = physics
+	tier = 5
+	category = { materials }	
+	prerequisites = { "tech_mine_zro" "tech_sr_extraction_zro_particles_01" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_light_gases_03 = {
+	cost = @tier6cost2
+	area = society
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_light_gases" "tech_sr_extraction_light_gases_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_natural_liquids_03 = {
+	cost = @tier6cost2
+	area = society
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_natural_liquids" "tech_sr_extraction_natural_liquids_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_garanthium_ore_03 = {
+	cost = @tier6cost2
+	area = engineering
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_mine_garanthium" "tech_sr_extraction_garanthium_ore_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_lythuric_gas_03 = {
+	cost = @tier6cost2
+	area = physics
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_lythuric_gas" "tech_sr_extraction_lythuric_gas_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_engos_vapor_03 = {
+	cost = @tier6cost2
+	area = society
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_engos_vapor" "tech_sr_extraction_engos_vapor_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_teldar_crystals_03 = {
+	cost = @tier6cost2
+	area = physics
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_mine_teldar" "tech_sr_extraction_teldar_crystals_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_pitharan_dust_03 = {
+	cost = @tier6cost2
+	area = engineering
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_pitharan_dust" "tech_sr_extraction_pitharan_dust_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_orillium_ore_03 = {
+	cost = @tier6cost2
+	area = engineering
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_mine_orillium" "tech_sr_extraction_orillium_ore_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_neutronium_ore_03 = {
+	cost = @tier6cost2
+	area = engineering
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_mine_neutronium" "tech_sr_extraction_neutronium_ore_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_living_metal_03 = {
+	cost = @tier6cost2
+	area = engineering
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_mine_living_metal" "tech_sr_extraction_living_metal_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_dark_matter_03 = {
+	cost = @tier6cost2
+	area = physics
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_mine_dark_matter" "tech_sr_extraction_dark_matter_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_betharian_stones_03 = {
+	cost = @tier6cost2
+	area = physics
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_mine_betharian" "tech_sr_extraction_betharian_stones_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_alien_pets_03 = {
+	cost = @tier6cost2
+	area = society
+	tier = 6
+	category = { biology }	
+	prerequisites = { "tech_alien_pets" "tech_sr_extraction_alien_pets_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+tech_sr_extraction_satramene_gas_03 = {
+	cost = @tier6cost2
+	area = society
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_mine_satramene" "tech_sr_extraction_satramene_gas_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_zro_particles_03 = {
+	cost = @tier6cost2
+	area = physics
+	tier = 6
+	category = { materials }	
+	prerequisites = { "tech_mine_zro" "tech_sr_extraction_zro_particles_02" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_light_gases_04 = {
+	cost = @tier8cost2
+	area = society
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_light_gases" "tech_sr_extraction_light_gases_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_natural_liquids_04 = {
+	cost = @tier8cost2
+	area = society
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_natural_liquids" "tech_sr_extraction_natural_liquids_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_garanthium_ore_04 = {
+	cost = @tier8cost2
+	area = engineering
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_mine_garanthium" "tech_sr_extraction_garanthium_ore_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_lythuric_gas_04 = {
+	cost = @tier8cost2
+	area = physics
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_lythuric_gas" "tech_sr_extraction_lythuric_gas_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_engos_vapor_04 = {
+	cost = @tier8cost2
+	area = society
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_engos_vapor" "tech_sr_extraction_engos_vapor_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_teldar_crystals_04 = {
+	cost = @tier8cost2
+	area = physics
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_mine_teldar" "tech_sr_extraction_teldar_crystals_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_pitharan_dust_04 = {
+	cost = @tier8cost2
+	area = engineering
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_pitharan_dust" "tech_sr_extraction_pitharan_dust_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_orillium_ore_04 = {
+	cost = @tier8cost2
+	area = engineering
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_mine_orillium" "tech_sr_extraction_orillium_ore_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_neutronium_ore_04 = {
+	cost = @tier8cost2
+	area = engineering
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_mine_neutronium" "tech_sr_extraction_neutronium_ore_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_living_metal_04 = {
+	cost = @tier8cost2
+	area = engineering
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_mine_living_metal" "tech_sr_extraction_living_metal_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_dark_matter_04 = {
+	cost = @tier8cost2
+	area = physics
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_mine_dark_matter" "tech_sr_extraction_dark_matter_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_betharian_stones_04 = {
+	cost = @tier8cost2
+	area = physics
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_mine_betharian" "tech_sr_extraction_betharian_stones_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_alien_pets_04 = {
+	cost = @tier8cost2
+	area = society
+	tier = 8
+	category = { biology }	
+	prerequisites = { "tech_alien_pets" "tech_sr_extraction_alien_pets_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+tech_sr_extraction_satramene_gas_04 = {
+	cost = @tier8cost2
+	area = society
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_mine_satramene" "tech_sr_extraction_satramene_gas_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_zro_particles_04 = {
+	cost = @tier8cost2
+	area = physics
+	tier = 8
+	category = { materials }	
+	prerequisites = { "tech_mine_zro" "tech_sr_extraction_zro_particles_03" }
+	weight = @tier8weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_light_gases_05 = {
+	cost = @tierXcost2
+	area = society
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_light_gases" "tech_sr_extraction_light_gases_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_natural_liquids_05 = {
+	cost = @tierXcost2
+	area = society
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_natural_liquids" "tech_sr_extraction_natural_liquids_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_garanthium_ore_05 = {
+	cost = @tierXcost2
+	area = engineering
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_mine_garanthium" "tech_sr_extraction_garanthium_ore_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_lythuric_gas_05 = {
+	cost = @tierXcost2
+	area = physics
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_lythuric_gas" "tech_sr_extraction_lythuric_gas_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_engos_vapor_05 = {
+	cost = @tierXcost2
+	area = society
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_engos_vapor" "tech_sr_extraction_engos_vapor_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_teldar_crystals_05 = {
+	cost = @tierXcost2
+	area = physics
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_mine_teldar" "tech_sr_extraction_teldar_crystals_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_pitharan_dust_05 = {
+	cost = @tierXcost2
+	area = engineering
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_pitharan_dust" "tech_sr_extraction_pitharan_dust_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_orillium_ore_05 = {
+	cost = @tierXcost2
+	area = engineering
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_mine_orillium" "tech_sr_extraction_orillium_ore_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_neutronium_ore_05 = {
+	cost = @tierXcost2
+	area = engineering
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_mine_neutronium" "tech_sr_extraction_neutronium_ore_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_living_metal_05 = {
+	cost = @tierXcost2
+	area = engineering
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_mine_living_metal" "tech_sr_extraction_living_metal_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_dark_matter_05 = {
+	cost = @tierXcost2
+	area = physics
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_mine_dark_matter" "tech_sr_extraction_dark_matter_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_betharian_stones_05 = {
+	cost = @tierXcost2
+	area = physics
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_mine_betharian" "tech_sr_extraction_betharian_stones_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_alien_pets_05 = {
+	cost = @tierXcost2
+	area = society
+	tier = 10
+	category = { biology }	
+	prerequisites = { "tech_alien_pets" "tech_sr_extraction_alien_pets_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+tech_sr_extraction_satramene_gas_05 = {
+	cost = @tierXcost2
+	area = society
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_mine_satramene" "tech_sr_extraction_satramene_gas_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+tech_sr_extraction_zro_particles_05 = {
+	cost = @tierXcost2
+	area = physics
+	tier = 10
+	category = { materials }	
+	prerequisites = { "tech_mine_zro" "tech_sr_extraction_zro_particles_04" }
+	weight = @tierXweight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 2.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}	
+	}
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+
+######################################
+### Strategic Resources Extraction ###
+######################################
+tech_enrichment_gen_01 = {
+	cost = @tier5cost2
+	area = engineering
+	tier = 5
+	category = { industry }	
+	prerequisites = { "tech_mineral_processing_1" }
+	weight = @tier5weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				has_technology = "tech_mine_garanthium"
+				has_technology = "tech_lythuric_gas"
+				has_technology = "tech_engos_vapor"
+				has_technology = "tech_mine_teldar"
+				has_technology = "tech_pitharan_dust"
+				has_technology = "tech_mine_orillium"
+				has_technology = "tech_mine_neutronium"
+				has_technology = "tech_mine_living_metal"
+				has_technology = "tech_mine_betharian"
+				has_technology = "tech_mine_zro"
+				has_technology = "tech_mine_satramene"
+				has_technology = "tech_mine_dark_matter"
+				has_technology = "tech_alien_pets"
+				has_technology = "tech_light_gases"
+				has_technology = "tech_natural_liquids"
+			}
+		}
+		modifier = {
+			factor = 0.15
+			NOR = {
+				has_technology = "tech_mine_garanthium"
+				has_technology = "tech_lythuric_gas"
+				has_technology = "tech_engos_vapor"
+				has_technology = "tech_mine_teldar"
+				has_technology = "tech_pitharan_dust"
+				has_technology = "tech_mine_orillium"
+				has_technology = "tech_mine_neutronium"
+				has_technology = "tech_mine_living_metal"
+				has_technology = "tech_mine_betharian"
+				has_technology = "tech_mine_zro"
+				has_technology = "tech_mine_satramene"
+				has_technology = "tech_mine_dark_matter"
+				has_technology = "tech_alien_pets"
+				has_technology = "tech_light_gases"
+				has_technology = "tech_natural_liquids"
+			}
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_garanthium"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_lythuric_gas"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_engos_vapor"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_teldar"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_pitharan_dust"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_orillium"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_neutronium"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_living_metal"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_betharian"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_zro"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_satramene"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_dark_matter"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_alien_pets"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_light_gases"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_natural_liquids"
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOT = {
+				has_technology = "tech_mine_garanthium"
+				has_technology = "tech_lythuric_gas"
+				has_technology = "tech_engos_vapor"
+				has_technology = "tech_mine_teldar"
+				has_technology = "tech_pitharan_dust"
+				has_technology = "tech_mine_orillium"
+				has_technology = "tech_mine_neutronium"
+				has_technology = "tech_mine_living_metal"
+				has_technology = "tech_mine_betharian"
+				has_technology = "tech_mine_zro"
+				has_technology = "tech_mine_satramene"
+				has_technology = "tech_mine_dark_matter"
+				has_technology = "tech_alien_pets"
+				has_technology = "tech_light_gases"
+				has_technology = "tech_natural_liquids"
+			}
+		}
+		modifier = {
+			factor = 0.15
+			NOR = {
+				has_technology = "tech_mine_garanthium"
+				has_technology = "tech_lythuric_gas"
+				has_technology = "tech_engos_vapor"
+				has_technology = "tech_mine_teldar"
+				has_technology = "tech_pitharan_dust"
+				has_technology = "tech_mine_orillium"
+				has_technology = "tech_mine_neutronium"
+				has_technology = "tech_mine_living_metal"
+				has_technology = "tech_mine_betharian"
+				has_technology = "tech_mine_zro"
+				has_technology = "tech_mine_satramene"
+				has_technology = "tech_mine_dark_matter"
+				has_technology = "tech_alien_pets"
+				has_technology = "tech_light_gases"
+				has_technology = "tech_natural_liquids"
+			}
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_garanthium"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_lythuric_gas"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_engos_vapor"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_teldar"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_pitharan_dust"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_orillium"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_neutronium"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_living_metal"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_betharian"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_zro"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_satramene"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_mine_dark_matter"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_alien_pets"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_light_gases"
+		}
+		modifier = {
+			factor = 1.05
+			has_technology = "tech_natural_liquids"
+		}
+	}
+}
+tech_enrichment_gen_02 = {
+	cost = @tier6cost2
+	area = engineering
+	tier = 6
+	category = { industry }	
+	prerequisites = { "tech_enrichment_gen_01" }
+	weight = @tier6weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				has_technology = "tech_mine_garanthium"
+				has_technology = "tech_lythuric_gas"
+				has_technology = "tech_engos_vapor"
+				has_technology = "tech_mine_teldar"
+				has_technology = "tech_pitharan_dust"
+				has_technology = "tech_mine_orillium"
+				has_technology = "tech_mine_neutronium"
+				has_technology = "tech_mine_living_metal"
+				has_technology = "tech_mine_betharian"
+				has_technology = "tech_mine_zro"
+				has_technology = "tech_mine_satramene"
+				has_technology = "tech_mine_dark_matter"
+				has_technology = "tech_alien_pets"
+				has_technology = "tech_light_gases"
+				has_technology = "tech_natural_liquids"
+			}
+		}
+		modifier = {
+			factor = 0.15
+			NOR = {
+				has_technology = "tech_mine_garanthium"
+				has_technology = "tech_lythuric_gas"
+				has_technology = "tech_engos_vapor"
+				has_technology = "tech_mine_teldar"
+				has_technology = "tech_pitharan_dust"
+				has_technology = "tech_mine_orillium"
+				has_technology = "tech_mine_neutronium"
+				has_technology = "tech_mine_living_metal"
+				has_technology = "tech_mine_betharian"
+				has_technology = "tech_mine_zro"
+				has_technology = "tech_mine_satramene"
+				has_technology = "tech_mine_dark_matter"
+				has_technology = "tech_alien_pets"
+				has_technology = "tech_light_gases"
+				has_technology = "tech_natural_liquids"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOT = {
+				has_technology = "tech_mine_garanthium"
+				has_technology = "tech_lythuric_gas"
+				has_technology = "tech_engos_vapor"
+				has_technology = "tech_mine_teldar"
+				has_technology = "tech_pitharan_dust"
+				has_technology = "tech_mine_orillium"
+				has_technology = "tech_mine_neutronium"
+				has_technology = "tech_mine_living_metal"
+				has_technology = "tech_mine_betharian"
+				has_technology = "tech_mine_zro"
+				has_technology = "tech_mine_satramene"
+				has_technology = "tech_mine_dark_matter"
+				has_technology = "tech_alien_pets"
+				has_technology = "tech_light_gases"
+				has_technology = "tech_natural_liquids"
+			}
+		}
+		modifier = {
+			factor = 0.15
+			NOR = {
+				has_technology = "tech_mine_garanthium"
+				has_technology = "tech_lythuric_gas"
+				has_technology = "tech_engos_vapor"
+				has_technology = "tech_mine_teldar"
+				has_technology = "tech_pitharan_dust"
+				has_technology = "tech_mine_orillium"
+				has_technology = "tech_mine_neutronium"
+				has_technology = "tech_mine_living_metal"
+				has_technology = "tech_mine_betharian"
+				has_technology = "tech_mine_zro"
+				has_technology = "tech_mine_satramene"
+				has_technology = "tech_mine_dark_matter"
+				has_technology = "tech_alien_pets"
+				has_technology = "tech_light_gases"
+				has_technology = "tech_natural_liquids"
+			}
+		}
+	}
+}
+tech_enrichment_gen_03 = {
+	cost = @tier7cost2
+	area = engineering
+	tier = 7
+	category = { industry }	
+	prerequisites = { "tech_enrichment_gen_02" }
+	weight = @tier7weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				has_technology = "tech_mine_garanthium"
+				has_technology = "tech_lythuric_gas"
+				has_technology = "tech_engos_vapor"
+				has_technology = "tech_mine_teldar"
+				has_technology = "tech_pitharan_dust"
+				has_technology = "tech_mine_orillium"
+				has_technology = "tech_mine_neutronium"
+				has_technology = "tech_mine_living_metal"
+				has_technology = "tech_mine_betharian"
+				has_technology = "tech_mine_zro"
+				has_technology = "tech_mine_satramene"
+				has_technology = "tech_mine_dark_matter"
+				has_technology = "tech_alien_pets"
+				has_technology = "tech_light_gases"
+				has_technology = "tech_natural_liquids"
+			}
+		}
+		modifier = {
+			factor = 0.15
+			NOR = {
+				has_technology = "tech_mine_garanthium"
+				has_technology = "tech_lythuric_gas"
+				has_technology = "tech_engos_vapor"
+				has_technology = "tech_mine_teldar"
+				has_technology = "tech_pitharan_dust"
+				has_technology = "tech_mine_orillium"
+				has_technology = "tech_mine_neutronium"
+				has_technology = "tech_mine_living_metal"
+				has_technology = "tech_mine_betharian"
+				has_technology = "tech_mine_zro"
+				has_technology = "tech_mine_satramene"
+				has_technology = "tech_mine_dark_matter"
+				has_technology = "tech_alien_pets"
+				has_technology = "tech_light_gases"
+				has_technology = "tech_natural_liquids"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			NOT = {
+				has_technology = "tech_mine_garanthium"
+				has_technology = "tech_lythuric_gas"
+				has_technology = "tech_engos_vapor"
+				has_technology = "tech_mine_teldar"
+				has_technology = "tech_pitharan_dust"
+				has_technology = "tech_mine_orillium"
+				has_technology = "tech_mine_neutronium"
+				has_technology = "tech_mine_living_metal"
+				has_technology = "tech_mine_betharian"
+				has_technology = "tech_mine_zro"
+				has_technology = "tech_mine_satramene"
+				has_technology = "tech_mine_dark_matter"
+				has_technology = "tech_alien_pets"
+				has_technology = "tech_light_gases"
+				has_technology = "tech_natural_liquids"
+			}
+		}
+		modifier = {
+			factor = 0.15
+			NOR = {
+				has_technology = "tech_mine_garanthium"
+				has_technology = "tech_lythuric_gas"
+				has_technology = "tech_engos_vapor"
+				has_technology = "tech_mine_teldar"
+				has_technology = "tech_pitharan_dust"
+				has_technology = "tech_mine_orillium"
+				has_technology = "tech_mine_neutronium"
+				has_technology = "tech_mine_living_metal"
+				has_technology = "tech_mine_betharian"
+				has_technology = "tech_mine_zro"
+				has_technology = "tech_mine_satramene"
+				has_technology = "tech_mine_dark_matter"
+				has_technology = "tech_alien_pets"
+				has_technology = "tech_light_gases"
+				has_technology = "tech_natural_liquids"
+			}
+		}
+	}
+}

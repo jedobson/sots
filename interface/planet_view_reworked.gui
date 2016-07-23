@@ -1,0 +1,943 @@
+@movable_editors = no
+
+guiTypes = {
+	@tile_info_module_width = 328
+	@tile_info_x = 128
+	@tile_title_y = 30
+	@title_desc_y = 68
+	
+	###planet_view_module_colonized_top_bar - resources
+	containerWindowType = {
+		name = "resources"
+		position = { x = 0 y = 90 }
+		size = { width = 190 height = 55 }
+
+		background = {
+			name = "resources_background"
+			spriteType = "GFX_dark_area_cut"
+		}
+
+		gridBoxType = {
+			name = "resources"
+			slotSize = { width = 37 height = 17 } #mod
+			size = { width = 180 height = 44 }
+			position = { x = -73 y = 0 } #mod
+			max_slots_horizontal = 5
+		}
+	}
+	
+	###planet_view_module_tiles_entry_bar_output
+	containerWindowType = {
+		name = "planet_view_module_tiles_entry_bar_output"
+		size = { width = 98 height = 20 }
+		
+		background = {
+			name = "output_bar"
+			spriteType = "GFX_tile_output"
+		}
+		
+        overlappingElementsBoxType = {
+            name = "outputs_box"
+            size = { x = 105 y = 0 } #mod
+            position = { x = -10 y = 0 } #mod
+            orientation = upper_left
+            spacing = 0
+            format = center
+        }
+	}
+	
+	###planet_view_tile_info_panel_module_tile
+	containerWindowType = {
+		name = "planet_view_tile_info_panel_module_tile"
+		size = { width = @tile_info_module_width height = 172 }
+		show_sound = "planet_view_menu_slide"
+
+		background = {
+			name = "planet_view_tile_info_panel_module_tile_background"
+			spriteType = "GFX_tiles_frame_light"
+		}
+
+
+		instantTextBoxType = {
+			name = "tile_description_label"
+			font = "cg_16b"
+			text = "TERRAIN_DETAILS_HEADER"
+			position = { x = 17 y = 12 }
+			maxWidth = 344
+			maxHeight = 40
+			fixedSize = yes
+			format = left
+			orientation = upper_left
+			alwaysTransparent = yes
+			text_color_code = "E"
+		}
+
+		# Envrionment background
+		iconType = {
+			name = "icon"
+			spriteType = "GFX_tile_background"
+			position = { x = 18 y = 34 }
+		}
+		
+		iconType = {
+			name = "tile_blocker_clearable"
+			position = { x = 18 y = 34 }
+			spriteType = "GFX_tile_frame_blocker_clearable"
+			alwaysTransparent = yes
+		}				
+
+		iconType = {
+			name = "tile_blocker"
+			position = { x = 18 y = 34 }
+			spriteType = "GFX_tile_frame_blocker"
+			alwaysTransparent = yes
+		}
+
+		# Tile Output
+		iconType = {
+			name = "output_bar"
+			position = { x = 18 y = 112 }
+			spriteType = "GFX_tile_output"
+			#alwaysTransparent = yes
+		}
+
+		overlappingElementsBoxType = {
+			name = "output_box"
+			size = { x = 98 y = 0 }
+			position = { x = 12 y = 112 } #mod
+			orientation = upper_left
+			spacing = 0
+			format = center
+		}
+
+		iconType = {
+			name = "frame"
+			spriteType = "GFX_tile_frame"
+			position = { x = 17 y = 33 }
+			alwaysTransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "type"
+			font = "cg_16b"
+			text = "TILE_TYPE"
+			position = { x = @tile_info_x y = @tile_title_y }
+			maxWidth = 180 #mod
+			maxHeight = 40
+			fixedSize = yes
+			format = left
+			orientation = upper_left
+			alwaysTransparent = yes
+			#text_color_code = "S"
+		}
+
+		instantTextBoxType = {
+			name = "description"
+			font = "cg_16b"
+			text = "TILE_DESC"
+			position = { x = @tile_info_x y = @title_desc_y }
+			maxWidth = 190
+			maxHeight = 60
+			fixedSize = yes
+			format = left
+			orientation = upper_left
+			alwaysTransparent = yes
+			text_color_code = "E"
+		}
+
+		buttonType = {
+			name = "build"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+			position = { x = -171 y = -63  }
+			Orientation = "LOWER_RIGHT"
+			buttonFont = "cg_16b"
+			text = "BUILD"
+			font = "cg_16b"
+			shortcut = "b"
+		}
+
+		buttonType = {
+			name = "clear"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+			position = { x = -5 y = -63  }
+			Orientation = "CENTER_DOWN"
+			buttonFont = "cg_16b"
+			text = "CLEAR"
+			font = "cg_16b"
+			clicksound = confimation
+		}
+	}
+	
+	###planet_view_tile_info_panel_module_ruined_building
+	containerWindowType = {
+		name = "planet_view_tile_info_panel_module_ruined_building"
+		size = { width = @tile_info_module_width height = 200 }
+
+		background = {
+			name = "planet_view_tile_info_panel_module_building_background"
+			spriteType = "GFX_tiles_frame_light"
+		}
+
+		instantTextBoxType = {
+			name = "tile_description_label"
+			font = "cg_16b"
+			text = "Building Details"
+			position = { x = 17 y = 12 }
+			maxWidth = 344
+			maxHeight = 40
+			fixedSize = yes
+			format = left
+			orientation = upper_left
+			alwaysTransparent = yes
+			text_color_code = "E"
+		}
+
+		# Building Output
+
+		iconType = {
+			name = "building_bg"
+			spriteType = "GFX_building_bg"
+			position = { x = 18 y = 34 }
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "icon"
+			spriteType = "GFX_building"
+			position = { x = -2 y = 38 } #mod
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "output_bar"
+			position = { x = 18 y = 112 }
+			spriteType = "GFX_tile_output"
+			alwaysTransparent = yes
+		}
+
+		overlappingElementsBoxType = {
+			name = "output_box"
+			size = { x = 98 y = 0 }
+			position = { x = 12 y = 112 } #mod
+			orientation = upper_left
+			spacing = 0
+			format = center
+		}
+
+		iconType = {
+			name = "frame"
+			spriteType = "GFX_tile_frame"
+			position = { x = 17 y = 33 }
+			alwaysTransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "type"
+			font = "cg_16b"
+			text = ""
+			position = { x = @tile_info_x y = @tile_title_y }
+			maxWidth = 180 #mod
+			maxHeight = 40
+			fixedSize = yes
+			format = left
+			orientation = upper_left
+			alwaysTransparent = yes
+			text_color_code = "H"
+		}
+
+		instantTextBoxType = {
+			name = "description"
+			font = "cg_16b"
+			text = ""
+			position = { x = @tile_info_x y = @title_desc_y }
+			maxWidth = 230
+			maxHeight = 100
+			fixedSize = yes
+			format = left
+			orientation = upper_left
+			alwaysTransparent = yes
+		}
+
+		buttonType = {
+			name = "repair"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+			position = { x = -171 y = -63  }
+			orientation = "LOWER_RIGHT"
+			buttonFont = "cg_16b"
+			text = "REPAIR"
+			font = "cg_16b"
+		}
+
+		buttonType = {
+			name = "destroy"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+			position = { x = 5 y = -63 }
+			orientation = "LOWER_LEFT"
+			buttonFont = "cg_16b"
+			text = "DESTROY"
+			font = "cg_16b"
+		}
+	}
+	
+	###planet_view_tile_info_panel_module_building
+	containerWindowType = {
+		name = "planet_view_tile_info_panel_module_building"
+		size = { width = @tile_info_module_width height = 260 }
+
+		background = {
+			name = "planet_view_tile_info_panel_module_building_background"
+			spriteType = "GFX_tiles_frame_light"
+		}
+
+		instantTextBoxType = {
+			name = "tile_description_label"
+			font = "cg_16b"
+			text = "BUILDING_DETAILS"
+			position = { x = 17 y = 12 }
+			maxWidth = 344
+			maxHeight = 40
+			fixedSize = yes
+			format = left
+			orientation = upper_left
+			alwaysTransparent = yes
+			text_color_code = "E"
+		}
+
+		# Building Output
+
+		iconType = {
+			name = "building_bg"
+			spriteType = "GFX_building_bg"
+			position = { x = 18 y = 34 }
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "icon"
+			spriteType = "GFX_building"
+			position = { x = -2 y = 38 } #mod
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "output_bar"
+			position = { x = 18 y = 112 }
+			spriteType = "GFX_tile_output"
+			alwaysTransparent = yes
+		}
+
+		overlappingElementsBoxType = {
+			name = "output_box"
+			size = { x = 98 y = 0 }
+			position = { x = 12 y = 112 } #mod
+			orientation = upper_left
+			spacing = 0
+			format = center
+		}
+
+		iconType = {
+			name = "frame"
+			spriteType = "GFX_tile_frame"
+			position = { x = 17 y = 33 }
+			alwaysTransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "type"
+			font = "cg_16b"
+			text = ""
+			position = { x = @tile_info_x y = @tile_title_y }
+			maxWidth = 180 #mod
+			maxHeight = 40
+			fixedSize = yes
+			format = left
+			orientation = upper_left
+			alwaysTransparent = yes
+			text_color_code = "H"
+		}
+
+		instantTextBoxType = {
+			name = "description"
+			font = "cg_16b"
+			text = ""
+			position = { x = @tile_info_x y = @title_desc_y }
+			maxWidth = 230
+			maxHeight = 100
+			fixedSize = yes
+			format = left
+			orientation = upper_left
+			alwaysTransparent = yes
+		}
+
+		buttonType = {
+			name = "deactivate"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+			position = { x = 5 y = -63  }
+			Orientation = "LOWER_LEFT"
+			buttonFont = "cg_16b"
+			text = "DEACTIVATE"
+			font = "cg_16b"
+		}
+
+		buttonType = {
+			name = "replace"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+			position = { x = -171 y = -108  }
+			Orientation = "LOWER_RIGHT"
+			buttonFont = "cg_16b"
+			text = "REPLACE"
+			font = "cg_16b"
+		}
+
+		buttonType = {
+			name = "upgrade"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+			position = { x = -171 y = -63  }
+			Orientation = "LOWER_RIGHT"
+			buttonFont = "cg_16b"
+			text = "UPGRADE"
+			font = "cg_16b"
+		}
+
+		buttonType = {
+			name = "destroy"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+			position = { x = 5 y = -108  }
+			Orientation = "LOWER_LEFT"
+			buttonFont = "cg_16b"
+			text = "DESTROY"
+			font = "cg_16b"
+		}
+	}
+	
+	###planet_view_tile_info_panel_module_construction
+	containerWindowType = {
+		name = "planet_view_tile_info_panel_module_construction"
+		size = { width = @tile_info_module_width height = 200 }
+
+
+		background = {
+			name = "planet_view_tile_info_panel_module_construction_background"
+			spriteType = "GFX_tiles_frame_light"
+		}
+
+		# Blocker
+		containerWindowType = {
+			name = "blocker"
+			size = { width = @tile_info_module_width height = 100 }
+
+
+			iconType = {
+				name = "blocker"
+				spriteType = "GFX_tile_background"
+				position = { x = 18 y = 34 }
+			}
+
+			iconType = {
+				name = "tile_blocker"
+				position = { x = 18 y = 34 }
+				spriteType = "GFX_tile_frame_blocker"
+				alwaysTransparent = yes
+			}
+			
+			iconType = {
+				name = "tile_blocker_clearable"
+				position = { x = 18 y = 34 }
+				spriteType = "GFX_tile_frame_blocker_clearable"
+				alwaysTransparent = yes
+			}			
+
+			# Tile Output
+			iconType = {
+				name = "output_bar"
+				position = { x = 18 y = 112 }
+				spriteType = "GFX_tile_output"
+				#alwaysTransparent = yes
+			}
+
+			overlappingElementsBoxType = {
+				name = "output_box"
+				size = { x = 98 y = 0 }
+				position = { x = 12 y = 112 } #mod
+				orientation = upper_left
+				spacing = 0
+				format = center
+			}
+
+			containerWindowType = {
+				name = "tile_terrain_frame_box"
+				size = { width = 108 height = 108 }
+				position = { x = 13 y = 29 }
+
+					background = {
+						name = "tile_terrain_frame"
+						spriteType = "GFX_clean_frame_area"
+					}
+			}
+
+			instantTextBoxType = {
+				name = "construction_description"
+				font = "cg_16b"
+				text = "CLEARING_PROJECT"
+				position = { x = 17 y = 12 }
+				maxWidth = 180
+				maxHeight = 40
+				fixedSize = yes
+				format = left
+				orientation = upper_left
+				alwaysTransparent = yes
+				text_color_code = "E"
+			}
+
+			instantTextBoxType = {
+				name = "type"
+				font = "cg_16b"
+				text = "BUILDING_TYPE"
+				position = { x = @tile_info_x y = @tile_title_y }
+				maxWidth = 180
+				maxHeight = 40
+				fixedSize = yes
+				format = left
+				orientation = upper_left
+				alwaysTransparent = yes
+			}
+
+			instantTextBoxType = {
+				name = "description"
+				font = "cg_16b"
+				text = "BUILDING_DESCRIPTION"
+				position = { x = @tile_info_x y = @title_desc_y }
+				maxWidth = 190
+				maxHeight = 100
+				fixedSize = yes
+				format = left
+				orientation = upper_left
+				#alwaysTransparent = yes
+			}
+		}
+
+		# Building in progress
+		containerWindowType = {
+			name = "building"
+			size = { width = @tile_info_module_width height = 100 }
+
+			instantTextBoxType = {
+				name = "construction_description"
+				font = "cg_16b"
+				text = "CONSTRUCTION_PROJECT"
+				position = { x = 17 y = 12 }
+				maxWidth = 344
+				maxHeight = 40
+				fixedSize = yes
+				format = left
+				orientation = upper_left
+				alwaysTransparent = yes
+				text_color_code = "E"
+			}
+			
+			iconType = {
+				name = "building_bg"
+				spriteType = "GFX_building_bg"
+				position = { x = 18 y = 34 }
+				alwaysTransparent = yes
+			}
+			
+			iconType = {
+				name = "icon"
+				spriteType = "GFX_building"
+				position = { x = 4 y = 38 } #mod
+				alwaysTransparent = yes
+			}
+
+			iconType = {
+				name = "output_bar"
+				position = { x = 18 y = 112 }
+				spriteType = "GFX_tile_output"
+				alwaysTransparent = yes
+			}
+
+			overlappingElementsBoxType = {
+				name = "output_box"
+				size = { x = 98 y = 0 }
+				position = { x = 12 y = 112 }
+				orientation = upper_left
+				spacing = 0
+				format = center
+			}
+
+			containerWindowType = {
+				name = "tile_terrain_frame_box"
+				size = { width = 108 height = 108 }
+				position = { x = 13 y = 29 }
+
+					background = {
+						name = "tile_terrain_frame"
+						spriteType = "GFX_clean_frame_area"
+					}
+			}
+
+
+
+			instantTextBoxType = {
+				name = "type"
+				font = "cg_16b"
+				text = "BUILDING_TYPE"
+				position = { x = @tile_info_x y = @tile_title_y }
+				maxWidth = 180
+				maxHeight = 40
+				fixedSize = yes
+				format = left
+				orientation = upper_left
+				alwaysTransparent = yes
+			}
+
+			instantTextBoxType = {
+				name = "description"
+				font = "cg_16b"
+				text = "BUILDING_DESCRIPTION"
+				position = { x = @tile_info_x y = @title_desc_y }
+				maxWidth = 210
+				maxHeight = 100
+				fixedSize = yes
+				format = left
+				orientation = upper_left
+				alwaysTransparent = yes
+			}
+		}
+		
+		# Repair in progress
+		containerWindowType = {
+			name = "repairing"
+			size = { width = @tile_info_module_width height = 100 }
+
+			instantTextBoxType = {
+				name = "reparation_description"
+				font = "cg_16b"
+				text = "REPARATION_PROJECT"
+				position = { x = 17 y = 12 }
+				maxWidth = 344
+				maxHeight = 40
+				fixedSize = yes
+				format = left
+				orientation = upper_left
+				alwaysTransparent = yes
+				text_color_code = "E"
+			}
+
+			iconType = {
+				name = "building_bg"
+				spriteType = "GFX_building_bg"
+				position = { x = 18 y = 34 }
+				alwaysTransparent = yes
+			}
+			
+			iconType = {
+				name = "icon"
+				spriteType = "GFX_building"
+				position = { x = -8 y = 38 } #mod
+				alwaysTransparent = yes
+			}
+
+			iconType = {
+				name = "output_bar"
+				position = { x = 18 y = 112 }
+				spriteType = "GFX_tile_output"
+				alwaysTransparent = yes
+			}
+
+			overlappingElementsBoxType = {
+				name = "output_box"
+				size = { x = 98 y = 0 }
+				position = { x = 12 y = 112 }
+				orientation = upper_left
+				spacing = 0
+				format = center
+			}
+
+			containerWindowType = {
+				name = "tile_terrain_frame_box"
+				size = { width = 108 height = 108 }
+				position = { x = 13 y = 29 }
+
+				background = {
+					name = "tile_terrain_frame"
+					spriteType = "GFX_clean_frame_area"
+				}
+			}
+
+			instantTextBoxType = {
+				name = "type"
+				font = "cg_16b"
+				text = "BUILDING_TYPE"
+				position = { x = @tile_info_x y = @tile_title_y }
+				maxWidth = 180
+				maxHeight = 40
+				fixedSize = yes
+				format = left
+				orientation = upper_left
+				alwaysTransparent = yes
+			}
+
+			instantTextBoxType = {
+				name = "description"
+				font = "cg_16b"
+				text = "BUILDING_DESCRIPTION"
+				position = { x = @tile_info_x y = @title_desc_y }
+				maxWidth = 210
+				maxHeight = 100
+				fixedSize = yes
+				format = left
+				orientation = upper_left
+				alwaysTransparent = yes
+			}
+		}
+
+		buttonType = {
+			name = "cancel"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+			position = { x = 5 y = -63  }
+			Orientation = "LOWER_LEFT"
+			buttonFont = "cg_16b"
+			text = "CANCEL"
+			font = "cg_16b"
+		}
+	}
+	
+	###planet_view_tile_construction_panel_module_current
+	containerWindowType = {
+		name = "planet_view_tile_construction_panel_module_current"
+		size = { width = @tile_info_module_width height = 145 }
+
+		containerWindowType = {
+			name = "leader_frame_box"
+			size = { width = @tile_info_module_width height = 100 }
+			position = { x = 0 y = 0 }
+
+				background = {
+					name = "leader_frame"
+					spriteType = "GFX_tiles_frame_light"
+				}
+		}
+
+		buttonType = {
+			name = "icon_frame"
+			spriteType = "GFX_tiles_frame_light"
+			size = { x = 100 y = 100 }
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "building_bg"
+			spriteType = "GFX_building_bg"
+			position = { x = 6 y = 6 }
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "icon"
+			spriteType = "GFX_building"
+			position = { x = -15 y = 10	} #mod
+			alwaysTransparent = yes
+		}
+
+		# Building Output
+		iconType = {
+			name = "output_bar"
+			position = { x = 1 y = 9999 }
+			spriteType = "GFX_tile_output"
+			alwaysTransparent = yes
+		}
+
+		overlappingElementsBoxType = {
+			name = "output_box"
+			size = { x = 98 y = 0 }
+			position = { x = 4 y = 71 }
+			orientation = upper_left
+			spacing = 0
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "current_building_label"
+			font = "cg_16b"
+			text = "CURRENT_BUILDING"
+			position = { x = 115 y = 15 }
+			maxWidth = 180
+			maxHeight = 40
+			fixedSize = yes
+			format = center
+			orientation = upper_left
+			alwaysTransparent = no
+			text_color_code = "H"
+		}
+
+		instantTextBoxType = {
+			name = "name"
+			font = "cg_16b"
+			text = "TILE_DESC"
+			position = { x = 115 y = 35 }
+			maxWidth = 200
+			maxHeight = 40
+			fixedSize = yes
+			format = center
+			orientation = upper_left
+			alwaysTransparent = no
+		}
+
+		instantTextBoxType = {
+			name = "description"
+			font = "cg_16b"
+			text = "TILE_DESC"
+			position = { x = 1000 y = 45 }
+			maxWidth = 240
+			maxHeight = 75
+			fixedSize = yes
+			format = left
+			orientation = upper_left
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "separator"
+			spriteType = "GFX_population_seperate_line"
+			position = { x = -5 y = 125 }
+		}
+	}
+	
+	###planet_view_tile_construction_panel_module_list_entry
+	containerWindowType = {
+		name = "planet_view_tile_construction_panel_module_list_entry"
+		size = { width = @tile_info_module_width height = 100 }
+		show_sound = "planet_view_menu_slide"
+
+		background = {
+			name = "planet_bg"
+			quadTextureSprite = "GFX_tiles_frame_light"
+		}
+
+		buttonType = {
+			name = "icon_frame"
+			spriteType = "GFX_tiles_frame_light"
+			size = { x = 100 y = 100 }
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "building_bg"
+			spriteType = "GFX_building_bg"
+			position = { x = 6 y = 6 }
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "icon"
+			spriteType = "GFX_building"
+			position = { x = -15 y = 10 } #mod
+			alwaysTransparent = yes
+		}
+
+		# Building Output
+
+		overlappingElementsBoxType = {
+			name = "output_box"
+			size = { x = 96 y = 0 }
+			position = { x = 0 y = 71 } #mod
+			orientation = upper_left
+			spacing = -2
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "name"
+			font = "cg_16b"
+			text = "TILE_DESC"
+			position = { x = 119 y = 15 }
+			maxWidth = 180
+			maxHeight = 40
+			fixedSize = yes
+			format = centre
+			orientation = upper_left
+			alwaysTransparent = no
+			text_color_code = "H"
+		}
+
+		instantTextBoxType = {
+			name = "cost"
+			font = "cg_16b"
+			text = ""
+			position = { x = 98 y = 48 }
+			maxWidth = 222
+			maxHeight = 75
+			fixedSize = yes
+			format = centre
+			orientation = upper_left
+		}
+
+		iconType = {
+			name = "missing_resources"
+			orientation = UPPER_RIGHT
+			position = { x = -60 y = 44 }
+			spriteType = "GFX_missing_resources_icon"
+		}
+
+		iconType = {
+			name = "missing_maintenance"
+			orientation = UPPER_RIGHT
+			position = { x = -60 y = 44 }
+			spriteType = "GFX_failure_risk_icon"
+		}
+	}
+	
+	###planet_view_tile_construction_buildable_pop_entry
+	containerWindowType = {
+		name = "planet_view_tile_construction_buildable_pop_entry"
+		size = { width = @tile_info_module_width height = 100 }
+		show_sound = "planet_view_menu_slide"
+
+		background = {
+			name = "planet_bg"
+			quadTextureSprite = "GFX_tiles_frame_light"
+		}
+
+		containerWindowType = {
+			name = "portrait_window"
+			position = { x = 25 y = 4 }
+			size = { width = 100 height = 90 }
+			clipping = yes
+
+			buttonType = {
+				name = "portrait"
+				spriteType = "GFX_portrait_character"
+				position = { x = -40 y = -20 }
+				scale = 0.3
+				alwaystransparent = yes
+			}
+		}
+
+		instantTextBoxType = {
+			name = "name"
+			font = "cg_16b"
+			text = "TILE_DESC"
+			position = { x = 119 y = 15 }
+			maxWidth = 180
+			maxHeight = 40
+			fixedSize = yes
+			format = centre
+			orientation = upper_left
+			alwaysTransparent = no
+			text_color_code = "H"
+		}
+
+		instantTextBoxType = {
+			name = "cost"
+			font = "cg_16b"
+			text = ""
+			position = { x = 98 y = 48 }
+			maxWidth = 222
+			maxHeight = 75
+			fixedSize = yes
+			format = centre
+			orientation = upper_left
+		}
+	}
+}

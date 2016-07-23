@@ -1,0 +1,146 @@
+namespace = sots_survey
+
+# You study a Ringworld for the first time, and it adds technologies if it is the first survey
+ship_event = {
+	id = sots_survey.1000
+	title = "sots_survey.1000.name"
+	desc = sots_survey.1000.desc
+	picture = GFX_evt_ringworld
+	show_sound = event_mystic_reveal
+
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			NOT = { has_country_flag = sots_ringworld_studied }
+		}
+		from = {
+			OR = {
+				is_planet_class = pc_ringworld_buildable
+				is_planet_class = pc_ringworld_support
+				is_planet_class = pc_ringworld_conduit
+			}
+		}
+	}
+	
+	option = {
+		name = AMAZING
+		owner = {
+			hidden_effect = {
+				set_country_flag = sots_ringworld_studied
+			}
+			hidden_effect = {
+			### Strategic Resource Technologies
+			add_research_option = tech_mine_garanthium
+			add_research_option = tech_lythuric_gas
+			add_research_option = tech_engos_vapor
+			add_research_option = tech_mine_teldar
+			add_research_option = tech_pitharan_dust
+			add_research_option = tech_mine_orillium
+			add_research_option = tech_mine_neutronium
+			add_research_option = tech_mine_living_metal
+			add_research_option = tech_mine_betharian
+			add_research_option = tech_mine_zro
+			add_research_option = tech_mine_satramene
+			add_research_option = tech_mine_dark_matter
+			add_research_option = tech_alien_pets
+			add_research_option = tech_light_gases
+			add_research_option = tech_natural_liquids
+			### Special Rare Technologies
+			add_research_option = tech_extradimensional_weapon_1
+			add_research_option = tech_psionic_theory
+			### All FTL Technologies
+			add_research_option = tech_wormhole_generation_1
+			add_research_option = tech_hyper_drive_1
+			add_research_option = tech_warp_drive_1
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = sots_survey.1001
+	title = "sots_survey.1001.name"
+	desc = sots_survey.1001.desc
+	picture = GFX_evt_ringworld
+	show_sound = event_mystic_reveal
+
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			is_ai = no
+		}
+		from = {
+			OR = {
+				has_planet_class = pc_ringworld_buildable
+				has_planet_class = pc_ringworld_support
+				has_planet_class = pc_ringworld_conduit
+				has_planet_class = pc_ringworld_habitable
+				has_planet_class = pc_ringworld_tech
+				has_planet_class = pc_ringworld_seam
+				has_planet_class = pc_ringworld_habitable_damaged
+				has_planet_class = pc_ringworld_tech_damaged
+				has_planet_class = pc_ringworld_tech_damaged
+			}
+		}
+	}
+	
+	option = {
+		name = GOOD
+	}
+}
+
+ship_event = {
+	id = sots_survey.1002
+	title = "sots_survey.1002.name"
+	desc = sots_survey.1002.desc
+	picture = GFX_evt_star_chart
+	show_sound = event_mystic_reveal
+
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			is_ai = no
+		}
+		from = {
+			AND = {
+				OR = {
+					is_planet_class = pc_desert
+					is_planet_class = pc_tropical
+					is_planet_class = pc_arid
+					is_planet_class = pc_continental
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+					is_planet_class = pc_gaia
+					is_planet_class = pc_nuked
+					#is_planet_class = pc_ringworld_habitable
+					#is_planet_class = pc_ringworld_buildable
+				}
+				OR = {
+					has_deposit = "d_terraforming_gas_local_deposit"
+					has_deposit = "d_terraforming_fluid_local_deposit"
+					has_deposit = "d_garanthium_local_deposit"
+					has_deposit = "d_lythuric_gas_local_deposit"
+					has_deposit = "d_engos_local_deposit"
+					has_deposit = "d_teldar_local_deposit"
+					has_deposit = "d_pitharan_local_deposit"
+					has_deposit = "d_orillium_local_deposit"
+					has_deposit = "d_neutronium_local_deposit"
+					has_deposit = "d_living_metal_local_deposit"
+					has_deposit = "d_dark_matter_local_deposit"
+					has_deposit = "d_betharian_local_deposit"
+					has_deposit = "d_alien_pets_local_deposit"
+					has_deposit = "d_satramene_local_deposit"
+					has_deposit = "d_zro_local_deposit"
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EXCELLENT
+	}
+}

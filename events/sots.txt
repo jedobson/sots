@@ -1,0 +1,79 @@
+#########################################
+#
+# glass_ball.txt
+#
+#########################################
+
+namespace = glass_ball
+
+planet_event = {
+	id = glass_ball.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_ai = no }
+		orbital_bombardment = full
+		fortification_health = 0
+		NOT = {
+			is_planet_class = pc_glassed
+			is_planet_class = pc_nuked
+		}
+	}
+	
+	immediate = {
+		FROM = {
+			country_event = { id = glass_ball.2 }
+		}
+	}
+}
+
+country_event = {
+	id = glass_ball.2
+	title = glass_ball.2.name
+	desc = glass_ball.2.desc
+	picture = GFX_evt_glassing
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "glass_ball.2.a"
+		trigger = {
+			FROM = { is_ringworld = no }
+		}
+		custom_tooltip = glass_ball.2.a.tooltip
+		hidden_effect = {
+			FROM = {
+				every_owned_pop = { kill_pop = yes }
+				change_pc = pc_glassed
+			}
+		}
+	}
+	
+	option = {
+		name = "glass_ball.2.b"
+		custom_tooltip = glass_ball.2.b.tooltip
+		hidden_effect = {
+			FROM = {
+				every_owned_pop = { kill_pop = yes }
+				if = {
+					limit = {
+						is_ringworld = yes
+					}
+					change_pc = pc_ringworld_habitable_damaged
+				}
+				if = {
+					limit = {
+						is_ringworld = no
+					}
+					change_pc = pc_nuked
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "glass_ball.2.c"
+	}
+}
+	

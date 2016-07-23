@@ -1,0 +1,503 @@
+###########################
+### DUPLEX TERRAFORMING ###
+###########################
+
+terraform_link = {
+	from = "pc_desert"
+	to = "pc_tropical"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 3
+		sr_terraform_liquids = 2
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+terraform_link = {
+	from = "pc_tropical"
+	to = "pc_desert"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 4
+		sr_terraform_liquids = 1
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+terraform_link = {
+	from = "pc_tropical"
+	to = "pc_continental"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 2
+		sr_terraform_liquids = 3
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+terraform_link = {
+	from = "pc_continental"
+	to = "pc_tropical"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 3
+		sr_terraform_liquids = 2
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+terraform_link = {
+	from = "pc_continental"
+	to = "pc_ocean"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 2
+		sr_terraform_liquids = 3
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+terraform_link = {
+	from = "pc_ocean"
+	to = "pc_continental"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 3
+		sr_terraform_liquids = 2
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+terraform_link = {
+	from = "pc_ocean"
+	to = "pc_arctic"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 4
+		sr_terraform_liquids = 1
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+terraform_link = {
+	from = "pc_arctic"
+	to = "pc_ocean"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 1
+		sr_terraform_liquids = 4
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+terraform_link = {
+	from = "pc_arctic"
+	to = "pc_tundra"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 3
+		sr_terraform_liquids = 2
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+terraform_link = {
+	from = "pc_tundra"
+	to = "pc_arctic"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 2
+		sr_terraform_liquids = 3
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+terraform_link = {
+	from = "pc_tundra"
+	to = "pc_arid"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 3
+		sr_terraform_liquids = 2
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+terraform_link = {
+	from = "pc_arid"
+	to = "pc_tundra"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 2
+		sr_terraform_liquids = 3
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+terraform_link = {
+	from = "pc_arid"
+	to = "pc_desert"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 4
+		sr_terraform_liquids = 1
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+terraform_link = {
+	from = "pc_desert"
+	to = "pc_arid"
+	duration = 720
+	energy = 1500
+	resources = {
+		sr_terraform_gases = 2
+		sr_terraform_liquids = 3
+	}
+	condition = {
+		has_technology = "tech_terrestrial_sculpting"
+	}
+}
+
+############################
+### SIMPLEX TERRAFORMING ###
+############################
+
+terraform_link = {
+	from = "pc_continental"
+	to = "pc_gaia"
+	duration = 1800
+	energy = 3500
+	resources = {
+		sr_terraform_gases = 3
+		sr_terraform_liquids = 3
+		sr_alien_pets = 2
+		sr_satramene = 1
+		sr_engos = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_terrestrial_sculpting"
+			has_technology = "tech_atmospheric_manipulation"
+			has_technology = "tech_perfect_ecosystem_integration"
+		}
+	}
+}
+terraform_link = {
+	from = "pc_barren"
+	to = "pc_desert"
+	duration = 1080
+	energy = 2500
+	resources = {
+		sr_terraform_gases = 5
+		sr_terraform_liquids = 2
+		sr_alien_pets = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_terrestrial_sculpting"
+			has_technology = "tech_atmospheric_manipulation"
+		}
+	}
+}
+terraform_link = {
+	from = "pc_barren_cold"
+	to = "pc_arctic"
+	duration = 1080
+	energy = 2500
+	resources = {
+		sr_terraform_gases = 5
+		sr_terraform_liquids = 2
+		sr_alien_pets = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_terrestrial_sculpting"
+			has_technology = "tech_atmospheric_manipulation"
+		}
+	}
+}
+terraform_link = {
+	from = "pc_toxic"
+	to = "pc_barren"
+	duration = 1080
+	energy = 2500
+	resources = {
+		sr_terraform_gases = 4
+		sr_terraform_liquids = 2
+		sr_pitharan = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_terrestrial_sculpting"
+			has_technology = "tech_atmospheric_manipulation"
+			#tech_high_temperatures_detoxification needed!
+		}
+	}
+}
+terraform_link = {
+	from = "pc_toxic"
+	to = "pc_barren_cold"
+	duration = 1080
+	energy = 2500
+	resources = {
+		sr_terraform_gases = 2
+		sr_terraform_liquids = 4
+		sr_lythuric = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_terrestrial_sculpting"
+			has_technology = "tech_atmospheric_manipulation"
+			#tech_low_temperatures_detoxification needed!
+		}
+	}
+}
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_barren"
+	duration = 1080
+	energy = 2500
+	resources = {
+		sr_terraform_gases = 1
+		sr_terraform_liquids = 5
+		sr_lythuric = 2
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_terrestrial_sculpting"
+			has_technology = "tech_atmospheric_manipulation"
+			#tech_planet_wide_cooling needed!
+		}
+	}
+}
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_barren_cold"
+	duration = 1080
+	energy = 2500
+	resources = {
+		sr_terraform_gases = 5
+		sr_terraform_liquids = 1
+		sr_pitharan = 2
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_terrestrial_sculpting"
+			has_technology = "tech_atmospheric_manipulation"
+			#tech_planet_wide_heating needed!
+		}
+	}
+}
+terraform_link = {
+	from = "pc_nuked"
+	to = "pc_desert"
+	duration = 1080
+	energy = 2500
+	resources = {
+		sr_terraform_gases = 5
+		sr_terraform_liquids = 3
+		sr_lythuric = 1
+		sr_pitharan = 1
+		sr_alien_pets = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_terrestrial_sculpting"
+			has_technology = "tech_atmospheric_manipulation"
+			#tech_planet_wide_decontamination needed!
+		}
+	}
+}
+terraform_link = {
+	from = "pc_gas_giant"
+	to = "pc_molten"
+	duration = 1080
+	energy = 2500
+	resources = {
+		sr_terraform_gases = 2
+		sr_terraform_liquids = 1
+		sr_dark_matter = 3
+		sr_neutronium = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_terrestrial_sculpting"
+			has_technology = "tech_atmospheric_manipulation"
+			#tech_celestial_densification needed!
+		}
+	}
+}
+
+#################################
+### RINGWORLDS REPAIR/UPGRADE ###
+#################################
+
+terraform_link = {
+	from = "pc_ringworld_habitable_damaged"
+	to = "pc_ringworld_conduit"
+	duration = 1800
+	energy = 4500
+	resources = {
+		sr_living_metal = 4
+		sr_neutronium = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_mine_living_metal"
+			has_technology = "tech_superstructural_reassembly"
+		}
+	}
+}
+terraform_link = {
+	from = "pc_ringworld_tech_damaged"
+	to = "pc_ringworld_conduit"
+	duration = 1800
+	energy = 4500
+	resources = {
+		sr_living_metal = 4
+		sr_neutronium = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_mine_living_metal"
+			has_technology = "tech_superstructural_reassembly"
+		}
+	}
+}
+terraform_link = {
+	from = "pc_ringworld_seam_damaged"
+	to = "pc_ringworld_conduit"
+	duration = 1800
+	energy = 4500
+	resources = {
+		sr_living_metal = 4
+		sr_neutronium = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_mine_living_metal"
+			has_technology = "tech_superstructural_reassembly"
+		}
+	}
+}
+terraform_link = {
+	from = "pc_ringworld_seam"
+	to = "pc_ringworld_support"
+	duration = 1800
+	energy = 6750
+	resources = {
+		sr_living_metal = 3
+		sr_neutronium = 2
+		sr_dark_matter = 2
+		sr_garanthium = 1
+		sr_teldar = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_mine_living_metal"
+			has_technology = "tech_superstructural_reassembly"
+			has_technology = "tech_superdurable_support_bulkheads"
+		}
+	}
+}
+terraform_link = {
+	from = "pc_ringworld_conduit"
+	to = "pc_ringworld_support"
+	duration = 1800
+	energy = 6750
+	resources = {
+		sr_living_metal = 3
+		sr_neutronium = 2
+		sr_dark_matter = 2
+		sr_garanthium = 1
+		sr_teldar = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_mine_living_metal"
+			has_technology = "tech_superstructural_reassembly"
+			has_technology = "tech_superdurable_support_bulkheads"
+		}
+	}
+}
+terraform_link = {
+	from = "pc_ringworld_tech"
+	to = "pc_ringworld_buildable"
+	duration = 3600
+	energy = 9000
+	resources = {
+		sr_living_metal = 1
+		sr_neutronium = 1
+		sr_dark_matter = 1
+		sr_betharian = 2
+		sr_terraform_gases = 5
+		sr_terraform_liquids = 5
+		sr_alien_pets = 3
+		sr_satramene = 2
+		sr_engos = 2
+		sr_zro = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_mine_living_metal"
+			has_technology = "tech_superstructural_reassembly"
+			has_technology = "tech_superdurable_support_bulkheads"
+			has_technology = "tech_perpetual_dyson_cores"
+			has_technology = "tech_artificial_ecosystem_construction"
+		}
+	}
+}
+terraform_link = {
+	from = "pc_ringworld_support"
+	to = "pc_ringworld_buildable"
+	duration = 3600
+	energy = 9000
+	resources = {
+		sr_living_metal = 1
+		sr_neutronium = 1
+		sr_dark_matter = 1
+		sr_betharian = 2
+		sr_terraform_gases = 5
+		sr_terraform_liquids = 5
+		sr_alien_pets = 3
+		sr_satramene = 2
+		sr_engos = 2
+		sr_zro = 1
+	}
+	condition = {
+		AND = {
+			has_technology = "tech_mine_living_metal"
+			has_technology = "tech_superstructural_reassembly"
+			has_technology = "tech_superdurable_support_bulkheads"
+			has_technology = "tech_perpetual_dyson_cores"
+			has_technology = "tech_artificial_ecosystem_construction"
+		}
+	}
+}

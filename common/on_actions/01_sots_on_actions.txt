@@ -1,0 +1,18 @@
+# A planet is being bombarded
+# This = planet under bombardment
+# From = bombarding empire
+on_monthly_orbital_bombardment = {
+	events = {
+		orbital_bombardment.1
+		glass_ball.1
+	}
+}
+
+# Triggers when pressing begin in the intro window
+# This = country to press begin
+on_press_begin = {
+	events = {
+		playablerobots.2
+	}
+}
+
