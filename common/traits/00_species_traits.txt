@@ -12,13 +12,13 @@ trait_legacy_big_world = {
 trait_legacy_perfect_world = {
 	initial = yes
 	modification = no
-	cost = 8
+	cost = 5
 	opposites = { "trait_legacy_big_world" "trait_legacy_ringworld_basic" "trait_fleeting" "trait_very_fleeting" }
 }
 trait_legacy_ringworld_basic = {
 	initial = yes
 	modification = no
-	cost = 13
+	cost = 8
 	opposites = { "trait_legacy_perfect_world" "trait_legacy_big_world" "trait_fleeting" "trait_very_fleeting" }
 }
 
@@ -77,7 +77,7 @@ trait_sacrifice_forgotten = {
 trait_psionically_gifted = {
   initial = yes
 	modification = yes
-	cost = 5
+	cost = 3
 	modifier = {
 		category_psionics_research_speed_mult = 0.20
 	}
@@ -86,7 +86,7 @@ trait_psionically_gifted = {
 trait_mechanically_gifted = {
   initial = yes
 	modification = yes
-	cost = 5
+	cost = 3
 	modifier = {
 		category_computing_research_speed_mult = 0.20
 	}

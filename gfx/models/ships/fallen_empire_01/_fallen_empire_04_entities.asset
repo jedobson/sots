@@ -886,6 +886,7 @@ entity = {
 entity = {
 	name = "fallen_empire_04_battleship_entity"
 	pdxmesh = "eventship_01_fallen_mesh"
+	scale = 0.9
 
 	#TEMP  REMOVE WHEN BUG IS SOLVED
 	#locator = { name = "large_gun_01_l" position = { 0 0 0 } }
@@ -2083,7 +2084,7 @@ entity = {
 entity = {
 	name = "fallen_empire_04_facruiser_entity"
 	pdxmesh = "eventship_01_fallen_mesh"
-	scale = 1
+	scale = 1.1
 
 	#TEMP  REMOVE WHEN BUG IS SOLVED
 	#locator = { name = "large_gun_01_l" position = { 0 0 0 } }
@@ -2809,6 +2810,7 @@ entity = {
 entity = {
 	name = "fallen_empire_04_Dreadnought_entity"
 	pdxmesh = "eventship_01_fallen_mesh"
+	scale = 1.2
 
 	#TEMP  REMOVE WHEN BUG IS SOLVED
 	#locator = { name = "large_gun_01_l" position = { 0 0 0 } }

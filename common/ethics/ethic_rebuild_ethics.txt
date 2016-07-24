@@ -15,7 +15,7 @@ ethic_categories = {
 	
 
 ethic_socialism = {
-	cost = 0
+	cost = 1
 	category = "soc"
 	category_value = 1
 	
@@ -32,7 +32,7 @@ ethic_socialism = {
 
 
 ethic_fanatic_socialism = {
-	cost = 1
+	cost = 2
 	category = "soc"
 	category_value = 0
 	
@@ -52,7 +52,7 @@ ethic_fanatic_socialism = {
 
 
 ethic_capitalism = {
-	cost = 0
+	cost = 1
 	category = "soc"
 	category_value = 3
 	
@@ -70,7 +70,7 @@ ethic_capitalism = {
 
 
 ethic_fanatic_capitalism = {
-	cost = 1
+	cost = 2
 	category = "soc"
 	category_value = 4
 	
