@@ -230,6 +230,10 @@ building_power_plant_5 = {
 		minerals = @b4cost
 	}
 	
+	potential = {
+		planet = { is_capital = yes }
+	}
+	
 	allow = {
 		custom_tooltip = {
 			text = "requires_building_capital_3"
@@ -657,6 +661,10 @@ building_hydroponics_farm_5 = {
 		minerals = @b5cost
 	}
 	
+	potential = {
+		planet = { is_capital = yes }
+	}
+	
 	allow = {
 		custom_tooltip = {
 			text = "requires_building_capital_3"
@@ -955,6 +963,10 @@ building_mining_network_5 = {
 		minerals = @b5cost
 	}
 	
+	potential = {
+		planet = { is_capital = yes }
+	}	
+	
 	allow = {
 		custom_tooltip = {
 			text = "requires_building_capital_3"
@@ -1221,6 +1233,10 @@ building_engineering_facility_4 = {
 		minerals = @b5cost
 	}
 	
+	potential = {
+		planet = { is_capital = yes }
+	}
+	
 	allow = {
 		custom_tooltip = {
 			text = "requires_building_capital_3"
@@ -1373,6 +1389,10 @@ building_physics_lab_4 = {
 	
 	cost = {
 		minerals = @b5cost
+	}
+	
+	potential = {
+		planet = { is_capital = yes }
 	}
 	
 	allow = {
@@ -1529,6 +1549,10 @@ building_biolab_4 = {
 		minerals = @b5cost
 	}
 	
+	potential = {
+		planet = { is_capital = yes }
+	}
+	
 	allow = {
 		custom_tooltip = {
 			text = "requires_building_capital_3"
@@ -1631,7 +1655,6 @@ building_capital_1 = {
 	produced_resources = {
 		food = 3
 		minerals = 3
-		influence = 1
 	}
 	
 	adjacency_bonus = {
@@ -1686,7 +1709,6 @@ building_capital_2 = {
 	produced_resources = {
 		food = 4
 		minerals = 4
-		influence = 2
 	}
 	
 	adjacency_bonus = {
@@ -1744,7 +1766,7 @@ building_capital_3 = {
 	produced_resources = {
 		food = 5
 		minerals = 5
-		influence = 3
+		influence = 1
 	}
 	
 	adjacency_bonus = {
@@ -1900,21 +1922,18 @@ building_slave_processing = {
 
 # Fallen Empire buildings
 building_ancient_factory = {
-	base_buildtime = 1080
 	is_listed = no
-	
-	cost = {
-		energy = 1500
-		minerals = 1500
-		influence = 150
-	}
 
+	allow = {
+		always = no
+	}
+	
 	produced_resources = {
-		minerals = 20
+		minerals = @feproduction
 	}
 	
 	required_resources = {
-		energy = 5
+		energy = @feupkeep
 	}	
 	
 	prerequisites = {
@@ -1924,17 +1943,14 @@ building_ancient_factory = {
 }
 
 building_dark_matter_power_plant = {
-	base_buildtime = 1080
 	is_listed = no
 	
-	cost = {
-		energy = 1500
-		minerals = 1500
-		influence = 150
+	allow = {
+		always = no
 	}
 	
 	produced_resources = {
-		energy = 20
+		energy = 15
 	}
 	
 	prerequisites = {
@@ -1944,21 +1960,14 @@ building_dark_matter_power_plant = {
 }
 
 building_agri_processing_complex = {
-	base_buildtime = 1080
 	is_listed = no
 	
-	cost = {
-		energy = 1500
-		minerals = 1500
-		influence = 150
-	}
-	
 	produced_resources = {
-		food = 20
+		food = @feproduction
 	}
 	
 	required_resources = {
-		energy = 5
+		energy = @feupkeep
 	}
 	
 	ai_replace = no
@@ -2035,6 +2044,7 @@ building_grand_mausoleum = {
 	}
 }
 
+
 # Royal Gardens
 building_royal_gardens = {
 	base_buildtime = 720
@@ -2048,6 +2058,7 @@ building_royal_gardens = {
 	
 	planet_modifier = {
 		pop_happiness = 0.10
+                influence_gain_add = 0.2
 	}
 	
 	potential = {
@@ -2083,8 +2094,309 @@ building_royal_gardens = {
 	ai_special_building = yes
 }
 
+
+####################################
+### Strategic resource buildings ###
+####################################
+
+building_garanthiumworks = {
+	base_buildtime = 360
+	empire_unique = yes
+	
+	cost = {
+		minerals = 200
+	}
+	
+	required_resources = {
+		sr_garanthium = 1
+		energy = 2
+	}
+	
+	country_modifier = {
+		building_time_mult = -0.10
+		planet_building_cost_mult = -0.10
+	}
+	
+	planet_modifier = {
+		building_time_mult = -0.10
+		planet_building_cost_mult = -0.10
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	
+	ai_special_building = yes
+	
+	ai_allow = {
+		has_any_resource = no
+	}
+	
+	ai_weight = {
+		factor = 1000
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+
+building_lythuric_manipulator = {
+	base_buildtime = 360
+	empire_unique = yes
+	
+	cost = {
+		minerals = 350
+	}
+	
+	required_resources = {
+		sr_lythuric = 1
+		energy = 2
+	}
+	
+	country_modifier = {
+		pop_ethic_shift = -0.10
+	}
+	
+	planet_modifier = {
+		pop_ethic_shift = -0.10
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	
+	ai_special_building = yes
+	
+	ai_allow = {
+		has_any_resource = no
+	}
+	
+	ai_weight = {
+		factor = 1000
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+
+building_teldar_plant = {
+	base_buildtime = 360
+	empire_unique = yes
+	
+	cost = {
+		minerals = 350
+	}
+	
+	required_resources = {
+		sr_teldar = 1
+		energy = 2
+	}
+	
+	country_modifier = {
+		pop_happiness = 0.10
+	}
+	
+	planet_modifier = {
+		pop_happiness = 0.10
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	
+	ai_special_building = yes
+
+	ai_allow = {
+		has_any_resource = no
+	}
+	
+	ai_weight = {
+		factor = 1000
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+
+building_orillium_factory = {
+	base_buildtime = 360
+	empire_unique = yes
+	
+	cost = {
+		minerals = 350
+	}
+	
+	required_resources = {
+		sr_orillium = 1
+		energy = 2
+	}
+	
+	country_modifier = {
+		tile_resource_minerals_mult = 0.10
+	}
+	
+	planet_modifier = {
+		tile_resource_minerals_mult = 0.10
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	
+	ai_special_building = yes
+	
+	ai_allow = {
+		has_any_resource = no
+	}
+	
+	ai_weight = {
+		factor = 1000
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+
+building_pitharan_plant = {
+	base_buildtime = 360
+	empire_unique = yes
+	
+	cost = {
+		minerals = 350
+	}
+	
+	required_resources = {
+		sr_pitharan = 1
+		energy = 2
+	}
+	
+	country_modifier = {
+		tile_resource_food_mult = 0.10
+	}
+	
+	planet_modifier = {
+		tile_resource_food_mult = 0.10
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	
+	ai_special_building = yes
+	
+	ai_allow = {
+		has_any_resource = no
+	}
+	
+	ai_weight = {
+		factor = 1000
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+
+building_engos_plant = {
+	base_buildtime = 360
+	empire_unique = yes
+	
+	cost = {
+		minerals = 350
+	}
+	
+	required_resources = {
+		sr_engos = 1
+		energy = 2
+	}
+	
+	country_modifier = {
+		pop_environment_tolerance = 0.05
+	}
+	
+	planet_modifier = {
+		pop_environment_tolerance = 0.05
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	
+	ai_special_building = yes
+	
+	ai_allow = {
+		has_any_resource = no
+	}
+	
+	ai_weight = {
+		factor = 1000
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}	
+	}
+}
+
 ###############################
-### Planet Unique Buildings ###
+### Planet Unique buildings ###
 ###############################
 
 building_clinic = {
@@ -2177,6 +2489,7 @@ building_military_academy = {
 	}
 }
 
+
 building_paradise_dome = {
 	base_buildtime = 360
 	planet_unique = yes
@@ -2187,13 +2500,15 @@ building_paradise_dome = {
 	}
 	
 	required_resources = {
-		energy = 2
+		energy = 4
 	}
 	
 	planet_modifier = {
-		pop_happiness = 0.10
 		pop_environment_tolerance = 0.05
+		pop_happiness = 0.1
+ 
 	}
+
 	
 	allow = {
 		custom_tooltip = {
@@ -2213,15 +2528,8 @@ building_paradise_dome = {
 	}
 	
 	ai_special_building = yes
-	
-	ai_allow = {
-		has_any_resource = no
-	}
-	
-	ai_weight = {
-		factor = 1000	
-	}
 }
+
 
 building_xeno_zoo = {
 	base_buildtime = 360
@@ -2273,49 +2581,6 @@ building_xeno_zoo = {
 	}
 }
 
-building_hyper_entertainment_forum = {
-	base_buildtime = 720
-	planet_unique = yes
-	
-	cost = {
-		minerals = 550
-		influence = 25
-	}
-	
-	required_resources = {
-		energy = 6
-	}
-	
-	planet_modifier = {
-		pop_happiness = 0.15
-	}
-	
-	allow = {
-		custom_tooltip = {
-			text = "requires_building_capital_2"
-			planet = {
-				OR = {
-					has_building = "building_capital_2"
-					has_building = "building_capital_3"
-				}
-			}
-		}
-	}
-	
-	prerequisites = {
-		"tech_hyper_entertainment_forum"
-	}
-	
-	ai_special_building = yes
-	
-	ai_allow = {
-		has_any_resource = no
-	}
-	
-	ai_weight = {
-		factor = 1000
-	}
-}
 
 building_monument_purity = {
 	base_buildtime = 360
@@ -2463,6 +2728,51 @@ building_visitor_center = {
 ### Empire Unique buildings ###
 ########################
 
+
+
+building_hyper_entertainment_forum = {
+	base_buildtime = 920
+	empire_unique = yes
+	
+	cost = {
+		minerals = 950
+                energy = 250
+		influence = 25
+	}
+	
+	required_resources = {
+		energy = 15
+	}
+	
+	country_modifier = {
+		pop_happiness = 0.1
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_2"
+			planet = {
+				OR = {
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	
+	prerequisites = {
+		"tech_hyper_entertainment_forum"
+	}
+	
+	ai_weight = {
+		weight = 110
+	}
+	
+	ai_special_building = yes
+}
+
+
+
 building_galactic_stock_exchange = {
 	base_buildtime = 360
 	empire_unique = yes
@@ -2475,6 +2785,10 @@ building_galactic_stock_exchange = {
 	required_resources = {
 		energy = 2
 	}
+	
+	potential = {
+		planet = { is_capital = yes }
+	}	
 	
 	allow = {
 		custom_tooltip = {
@@ -2524,6 +2838,10 @@ building_ministry_benevolence = {
 	country_modifier = {
 		pop_ethic_shift = -0.15
 	}
+	
+	potential = {
+		planet = { is_capital = yes }
+	}	
 	
 	allow = {
 		custom_tooltip = {

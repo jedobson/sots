@@ -8,14 +8,14 @@ utopia_builders = {
 	trade_willingness = 1
 	bravery = 0.75
 	
-	military_spending = 0.9
+	military_spending = 0.8
 	colony_spending = 1.4
 	
 	alliance_acceptance = 75
 	federation_acceptance = 75
 	
-	threat_modifier = 0.5
-	friction_modifier = 0.5
+	threat_modifier = 1.3
+	friction_modifier = 0.7
 	
 	behaviour = {
 		conqueror = no
@@ -27,10 +27,11 @@ utopia_builders = {
 		purger = no
 		dominator = no
 		infiltrator = no
-		robot_exploiter = yes
-		robot_liberator = no
+		robot_liberator = yes
 		migrator = yes
-                multispecies = yes
+		ideologue = yes
+		propagator = yes
+        multispecies = yes
 	}
 	
 	allow = {
@@ -87,16 +88,237 @@ utopia_builders = {
 				has_government = social_democracy
 				has_government = social_utopia
 			}
+		}	
+
+
+ 		modifier = {
+			factor = 2.5
+			OR = {
+				has_government = anarch_communism
+				has_government = anarch_com_utopia
+			}
+        } 		
+
+ 		modifier = {
+			factor = 2
+			OR = {
+				has_government = peace_league
+				has_government = pan_galactic
+			}
+        } 	
+
+ 		modifier = {
+			factor = 1.6
+			OR = {
+				has_government = eco_democracy
+				has_government = eco_utopia
+			}
+        } 			
+				
+				
+	}	
+}
+
+
+
+
+
+paranoid_isolationists = {
+	type = isolationist
+
+	aggressiveness = 0.5
+	trade_willingness = 0.75
+	bravery = 0.75
+	
+	military_spending = 1.2
+	colony_spending = 1.2
+	
+	alliance_acceptance = -25
+	federation_acceptance = -25
+	
+	threat_modifier = 0.75
+	friction_modifier = 2.0
+	
+	behaviour = {
+		conqueror = no
+		subjugator = no
+		liberator = no
+		opportunist = no
+		uplifter = no
+		dominator = no
+		infiltrator = no
+		robot_liberator = no
+		migrator = no
+		propagator = yes
+        multispecies = no
+	}
+	
+	allow = {
+		NOT = { is_country_type = fallen_empire }
+		NOT = {
+				has_ethic = "ethic_expansionist"
+				has_ethic = "ethic_fanatic_expansionist"				
+		}
+		
+
+		
+	}
+	
+	weight_modifier = {
+		weight = 10	
+		modifier = {
+			factor = -1
+			NOT = {
+				has_ethic = "ethic_isolationist"
+				has_ethic = "ethic_fanatic_isolationist"					
+			}
+		}
+			
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_ethic = "ethic_pacifist"
+				has_ethic = "ethic_fanatic_pacifist"		
+			}
+		}		
+		
+		modifier = {
+			factor = 3
+			OR = {
+				has_ethic = "ethic_isolationist"
+				has_ethic = "ethic_fanatic_isolationist"		
+			}
+		}	
+		modifier = {
+			factor = 1
+			has_trait = "trait_repugnant"
+		}
+		modifier = {
+			factor = 1
+			has_trait = "trait_sedentary"
+		}
+		modifier = {
+			factor = -1
+			has_trait = "trait_nomadic"
+		}		
+
+		modifier = {
+			factor = 3
+			OR = {
+				has_government = xeno_fascism
+				has_government = unified_empire
+			}				
+	}	
+}
+
+
+
+adventurous_expansionist = {
+	type = explorer
+
+	aggressiveness = 0.9
+	trade_willingness = 1.0
+	bravery = 1.0
+	
+	military_spending = 1.3
+	colony_spending = 0.8	
+	
+	alliance_acceptance = 10
+	federation_acceptance = 10
+	
+	threat_modifier = 1.4
+	friction_modifier = 0.5
+	
+	behaviour = {
+		conqueror = yes
+		subjugator = yes
+		liberator = yes
+		uplifter = yes
+		dominator = yes
+		infiltrator = yes
+		migrator = yes
+		propagator = no
+	}
+	
+	allow = {
+		NOT = { is_country_type = fallen_empire }
+		
+		NOT = {
+			has_ethic = "ethic_isolationist"
+			has_ethic = "ethic_fanatic_isolationist"			
+		}
+			
+	}
+	
+	weight_modifier = {
+		weight = 10
+		
+		modifier = {
+			factor = -1
+			NOT = {
+				has_ethic = "ethic_expansionist"
+				has_ethic = "ethic_fanatic_expansionist"					
+			}
+		}
+		
+		
+		modifier = {
+			factor = 1.5
+			has_ethic = "ethic_fanatic_materialist"
+		}
+		
+		modifier = {
+			factor = 3
+			OR = {
+			has_ethic = "ethic_expansionist"
+			has_ethic = "ethic_fanatic_expansionist"
+		    }	
+		}
+
+		
+		modifier = {
+			factor = 1.3
+			has_trait = "trait_natural_physicists"
+		}
+		
+		modifier = {
+			factor = -1
+			has_trait = "trait_sedentary"
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = "trait_nomadic"
+		}	
+		
+		
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_government = science_directorate
+				has_government = illuminated_technocracy
+			}
+		}
+		
+		modifier = {
+			factor = 2.5
+			OR = {
+				has_government = un_colonies
+				has_government = star_con
+			}
+		}
 
 		modifier = {
 			factor = 2
 			OR = {
-				has_government = communist_dictatorship
-				has_government = communist_utopia
-			}	
-				
-				
-	}	
+				has_government = pioneer_guild
+				has_government = interstellar_consortium
+			}
+		}
+		modifier = {
+			factor = -2
+			has_election_type = none
+		}		
+	}
 }
 
 

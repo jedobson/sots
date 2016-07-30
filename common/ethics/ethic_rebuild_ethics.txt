@@ -10,7 +10,11 @@ ethic_categories = {
 	grn = {
 		opinions = { 1 1 1 1 1 }
 	}
-
+	
+	exp = {
+		opinions = { 1 1 1 1 1 }
+	}
+	
 }
 	
 
@@ -18,6 +22,7 @@ ethic_socialism = {
 	cost = 1
 	category = "soc"
 	category_value = 1
+	opposite_dislike = -0.05
 	
 	country_modifier = {
 		pop_growth_req_mult = -0.05
@@ -35,6 +40,7 @@ ethic_fanatic_socialism = {
 	cost = 2
 	category = "soc"
 	category_value = 0
+	opposite_dislike = -0.1
 	
 	country_modifier = {
 		pop_growth_req_mult = -0.15
@@ -55,6 +61,7 @@ ethic_capitalism = {
 	cost = 1
 	category = "soc"
 	category_value = 3
+	opposite_dislike = -0.05
 	
 	country_modifier = {
 		planet_building_cost_mult = -0.05
@@ -73,6 +80,7 @@ ethic_fanatic_capitalism = {
 	cost = 2
 	category = "soc"
 	category_value = 4
+	opposite_dislike = -0.1
 	
 	country_modifier = {
 		planet_building_cost_mult = -0.15
@@ -94,7 +102,6 @@ ethic_green = {
 	cost = 1
 	category = "grn"
 	category_value = 1
-	
     opposite_dislike = -0.05
 	
 	country_modifier = {
@@ -117,7 +124,6 @@ ethic_fanatic_green = {
 	cost = 2
 	category = "grn"
 	category_value = 0
-	
     opposite_dislike = -0.1
 	
 	country_modifier = {
@@ -141,7 +147,6 @@ ethic_industrial = {
 	cost = 1
 	category = "grn"
 	category_value = 3
-	
     opposite_dislike = -0.05
 	
 	country_modifier = {
@@ -164,8 +169,7 @@ ethic_industrial = {
 ethic_fanatic_industrial = {
 	cost = 2
 	category = "grn"
-	category_value = 4
-
+    category_value = 4
     opposite_dislike = -0.1
 	
 	country_modifier = {
@@ -183,5 +187,92 @@ ethic_fanatic_industrial = {
 	
 
 }
+
+
+
+ethic_expansionist = {
+	cost = 1
+	category = "exp"
+    category_value = 1
+	country_modifier = {
+		shipsize_outpost_station_build_cost_mult = -0.1
+	}
+	
+	pop_modifier = {
+		pop_migration_speed = 0.1
+	}
+	
+	random_weight = {
+		value = 50
+	}	
+	
+
+}
+
+
+ethic_fanatic_expansionist = {
+	cost = 2
+	category = "exp"
+    category_value = 0
+	
+	country_modifier = {
+		shipsize_outpost_station_build_cost_mult = -0.3
+	}
+	
+	pop_modifier = {
+		pop_migration_speed = 0.3
+	}
+	
+	random_weight = {
+		value = 50
+	}	
+	
+
+}
+
+
+
+
+
+ethic_isolationist = {
+	cost = 1
+	category = "exp"
+    category_value = 3
+	
+	country_modifier = {
+		country_border_mult = 0.1
+	}
+	
+	pop_modifier = {
+		pop_fortification_defense  = 0.1
+	}
+	
+	random_weight = {
+		value = 50
+	}	
+	
+
+}
+
+
+ethic_fanatic_isolationist = {
+	cost = 2
+	category = "exp"
+    category_value = 4
+	
+	country_modifier = {
+             country_border_mult = 0.3
+	}
+	
+	pop_modifier = {
+		pop_fortification_defense  = 0.3
+	}
+	
+	random_weight = {
+		value = 50
+	}	
+	
+	
+}	
 
 

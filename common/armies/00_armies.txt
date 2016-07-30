@@ -278,12 +278,12 @@ swarm_army = {
 # Elite Guard Armies - Cyborg Armies
 
 elite_guard_army = {
-	damage = 1.85
-	health = 1.85
-	morale = 2.5
+	damage = 1.7
+	health = 2.0
+	morale = 2.2
 	assault = yes
-	time = 115
-	maintenance = 0.7
+	time = 150
+	maintenance = 1.2
 	icon_frame = 2
 	cost = {
 		minerals = 135

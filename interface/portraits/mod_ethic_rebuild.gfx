@@ -1,7 +1,32 @@
 spriteTypes = {	
 	spriteType = {
-		name = "GFX_ethic_neutral"
-		texturefile = "gfx/interface/icons/ethics/ethic_neutral.dds"
+		name = "GFX_ethic_space_engineering"
+		texturefile = "gfx/interface/icons/ethics/ethic_space_engineering.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ethic_land_engineering"
+		texturefile = "gfx/interface/icons/ethics/ethic_land_engineering.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ethic_education"
+		texturefile = "gfx/interface/icons/ethics/ethic_education.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ethic_bureaucracy"
+		texturefile = "gfx/interface/icons/ethics/ethic_bureaucracy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ethic_robotization"
+		texturefile = "gfx/interface/icons/ethics/ethic_robotization.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ethic_interstellar_travel"
+		texturefile = "gfx/interface/icons/ethics/ethic_interstellar_travel.dds"
 	}
 	
 		spriteType = {
@@ -42,5 +67,27 @@ spriteTypes = {
 		spriteType = {
 		name = "GFX_ethic_fanatic_industrial"
 		texturefile = "gfx/interface/icons/ethics/ethic_fanatic_industrial.dds"
-	}			
+	}	
+	
+		spriteType = {
+		name = "GFX_ethic_isolationist"
+		texturefile = "gfx/interface/icons/ethics/ethic_isolationist.dds"
+	}		
+
+		spriteType = {
+		name = "GFX_ethic_fanatic_isolationist"
+		texturefile = "gfx/interface/icons/ethics/ethic_fanatic_isolationist.dds"
+	}	
+	
+		spriteType = {
+		name = "GFX_ethic_expansionist"
+		texturefile = "gfx/interface/icons/ethics/ethic_expansionist.dds"
+	}		
+
+		spriteType = {
+		name = "GFX_ethic_fanatic_expansionist"
+		texturefile = "gfx/interface/icons/ethics/ethic_fanatic_expansionist.dds"
+	}	
+
+
 }

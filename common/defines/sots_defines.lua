@@ -1,5 +1,5 @@
 -- NSpecies
-NDefines.NSpecies.MAX_ETHIC_POINTS = 4
+NDefines.NSpecies.MAX_ETHIC_POINTS = 8
 NDefines.NSpecies.MAX_TRAIT_POINTS = 4
 NDefines.NSpecies.MAX_TRAITS = 8
 
@@ -23,7 +23,7 @@ NDefines.NCombat.COMBAT_DETECT_RANGE_MULT = 0.75
 NDefines.NCombat.FLEET_MOVE_MAX_DIST_SHIPS = 150.0
 
 -- NGameplay
-NDefines.NGameplay.ETHOS_MAX_POINTS = 4
+NDefines.NGameplay.ETHOS_MAX_POINTS = 7
 NDefines.NGameplay.NAVY_SIZE_MAX = 248376
 NDefines.NGameplay.PLANET_ARMIES_LIMIT = 84
 NDefines.NGameplay.VICTORY_CONDITION_DOMINATION = 0.95

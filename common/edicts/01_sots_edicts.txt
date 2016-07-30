@@ -313,6 +313,37 @@ country_edict = {
 		weight = 1
 	}
 }
+
+# Divine Crusade (Divine Imperium special power)
+country_edict = {
+	name = "div_crusade"
+
+
+	modifier = {
+                pop_war_happiness = 0.15
+               	army_attack_morale_mult = 0.2
+                army_attack_damage_mult = 0.2
+                spaceport_ship_build_time_mult = -0.2
+                planet_army_build_speed_mult = 0.2
+                navy_size_mult = 0.2
+
+
+	}
+
+        influence_cost = 2
+	
+	
+	allow = {
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+			prerequisites = {
+		"tech_div_crusade"
+	}
+}
 ########################
 
 country_edict = {

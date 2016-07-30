@@ -917,3 +917,12 @@ trait_android_level3 = {
 		pop_environment_tolerance = 1.0
 	}
 }
+
+
+trait_drone_mindset = {
+	
+	cost = 1	
+	modifier = {
+		pop_slavery_tolerance = 0.25
+	}
+}
