@@ -189,25 +189,25 @@ terraform_link = {
 ### SIMPLEX TERRAFORMING ###
 ############################
 
-terraform_link = {
-	from = "pc_continental"
-	to = "pc_gaia"
-	duration = 1800
-	energy = 3500
-	resources = {
-		sr_terraform_gases = 3
-		sr_terraform_liquids = 3
-		sr_alien_pets = 2
-		sr_satramene = 1
-		sr_engos = 1
-	}
-	condition = {
-		AND = {
-			has_technology = "tech_terrestrial_sculpting"
-			has_technology = "tech_atmospheric_manipulation"
-			has_technology = "tech_perfect_ecosystem_integration"
-		}
-	}
+#terraform_link = {
+#	from = "pc_continental"
+#	to = "pc_gaia"
+#	duration = 1800
+#	energy = 3500
+#	resources = {
+#		sr_terraform_gases = 3
+#		sr_terraform_liquids = 3
+#		sr_alien_pets = 2
+#		sr_satramene = 1
+#		sr_engos = 1
+#	}
+#	condition = {
+#		AND = {
+#			has_technology = "tech_terrestrial_sculpting"
+#			has_technology = "tech_atmospheric_manipulation"
+#			has_technology = "tech_perfect_ecosystem_integration"
+#		}
+#	}
 }
 terraform_link = {
 	from = "pc_barren"

@@ -10,7 +10,7 @@
 @habitable_max_distance = 120
 @habitable_spawn_odds = 2
 @star_standard_scale = 60
-@ringworld_standard_scale = 4
+@ringworld_standard_scale = 1.8
 
 #########################
 ### Habitable Planets ###
