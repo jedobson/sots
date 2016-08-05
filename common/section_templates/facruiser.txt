@@ -29,13 +29,6 @@ ship_section_template = {
 		locatorname = "large_gun_01"
 	}
 
-	component_slot = {
-		name = "LARGE_GUN_02"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_01"
-	}
-
 	
 	medium_utility_slots = 3
 	large_utility_slots = 2
@@ -52,13 +45,6 @@ ship_section_template = {
 	
 	component_slot = {
 		name = "MEDIUM_GUN_01"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_02"
 		slot_size = medium
 		slot_type = weapon
 		locatorname = "medium_gun_01"
@@ -155,21 +141,16 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "small_gun_01"
 	}
+
 	component_slot = {
 		name = "SMALL_GUN_02"
 		slot_size = small
 		slot_type = weapon
 		locatorname = "small_gun_02"
 	}
-	component_slot = {
-		name = "SMALL_GUN_03"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_01"
-	}
 	
 	medium_utility_slots = 3
-	large_utility_slots = 2
+	large_utility_slots = 4
 	
 	cost = 300
 }
@@ -204,12 +185,6 @@ ship_section_template = {
 
 	component_slot = {
 		name = "MEDIUM_GUN_01"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-	component_slot = {
-		name = "MEDIUM_GUN_02"
 		slot_size = medium
 		slot_type = weapon
 		locatorname = "medium_gun_01"
@@ -291,7 +266,6 @@ ship_section_template = {
 		locatorname = "medium_gun_02"
 	}
 	
-	
 	component_slot = {
 		name = "SMALL_GUN_01"
 		slot_size = small
@@ -340,14 +314,6 @@ ship_section_template = {
 		locatorname = "medium_gun_01"
 	}
 
-	component_slot = {
-		name = "MEDIUM_GUN_02"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-
-	
 	medium_utility_slots = 3
 	large_utility_slots = 2
 	
@@ -374,16 +340,9 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "small_gun_02"
 	}
-
-	component_slot = {
-		name = "SMALL_GUN_03"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_01"
-	}
 	
 	medium_utility_slots = 3
-	large_utility_slots = 2
+	large_utility_slots = 3
 	
 	cost = 300
 }

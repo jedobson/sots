@@ -32,22 +32,6 @@ ship_section_template = {
 	}
 
 	component_slot = {
-		name = "STRIKE_CRAFT_03"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "large_gun_01"
-	}
-
-	component_slot = {
-		name = "STRIKE_CRAFT_04"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "large_gun_01"
-	}
-
-	component_slot = {
 		name = "LARGE_GUN_01"
 		slot_size = large
 		slot_type = weapon
@@ -80,6 +64,7 @@ ship_section_template = {
 		locatorname = "large_gun_01"
 		section_instance = 0
 	}
+
 	component_slot = {
 		name = "STRIKE_CRAFT_02"
 		slot_size = large
@@ -88,6 +73,7 @@ ship_section_template = {
 		locatorname = "large_gun_01"
 		section_instance = 1
 	}
+
 	component_slot = {
 		name = "STRIKE_CRAFT_03"
 		slot_size = large
@@ -96,24 +82,9 @@ ship_section_template = {
 		locatorname = "large_gun_01"
 		section_instance = 0
 	}
+
 	component_slot = {
 		name = "STRIKE_CRAFT_04"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "large_gun_01"
-		section_instance = 1
-	}
-	component_slot = {
-		name = "STRIKE_CRAFT_05"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "large_gun_01"
-		section_instance = 0
-	}
-	component_slot = {
-		name = "STRIKE_CRAFT_06"
 		slot_size = large
 		slot_type = strike_craft
 		rotation = 90
@@ -437,6 +408,7 @@ ship_section_template = {
 		locatorname = "large_gun_01"
 		section_instance = 0
 	}
+
 	component_slot = {
 		name = "STRIKE_CRAFT_02"
 		slot_size = large
@@ -445,6 +417,7 @@ ship_section_template = {
 		locatorname = "large_gun_01"
 		section_instance = 1
 	}
+
 	component_slot = {
 		name = "STRIKE_CRAFT_03"
 		slot_size = large
@@ -453,6 +426,7 @@ ship_section_template = {
 		locatorname = "large_gun_01"
 		section_instance = 0
 	}
+
 	component_slot = {
 		name = "STRIKE_CRAFT_04"
 		slot_size = large
@@ -461,31 +435,7 @@ ship_section_template = {
 		locatorname = "large_gun_01"
 		section_instance = 1
 	}
-	component_slot = {
-		name = "STRIKE_CRAFT_05"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "large_gun_01"
-		section_instance = 0
-	}
-	component_slot = {
-		name = "STRIKE_CRAFT_06"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "large_gun_01"
-		section_instance = 1
-	}
 
-	component_slot = {
-		name = "STRIKE_CRAFT_07"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "large_gun_01"
-		section_instance = 0
-	}
 
 	component_slot = {
 		name = "LARGE_GUN_01"
@@ -520,11 +470,19 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_mid"
 	
 	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "part1"
+	}
+
+	component_slot = {
 		name = "SMALL_GUN_01"
 		slot_size = small
 		slot_type = weapon
 		locatorname = "part1"
 	}	
+
 	component_slot = {
 		name = "SMALL_GUN_02"
 		slot_size = small
@@ -532,8 +490,8 @@ ship_section_template = {
 		locatorname = "part1"
 	}
 	
-	small_utility_slots = 2
-	medium_utility_slots = 2
+	small_utility_slots = 0
+	medium_utility_slots = 4
 	large_utility_slots = 2
 }
 
@@ -561,8 +519,15 @@ ship_section_template = {
 	}
 
 	component_slot = {
-		name = "MEDIUM_GUN_03"
-		slot_size = medium
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "part1"
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
 		slot_type = weapon
 		locatorname = "part1"
 	}
@@ -596,8 +561,15 @@ ship_section_template = {
 	}
 
 	component_slot = {
-		name = "MEDIUM_GUN_03"
-		slot_size = medium
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "part1"
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
 		slot_type = weapon
 		locatorname = "part1"
 	}
@@ -784,7 +756,6 @@ ship_section_template = {
 		locatorname = "part1"
 	}
 
-
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		slot_size = large
@@ -884,7 +855,6 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "part1"
 	}
-
 
 	component_slot = {
 		name = "STRIKE_CRAFT_01"

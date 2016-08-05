@@ -7,17 +7,19 @@ ship_section_template = {
 	entity = "Light_Carrier_bow_L1_entity"
 	icon = "GFX_ship_part_core_bow"
 	
-	# Guns
-	weapon_preferences = { weapon_type_kinetic }
+	# Lasers
+	weapon_preferences = { weapon_role_anti_armor }
 	ai_weight = {
 		modifier = {
 			factor = 5.0
 			OR = {
-				has_ai_personality = honorbound_warriors
-				has_ai_personality = evangelising_zealots
-				has_ai_personality = spiritual_seekers
-				has_ai_personality = democratic_crusaders
-				has_ai_personality = hive_mind
+				has_ai_personality = hegemonic_imperialists
+				has_ai_personality = erudite_explorers
+				has_ai_personality = fanatic_purifiers
+				has_ai_personality = xenophobic_isolationists				
+				has_ai_personality = federation_builders
+				has_ai_personality = ruthless_capitalists	
+				has_ai_personality = metalhead
 			}
 		}
 	}
@@ -29,10 +31,11 @@ ship_section_template = {
 		locatorname = "large_gun_01"
 	}
 	
+	small_utility_slots = 1
 	medium_utility_slots = 1
-	large_utility_slots = 1
+	large_utility_slots = 2
 	
-	cost = 200
+	cost = 120
 }
 
 ship_section_template = {
@@ -63,8 +66,9 @@ ship_section_template = {
 		locatorname = "small_gun_02"
 	}
 	
+	small_utility_slots = 1
 	medium_utility_slots = 1
-	large_utility_slots = 1
+	large_utility_slots = 2
 	
 	cost = 200
 }
@@ -77,7 +81,7 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_bow"
 	
 	# Missiles
-	weapon_preferences = { weapon_type_explosive }
+	weapon_preferences = { weapon_role_long_range }
 	ai_weight = {
 		modifier = {
 			factor = 5.0
@@ -105,22 +109,24 @@ ship_section_template = {
 		locatorname = "medium_gun_02"
 	}
 	
+	small_utility_slots = 1
 	medium_utility_slots = 1
-	large_utility_slots = 1
+	large_utility_slots = 2
 	
-	cost = 200
+	cost = 120
 }
 
-#MID
+#MID1
+
 ship_section_template = {
-	key = "Light_Carrier_MID_S2HB"
+	key = "Light_Carrier_MID1_S2HB"
 	ship_size = Light_Carrier
-	fits_on_slot = mid
-	entity = "Light_Carrier_mid_S2HB_entity"
+	fits_on_slot = mid1
+	entity = "Light_Carrier_mid1_S2HB_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	# Guns & Strike Craft
-	weapon_preferences = { weapon_type_kinetic weapon_type_point_defense }
+	weapon_preferences = { weapon_role_short_range weapon_role_point_defense }
 	ai_weight = {
 		modifier = {
 			factor = 5.0
@@ -141,22 +147,9 @@ ship_section_template = {
 		rotation = 90
 		locatorname = "strike_craft_locator_01"
 	}
+
 	component_slot = {
 		name = "STRIKE_CRAFT_02"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "strike_craft_locator_01"
-	}
-	component_slot = {
-		name = "STRIKE_CRAFT_03"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "strike_craft_locator_01"
-	}
-	component_slot = {
-		name = "STRIKE_CRAFT_04"
 		slot_size = large
 		slot_type = strike_craft
 		rotation = 90
@@ -176,23 +169,23 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "small_gun_02"
 	}
-
+	
 	small_utility_slots = 1
 	medium_utility_slots = 1
-	large_utility_slots = 1
+	large_utility_slots = 2
 	
-	cost = 200
+	cost = 120
 }
 
 ship_section_template = {
-	key = "Light_Carrier_MID_L1M1"
+	key = "Light_Carrier_MID1_L1M1"
 	ship_size = Light_Carrier
-	fits_on_slot = mid
-	entity = "Light_Carrier_mid_L1M1_entity"
+	fits_on_slot = mid1
+	entity = "Light_Carrier_mid1_L1M1_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	# Big lasers
-	weapon_preferences = { weapon_type_energy }
+	weapon_preferences = { weapon_role_anti_armor }
 	ai_weight = {
 		modifier = {
 			factor = 5.0
@@ -204,40 +197,30 @@ ship_section_template = {
 			}
 		}
 	}
+	
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		slot_size = large
 		slot_type = strike_craft
 		rotation = 90
-		locatorname = "large_gun_01"
+		locatorname = "medium_gun_01"
 	}
+
 	component_slot = {
 		name = "STRIKE_CRAFT_02"
 		slot_size = large
 		slot_type = strike_craft
 		rotation = 90
-		locatorname = "large_gun_01"
+		locatorname = "medium_gun_01"
 	}
-	component_slot = {
-		name = "STRIKE_CRAFT_03"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "STRIKE_CRAFT_04"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "large_gun_01"
-	}
+
 	component_slot = {
 		name = "LARGE_GUN_01"
 		slot_size = large
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
+
 	component_slot = {
 		name = "MEDIUM_GUN_01"
 		slot_size = medium
@@ -247,16 +230,16 @@ ship_section_template = {
 	
 	small_utility_slots = 1
 	medium_utility_slots = 1
-	large_utility_slots = 1
+	large_utility_slots = 2
 	
-	cost = 200
+	cost = 120
 }
 
 ship_section_template = {
-	key = "Light_Carrier_MID_M3"
+	key = "Light_Carrier_MID1_M3"
 	ship_size = Light_Carrier
-	fits_on_slot = mid
-	entity = "Light_Carrier_mid_M3_entity"
+	fits_on_slot = mid1
+	entity = "Light_Carrier_mid1_M3_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	# Missiles
@@ -273,6 +256,7 @@ ship_section_template = {
 			}
 		}
 	}
+	
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		slot_size = large
@@ -280,6 +264,7 @@ ship_section_template = {
 		rotation = 90
 		locatorname = "medium_gun_01"
 	}
+
 	component_slot = {
 		name = "STRIKE_CRAFT_02"
 		slot_size = large
@@ -287,20 +272,7 @@ ship_section_template = {
 		rotation = 90
 		locatorname = "medium_gun_01"
 	}
-	component_slot = {
-		name = "STRIKE_CRAFT_03"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "medium_gun_01"
-	}
-	component_slot = {
-		name = "STRIKE_CRAFT_04"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "medium_gun_01"
-	}
+
 	component_slot = {
 		name = "MEDIUM_GUN_01"
 		slot_size = medium
@@ -324,17 +296,93 @@ ship_section_template = {
 	
 	small_utility_slots = 1
 	medium_utility_slots = 1
-	large_utility_slots = 1
+	large_utility_slots = 2
 	
 	cost = 200
 }
 
+
+#MID2
+
 ship_section_template = {
-	key = "Light_Carrier_MID_M2S2"
+	key = "Light_Carrier_MID2_S2HB"
 	ship_size = Light_Carrier
-	fits_on_slot = mid
-	entity = "Light_Carrier_mid_M2S2_entity"
+	fits_on_slot = mid2
+	entity = "Light_Carrier_mid2_S2HB_entity"
 	icon = "GFX_ship_part_core_mid"
+	
+	# Guns & Strike Craft
+	weapon_preferences = { weapon_role_short_range weapon_role_point_defense }
+	ai_weight = {
+		modifier = {
+			factor = 5.0
+			OR = {
+				has_ai_personality = honorbound_warriors
+				has_ai_personality = evangelising_zealots
+				has_ai_personality = spiritual_seekers
+				has_ai_personality = democratic_crusaders
+				has_ai_personality = hive_mind
+			}
+		}
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_01"
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_02"
+	}
+	
+	small_utility_slots = 1
+	medium_utility_slots = 1
+	large_utility_slots = 2
+	
+	cost = 120
+}
+
+ship_section_template = {
+	key = "Light_Carrier_MID2_L1M1"
+	ship_size = Light_Carrier
+	fits_on_slot = mid2
+	entity = "Light_Carrier_mid2_L1M1_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Big lasers
+	weapon_preferences = { weapon_role_anti_armor }
+	ai_weight = {
+		modifier = {
+			factor = 5.0
+			OR = {
+				has_ai_personality = hegemonic_imperialists			
+				has_ai_personality = fanatic_purifiers								
+				has_ai_personality = ruthless_capitalists	
+				has_ai_personality = metalhead
+			}
+		}
+	}
 	
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
@@ -343,6 +391,7 @@ ship_section_template = {
 		rotation = 90
 		locatorname = "medium_gun_01"
 	}
+
 	component_slot = {
 		name = "STRIKE_CRAFT_02"
 		slot_size = large
@@ -350,20 +399,66 @@ ship_section_template = {
 		rotation = 90
 		locatorname = "medium_gun_01"
 	}
+
 	component_slot = {
-		name = "STRIKE_CRAFT_03"
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	
+	small_utility_slots = 1
+	medium_utility_slots = 1
+	large_utility_slots = 2
+	
+	cost = 120
+}
+
+ship_section_template = {
+	key = "Light_Carrier_MID2_M3"
+	ship_size = Light_Carrier
+	fits_on_slot = mid2
+	entity = "Light_Carrier_mid2_M3_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Missiles
+	weapon_preferences = { weapon_type_explosive }
+	ai_weight = {
+		modifier = {
+			factor = 5.0
+			OR = {
+				has_ai_personality = peaceful_traders
+				has_ai_personality = slaving_despots
+				has_ai_personality = harmonious_hierarchy
+				has_ai_personality = decadent_hierarchy
+				has_ai_personality = migrating_flock
+			}
+		}
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
 		slot_size = large
 		slot_type = strike_craft
 		rotation = 90
 		locatorname = "medium_gun_01"
 	}
+
 	component_slot = {
-		name = "STRIKE_CRAFT_04"
+		name = "STRIKE_CRAFT_02"
 		slot_size = large
 		slot_type = strike_craft
 		rotation = 90
 		locatorname = "medium_gun_01"
 	}
+
 	component_slot = {
 		name = "MEDIUM_GUN_01"
 		slot_size = medium
@@ -379,25 +474,19 @@ ship_section_template = {
 	}
 	
 	component_slot = {
-		name = "SMALL_GUN_01"
-		slot_size = small
+		name = "MEDIUM_GUN_03"
+		slot_size = medium
 		slot_type = weapon
-		locatorname = "small_gun_01"
-	}
-	
-	component_slot = {
-		name = "SMALL_GUN_02"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_02"
+		locatorname = "medium_gun_03"
 	}
 	
 	small_utility_slots = 1
 	medium_utility_slots = 1
-	large_utility_slots = 1
+	large_utility_slots = 2
 	
 	cost = 200
 }
+
 
 #STERN
 
@@ -411,7 +500,7 @@ ship_section_template = {
 	# Non-Point defense
 	ai_weight = {
 		modifier = {
-			factor = 10.0
+			factor = 100.0
 			NOT = {
 				has_ai_personality = peaceful_traders
 				has_ai_personality = slaving_despots
@@ -431,7 +520,7 @@ ship_section_template = {
 	medium_utility_slots = 1
 	large_utility_slots = 1
 	
-	cost = 200
+	cost = 120
 }
 
 ship_section_template = {
@@ -457,7 +546,7 @@ ship_section_template = {
 	
 	small_utility_slots = 1
 	medium_utility_slots = 1
-	large_utility_slots = 1
+	large_utility_slots = 2
 	
 	cost = 200
 }

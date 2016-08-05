@@ -9,7 +9,7 @@ ship_section_template = {
 	icon_frame = 1
 	
 	# Big guns
-	weapon_preferences = { weapon_type_kinetic }
+	weapon_preferences = { weapon_role_anti_shield }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -43,13 +43,6 @@ ship_section_template = {
 	}
 
 	component_slot = {
-		name = "LARGE_GUN_04"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_01"
-	}
-
-	component_slot = {
 		name = "MEDIUM_GUN_01"
 		slot_size = medium
 		slot_type = weapon
@@ -58,13 +51,6 @@ ship_section_template = {
 
 	component_slot = {
 		name = "MEDIUM_GUN_02"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_03"
 		slot_size = medium
 		slot_type = weapon
 		locatorname = "medium_gun_01"
@@ -83,9 +69,17 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "small_gun_02"
 	}
+
+	component_slot = {
+		name = "SMALL_GUN_03"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_02"
+	}
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
@@ -99,7 +93,7 @@ ship_section_template = {
 	icon_frame = 1
 	
 	# Big missiles
-	weapon_preferences = { weapon_type_explosive }
+	weapon_preferences = { weapon_role_long_range }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -130,20 +124,6 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
-
-	component_slot = {
-		name = "LARGE_GUN_04"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_01"
-	}
-
-	component_slot = {
-		name = "LARGE_GUN_05"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_01"
-	}
 	
 	component_slot = {
 		name = "SMALL_GUN_01"
@@ -173,8 +153,9 @@ ship_section_template = {
 		locatorname = "small_gun_04"
 	}
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
@@ -185,6 +166,20 @@ ship_section_template = {
 	fits_on_slot = bow
 	entity = "Flagship_bow_L2_entity"
 	icon = "GFX_ship_part_core_bow"
+	
+	# Big lasers
+	weapon_preferences = { weapon_role_anti_armor }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = hegemonic_imperialists			
+				has_ai_personality = fanatic_purifiers								
+				has_ai_personality = ruthless_capitalists				
+				has_ai_personality = metalhead
+			}
+		}
+	}
 
 	component_slot = {
 		name = "LARGE_GUN_01"
@@ -192,12 +187,12 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
-
+	
 	component_slot = {
 		name = "LARGE_GUN_02"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "large_gun_01"
+		locatorname = "large_gun_02"
 	}
 
 	component_slot = {
@@ -213,45 +208,10 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "large_gun_02"
 	}
-
-	component_slot = {
-		name = "LARGE_GUN_05"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_02"
-	}
-
-	component_slot = {
-		name = "LARGE_GUN_06"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_02"
-	}
-
-	component_slot = {
-		name = "LARGE_GUN_07"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_01"
-	}
-
-	component_slot = {
-		name = "LARGE_GUN_08"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_02"
-	}
-
-	component_slot = {
-		name = "LARGE_GUN_09"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_02"
-	}
-
-
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
@@ -263,15 +223,15 @@ ship_section_template = {
 	entity = "Flagship_bow_M1S2SHB_entity"
 	icon = "GFX_ship_part_core_bow"
 	
-	# Lasers & Strike Craft
-	weapon_preferences = { weapon_type_energy }
+	# Missiles & Strike Craft
+	weapon_preferences = { weapon_role_long_range }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
 			OR = {
-				has_ai_personality = federation_builders
-				has_ai_personality = erudite_explorers
-				has_ai_personality = xenophobic_isolationists
+				has_ai_personality = peaceful_traders
+				has_ai_personality = slaving_despots
+				has_ai_personality = migrating_flock
 			}
 		}
 	}
@@ -310,53 +270,10 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "small_gun_02"
 	}
-
-	component_slot = {
-		name = "SMALL_GUN_03"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_02"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_04"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_05"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_06"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-
-	component_slot = {
-		name = "STRIKE_CRAFT_01"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "strike_craft_locator_01"
-	}
-
-	component_slot = {
-		name = "STRIKE_CRAFT_02"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "strike_craft_locator_01"
-	}
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
@@ -369,7 +286,7 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_bow"
 	
 	# Small guns
-	weapon_preferences = { weapon_type_kinetic }
+	weapon_preferences = { weapon_role_short_range }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -386,12 +303,12 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "medium_gun_01"
 	}
-
+	
 	component_slot = {
 		name = "MEDIUM_GUN_02"
 		slot_size = medium
 		slot_type = weapon
-		locatorname = "medium_gun_01"
+		locatorname = "medium_gun_02"
 	}
 
 	component_slot = {
@@ -403,13 +320,6 @@ ship_section_template = {
 	
 	component_slot = {
 		name = "MEDIUM_GUN_04"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_02"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_05"
 		slot_size = medium
 		slot_type = weapon
 		locatorname = "medium_gun_02"
@@ -443,8 +353,9 @@ ship_section_template = {
 		locatorname = "small_gun_04"
 	}
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
@@ -456,15 +367,15 @@ ship_section_template = {
 	entity = "Flagship_bow_M3S2_entity"
 	icon = "GFX_ship_part_core_bow"
 	
-	# Missiles
-	weapon_preferences = { weapon_type_explosive }
+	# Small lasers
+	weapon_preferences = { weapon_role_anti_armor }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
 			OR = {
-				has_ai_personality = peaceful_traders
-				has_ai_personality = slaving_despots
-				has_ai_personality = migrating_flock				
+				has_ai_personality = federation_builders
+				has_ai_personality = erudite_explorers
+				has_ai_personality = xenophobic_isolationists				
 			}
 		}
 	}
@@ -494,14 +405,21 @@ ship_section_template = {
 		name = "MEDIUM_GUN_04"
 		slot_size = medium
 		slot_type = weapon
-		locatorname = "medium_gun_03"
+		locatorname = "medium_gun_01"
 	}
 
 	component_slot = {
 		name = "MEDIUM_GUN_05"
 		slot_size = medium
 		slot_type = weapon
-		locatorname = "medium_gun_01"
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_06"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
 	}
 	
 	component_slot = {
@@ -517,34 +435,21 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "small_gun_02"
 	}
-
-	component_slot = {
-		name = "SMALL_GUN_03"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_01"
-	}
 	
-	component_slot = {
-		name = "SMALL_GUN_04"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_02"
-	}
-	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
 
-#MID
+#MID1
 
 ship_section_template = {
-	key = "Flagship_MID_L2S4"
+	key = "Flagship_MID1_L2S4"
 	ship_size = Flagship
-	fits_on_slot = mid
-	entity = "Flagship_mid_L2S4_entity"
+	fits_on_slot = mid1
+	entity = "Flagship_mid1_L2S4_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	# Big lasers
@@ -567,6 +472,7 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
+
 	component_slot = {
 		name = "LARGE_GUN_02"
 		slot_size = large
@@ -580,18 +486,12 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
+
 	component_slot = {
 		name = "LARGE_GUN_04"
 		slot_size = large
 		slot_type = weapon
 		locatorname = "large_gun_02"
-	}
-
-	component_slot = {
-		name = "LARGE_GUN_05"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_01"
 	}
 	
 	component_slot = {
@@ -625,18 +525,35 @@ ship_section_template = {
 		locatorname = "small_gun_04"
 
 	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
 
 ship_section_template = {
-	key = "Flagship_MID_L1M4"
+	key = "Flagship_MID1_L1M4"
 	ship_size = Flagship
-	fits_on_slot = mid
-	entity = "Flagship_mid_L1M4_entity"
+	fits_on_slot = mid1
+	entity = "Flagship_mid1_L1M4_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	# Small guns
@@ -667,13 +584,6 @@ ship_section_template = {
 
 	component_slot = {
 		name = "LARGE_GUN_03"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_01"
-	}
-
-	component_slot = {
-		name = "LARGE_GUN_04"
 		slot_size = large
 		slot_type = weapon
 		locatorname = "large_gun_01"
@@ -708,23 +618,34 @@ ship_section_template = {
 	}
 
 	component_slot = {
-		name = "MEDIUM_GUN_05"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
 	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
 
 ship_section_template = {
-	key = "Flagship_MID_L2M2"
+	key = "Flagship_MID1_L2M2"
 	ship_size = Flagship
-	fits_on_slot = mid
-	entity = "Flagship_mid_L2M2_entity"
+	fits_on_slot = mid1
+	entity = "Flagship_mid1_L2M2_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	# Big missiles
@@ -745,6 +666,7 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
+
 	component_slot = {
 		name = "LARGE_GUN_02"
 		slot_size = large
@@ -756,7 +678,7 @@ ship_section_template = {
 		name = "LARGE_GUN_03"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "large_gun_02"
+		locatorname = "large_gun_01"
 	}
 
 	component_slot = {
@@ -781,37 +703,33 @@ ship_section_template = {
 	}
 
 	component_slot = {
-		name = "MEDIUM_GUN_03"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-	
-	component_slot = {
-		name = "MEDIUM_GUN_04"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_02"
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
 	}
 
 	component_slot = {
-		name = "MEDIUM_GUN_05"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
 	}
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
 
 ship_section_template = {
-	key = "Flagship_MID_L3"
+	key = "Flagship_MID1_L3"
 	ship_size = Flagship
-	fits_on_slot = mid
-	entity = "Flagship_mid_L3_entity"
+	fits_on_slot = mid1
+	entity = "Flagship_mid1_L3_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	# Big guns
@@ -838,30 +756,30 @@ ship_section_template = {
 		name = "LARGE_GUN_02"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "large_gun_01"
+		locatorname = "large_gun_02"
 	}
 	
 	component_slot = {
 		name = "LARGE_GUN_03"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "large_gun_02"
+		locatorname = "large_gun_03"
 	}
 
 	component_slot = {
 		name = "LARGE_GUN_04"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "large_gun_02"
+		locatorname = "large_gun_01"
 	}
-	
+
 	component_slot = {
 		name = "LARGE_GUN_05"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "large_gun_03"
+		locatorname = "large_gun_02"
 	}
-
+	
 	component_slot = {
 		name = "LARGE_GUN_06"
 		slot_size = large
@@ -870,37 +788,33 @@ ship_section_template = {
 	}
 
 	component_slot = {
-		name = "LARGE_GUN_07"
+		name = "STRIKE_CRAFT_01"
 		slot_size = large
-		slot_type = weapon
+		slot_type = strike_craft
+		rotation = 90
 		locatorname = "large_gun_01"
-	}
-	
-	component_slot = {
-		name = "LARGE_GUN_08"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_02"
 	}
 
 	component_slot = {
-		name = "LARGE_GUN_09"
+		name = "STRIKE_CRAFT_02"
 		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_03"
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
 	}
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
 
 ship_section_template = {
-	key = "Flagship_MID_M4SHB"
+	key = "Flagship_MID1_M4SHB"
 	ship_size = Flagship
-	fits_on_slot = mid
-	entity = "Flagship_mid_M4SHB_entity"
+	fits_on_slot = mid1
+	entity = "Flagship_mid1_M4SHB_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	# Missiles & Strike Craft
@@ -943,12 +857,12 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "medium_gun_04"
 	}
-	
+
 	component_slot = {
 		name = "MEDIUM_GUN_05"
 		slot_size = medium
 		slot_type = weapon
-		locatorname = "medium_gun_04"
+		locatorname = "medium_gun_03"
 	}
 	
 	component_slot = {
@@ -956,27 +870,6 @@ ship_section_template = {
 		slot_size = medium
 		slot_type = weapon
 		locatorname = "medium_gun_04"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_07"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-	
-	component_slot = {
-		name = "MEDIUM_GUN_08"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_02"
-	}
-	
-	component_slot = {
-		name = "MEDIUM_GUN_09"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_03"
 	}
 
 	component_slot = {
@@ -995,17 +888,18 @@ ship_section_template = {
 		locatorname = "strike_craft_locator_01"
 	}
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
 
 ship_section_template = {
-	key = "Flagship_MID_S4LHB"
+	key = "Flagship_MID1_S4LHB"
 	ship_size = Flagship
-	fits_on_slot = mid
-	entity = "Flagship_mid_S4LHB_entity"
+	fits_on_slot = mid1
+	entity = "Flagship_mid1_S4LHB_entity"
 	icon = "GFX_ship_part_core_mid"
 
 	component_slot = {
@@ -1044,23 +938,15 @@ ship_section_template = {
 		name = "SMALL_GUN_05"
 		slot_size = small
 		slot_type = weapon
-		locatorname = "small_gun_01"
+		locatorname = "small_gun_03"
 
 	}
-
+	
 	component_slot = {
 		name = "SMALL_GUN_06"
 		slot_size = small
 		slot_type = weapon
-		locatorname = "small_gun_02"
-
-	}
-
-	component_slot = {
-		name = "SMALL_GUN_07"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_03"
+		locatorname = "small_gun_04"
 
 	}
 
@@ -1079,86 +965,63 @@ ship_section_template = {
 		rotation = 90
 		locatorname = "strike_craft_locator_01"
 	}
-
-	component_slot = {
-		name = "STRIKE_CRAFT_03"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "strike_craft_locator_01"
-	}
-
-	component_slot = {
-		name = "STRIKE_CRAFT_04"
-		slot_size = large
-		slot_type = strike_craft
-		rotation = 90
-		locatorname = "strike_craft_locator_01"
-	}
 		
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
 
-#STERN
+#MID2
 
 ship_section_template = {
-	key = "Flagship_STERN_M1S2"
+	key = "Flagship_MID2_L2S4"
 	ship_size = Flagship
-	fits_on_slot = stern
-	entity = "Flagship_stern_M1S2_entity"
-	icon = "GFX_ship_part_core_stern"
+	fits_on_slot = mid2
+	entity = "Flagship_mid2_L2S4_entity"
+	icon = "GFX_ship_part_core_mid"
 	
-	# Guns
-	weapon_preferences = { weapon_type_kinetic weapon_type_point_defense }
+	# Big lasers
+	weapon_preferences = { weapon_type_energy }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
 			OR = {
-				has_ai_personality = honorbound_warriors
-				has_ai_personality = evangelising_zealots
-				has_ai_personality = democratic_crusaders
-				has_ai_personality = spiritual_seekers
-				has_ai_personality = hive_mind
+				has_ai_personality = hegemonic_imperialists			
+				has_ai_personality = fanatic_purifiers								
+				has_ai_personality = ruthless_capitalists	
+				has_ai_personality = metalhead
 			}
 		}
 	}
-
+	
 	component_slot = {
-		name = "MEDIUM_GUN_01"
-		slot_size = medium
+		name = "LARGE_GUN_01"
+		slot_size = large
 		slot_type = weapon
-		locatorname = "medium_gun_01"
+		locatorname = "large_gun_01"
 	}
 
 	component_slot = {
-		name = "MEDIUM_GUN_02"
-		slot_size = medium
+		name = "LARGE_GUN_02"
+		slot_size = large
 		slot_type = weapon
-		locatorname = "medium_gun_01"
+		locatorname = "large_gun_02"
 	}
 
 	component_slot = {
-		name = "MEDIUM_GUN_03"
-		slot_size = medium
+		name = "LARGE_GUN_03"
+		slot_size = large
 		slot_type = weapon
-		locatorname = "medium_gun_01"
+		locatorname = "large_gun_01"
 	}
 
 	component_slot = {
-		name = "MEDIUM_GUN_04"
-		slot_size = medium
+		name = "LARGE_GUN_04"
+		slot_size = large
 		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_05"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
+		locatorname = "large_gun_02"
 	}
 	
 	component_slot = {
@@ -1166,6 +1029,7 @@ ship_section_template = {
 		slot_size = small
 		slot_type = weapon
 		locatorname = "small_gun_01"
+		
 	}
 	
 	component_slot = {
@@ -1173,34 +1037,66 @@ ship_section_template = {
 		slot_size = small
 		slot_type = weapon
 		locatorname = "small_gun_02"
-	}
 
+	}
+	
 	component_slot = {
 		name = "SMALL_GUN_03"
 		slot_size = small
 		slot_type = weapon
-		locatorname = "small_gun_01"
+		locatorname = "small_gun_03"
+
 	}
 	
 	component_slot = {
 		name = "SMALL_GUN_04"
 		slot_size = small
 		slot_type = weapon
-		locatorname = "small_gun_02"
+		locatorname = "small_gun_04"
+
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
 	}
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
 
 ship_section_template = {
-	key = "Flagship_STERN_L1"
+	key = "Flagship_MID2_L1M4"
 	ship_size = Flagship
-	fits_on_slot = stern
-	entity = "Flagship_stern_L1_entity"
-	icon = "GFX_ship_part_core_stern"
+	fits_on_slot = mid2
+	entity = "Flagship_mid2_L1M4_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Small guns
+	weapon_preferences = { weapon_type_kinetic }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = spiritual_seekers
+				has_ai_personality = hive_mind
+			}
+		}
+	}
 	
 	component_slot = {
 		name = "LARGE_GUN_01"
@@ -1222,6 +1118,183 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+
+	
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
+	
+	cost = 1500
+}
+
+ship_section_template = {
+	key = "Flagship_MID2_L2M2"
+	ship_size = Flagship
+	fits_on_slot = mid2
+	entity = "Flagship_mid2_L2M2_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Big missiles
+	weapon_preferences = { weapon_type_explosive }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = harmonious_hierarchy
+				has_ai_personality = decadent_hierarchy
+			}
+		}
+	}	
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_03"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_04"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
+	
+	cost = 1500
+}
+
+ship_section_template = {
+	key = "Flagship_MID2_L3"
+	ship_size = Flagship
+	fits_on_slot = mid2
+	entity = "Flagship_mid2_L3_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Big guns
+	weapon_preferences = { weapon_type_kinetic }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = honorbound_warriors
+				has_ai_personality = evangelising_zealots
+				has_ai_personality = democratic_crusaders
+			}
+		}
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_03"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_03"
+	}
 
 	component_slot = {
 		name = "LARGE_GUN_04"
@@ -1234,39 +1307,819 @@ ship_section_template = {
 		name = "LARGE_GUN_05"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "large_gun_01"
+		locatorname = "large_gun_02"
 	}
-
+	
 	component_slot = {
 		name = "LARGE_GUN_06"
 		slot_size = large
 		slot_type = weapon
+		locatorname = "large_gun_03"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
 		locatorname = "large_gun_01"
 	}
 
 	component_slot = {
-		name = "LARGE_GUN_07"
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
+	
+	cost = 1500
+}
+
+ship_section_template = {
+	key = "Flagship_MID2_M4SHB"
+	ship_size = Flagship
+	fits_on_slot = mid2
+	entity = "Flagship_mid2_M4SHB_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Missiles & Strike Craft
+	weapon_preferences = { weapon_type_explosive }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = peaceful_traders
+				has_ai_personality = slaving_despots
+				has_ai_personality = migrating_flock				
+			}
+		}
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+
+	component_slot = {
+		name = "MEDIUM_GUN_05"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_06"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
+	
+	cost = 1500
+}
+
+ship_section_template = {
+	key = "Flagship_MID2_S4LHB"
+	ship_size = Flagship
+	fits_on_slot = mid2
+	entity = "Flagship_mid2_S4LHB_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_01"
+		
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_02"
+
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_03"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_03"
+
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_04"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_04"
+
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_05"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_03"
+
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_06"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_04"
+
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+		
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
+	
+	cost = 1500
+}
+
+
+#MID3
+
+ship_section_template = {
+	key = "Flagship_MID3_L2S4"
+	ship_size = Flagship
+	fits_on_slot = mid3
+	entity = "Flagship_mid3_L2S4_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Big lasers
+	weapon_preferences = { weapon_type_energy }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = hegemonic_imperialists			
+				has_ai_personality = fanatic_purifiers								
+				has_ai_personality = ruthless_capitalists	
+				has_ai_personality = metalhead
+			}
+		}
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
 		slot_size = large
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
 
 	component_slot = {
-		name = "LARGE_GUN_08"
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_03"
 		slot_size = large
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
 
 	component_slot = {
-		name = "LARGE_GUN_09"
+		name = "LARGE_GUN_04"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_01"
+		
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_02"
+
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_03"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_03"
+
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_04"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_04"
+
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
+	
+	cost = 1500
+}
+
+ship_section_template = {
+	key = "Flagship_MID3_L1M4"
+	ship_size = Flagship
+	fits_on_slot = mid3
+	entity = "Flagship_mid3_L1M4_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Small guns
+	weapon_preferences = { weapon_type_kinetic }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = spiritual_seekers
+				has_ai_personality = hive_mind
+			}
+		}
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_03"
 		slot_size = large
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+
+	
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
+	
+	cost = 1500
+}
+
+ship_section_template = {
+	key = "Flagship_MID3_L2M2"
+	ship_size = Flagship
+	fits_on_slot = mid3
+	entity = "Flagship_mid3_L2M2_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Big missiles
+	weapon_preferences = { weapon_type_explosive }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = harmonious_hierarchy
+				has_ai_personality = decadent_hierarchy
+			}
+		}
+	}	
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_03"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_04"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
+	
+	cost = 1500
+}
+
+ship_section_template = {
+	key = "Flagship_MID3_L3"
+	ship_size = Flagship
+	fits_on_slot = mid3
+	entity = "Flagship_mid3_L3_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Big guns
+	weapon_preferences = { weapon_type_kinetic }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = honorbound_warriors
+				has_ai_personality = evangelising_zealots
+				has_ai_personality = democratic_crusaders
+			}
+		}
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_03"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_03"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_04"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_05"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_06"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_03"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "large_gun_01"
+	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
+	
+	cost = 1500
+}
+
+ship_section_template = {
+	key = "Flagship_MID3_M4SHB"
+	ship_size = Flagship
+	fits_on_slot = mid3
+	entity = "Flagship_mid3_M4SHB_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Missiles & Strike Craft
+	weapon_preferences = { weapon_type_explosive }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = peaceful_traders
+				has_ai_personality = slaving_despots
+				has_ai_personality = migrating_flock				
+			}
+		}
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+
+	component_slot = {
+		name = "MEDIUM_GUN_05"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_06"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
+	
+	cost = 1500
+}
+
+ship_section_template = {
+	key = "Flagship_MID3_S4LHB"
+	ship_size = Flagship
+	fits_on_slot = mid3
+	entity = "Flagship_mid3_S4LHB_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_01"
+		
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_02"
+
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_03"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_03"
+
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_04"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_04"
+
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_05"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_03"
+
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_06"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_04"
+
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+		
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
+	
+	cost = 1500
+}
+
+#STERN
+
+ship_section_template = {
+	key = "Flagship_STERN_M1S2"
+	ship_size = Flagship
+	fits_on_slot = stern
+	entity = "Flagship_stern_M1S2_entity"
+	icon = "GFX_ship_part_core_stern"
+	
+	# Guns
+	weapon_preferences = { weapon_role_short_range weapon_role_point_defense }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = honorbound_warriors
+				has_ai_personality = evangelising_zealots
+				has_ai_personality = democratic_crusaders
+				has_ai_personality = spiritual_seekers
+				has_ai_personality = hive_mind
+			}
+		}
+	}
+
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_02"
+	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
+	
+	cost = 1500
+}
+
+ship_section_template = {
+	key = "Flagship_STERN_L1"
+	ship_size = Flagship
+	fits_on_slot = stern
+	entity = "Flagship_stern_L1_entity"
+	icon = "GFX_ship_part_core_stern"
+	
+	# Lasers
+	weapon_preferences = { weapon_role_anti_armor }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = hegemonic_imperialists
+				has_ai_personality = erudite_explorers
+				has_ai_personality = fanatic_purifiers
+				has_ai_personality = xenophobic_isolationists				
+				has_ai_personality = federation_builders
+				has_ai_personality = ruthless_capitalists
+				has_ai_personality = metalhead
+			}
+		}
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
@@ -1279,7 +2132,7 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_stern"
 	
 	# Missiles
-	weapon_preferences = { weapon_type_explosive }
+	weapon_preferences = { weapon_role_long_range }
 	ai_weight = {
 		modifier = {
 			factor = 100.0
@@ -1299,67 +2152,16 @@ ship_section_template = {
 		locatorname = "medium_gun_01"
 				
 	}
-
 	component_slot = {
 		name = "MEDIUM_GUN_02"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-				
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_03"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-				
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_04"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_02"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_05"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_02"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_06"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_02"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_07"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_08"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_09"
 		slot_size = medium
 		slot_type = weapon
 		locatorname = "medium_gun_02"
 	}
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }
@@ -1372,7 +2174,7 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_stern"
 	
 	# Point Defense
-	weapon_preferences = { weapon_type_point_defense }
+	weapon_preferences = { weapon_role_point_defense }
 	ai_weight = {
 		factor = 1
 		modifier = {
@@ -1406,46 +2208,12 @@ ship_section_template = {
 		name = "SMALL_GUN_04"
 		slot_size = small
 		slot_type = weapon
-		locatorname = "small_gun_03"
-	}
-
-	component_slot = {
-		name = "SMALL_GUN_05"
-		slot_size = small
-		slot_type = weapon
 		locatorname = "small_gun_04"
-	}
-
-	component_slot = {
-		name = "SMALL_GUN_06"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_04"
-	}
-
-	component_slot = {
-		name = "SMALL_GUN_07"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_01"
-	}
-
-	component_slot = {
-		name = "SMALL_GUN_08"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_02"
-	}
-
-	component_slot = {
-		name = "SMALL_GUN_09"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_03"
 	}
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 3
+	large_utility_slots = 6
 	
 	cost = 1500
 }

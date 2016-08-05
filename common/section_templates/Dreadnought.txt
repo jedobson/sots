@@ -9,7 +9,7 @@ ship_section_template = {
 	icon_frame = 1
 	
 	# Big guns
-	weapon_preferences = { weapon_type_kinetic }
+	weapon_preferences = { weapon_role_anti_shield }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -48,14 +48,6 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "medium_gun_01"
 	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_02"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-
 	
 	component_slot = {
 		name = "SMALL_GUN_01"
@@ -71,8 +63,9 @@ ship_section_template = {
 		locatorname = "small_gun_02"
 	}
 	
-	medium_utility_slots = 5
-	large_utility_slots = 4
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
 	
 	cost = 960
 }
@@ -86,7 +79,7 @@ ship_section_template = {
 	icon_frame = 1
 	
 	# Big missiles
-	weapon_preferences = { weapon_type_explosive }
+	weapon_preferences = { weapon_role_long_range }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -146,8 +139,9 @@ ship_section_template = {
 		locatorname = "small_gun_04"
 	}
 	
-	medium_utility_slots = 5
-	large_utility_slots = 4
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
 	
 	cost = 960
 }
@@ -159,18 +153,32 @@ ship_section_template = {
 	entity = "Dreadnought_bow_L2_entity"
 	icon = "GFX_ship_part_core_bow"
 	
+	# Big lasers
+	weapon_preferences = { weapon_role_anti_armor }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = hegemonic_imperialists			
+				has_ai_personality = fanatic_purifiers								
+				has_ai_personality = ruthless_capitalists				
+				has_ai_personality = metalhead
+			}
+		}
+	}
+
 	component_slot = {
 		name = "LARGE_GUN_01"
 		slot_size = large
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
-
+	
 	component_slot = {
 		name = "LARGE_GUN_02"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "large_gun_01"
+		locatorname = "large_gun_02"
 	}
 
 	component_slot = {
@@ -179,31 +187,17 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
-	
+
 	component_slot = {
 		name = "LARGE_GUN_04"
 		slot_size = large
 		slot_type = weapon
 		locatorname = "large_gun_02"
 	}
-
-	component_slot = {
-		name = "LARGE_GUN_05"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_02"
-	}
-
-	component_slot = {
-		name = "LARGE_GUN_06"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_02"
-	}
-
-
-	medium_utility_slots = 3
-	large_utility_slots = 6
+	
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
 	
 	cost = 960
 }
@@ -216,7 +210,7 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_bow"
 	
 	# Missiles & Strike Craft
-	weapon_preferences = { weapon_type_explosive }
+	weapon_preferences = { weapon_role_long_range }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -241,6 +235,13 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "medium_gun_01"
 	}
+
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
 	
 	component_slot = {
 		name = "SMALL_GUN_01"
@@ -257,22 +258,16 @@ ship_section_template = {
 	}
 
 	component_slot = {
-		name = "MEDIUM_GUN_03"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
 	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_04"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
-
 	
-	medium_utility_slots = 5
-	large_utility_slots = 4
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
 	
 	cost = 960
 }
@@ -285,7 +280,7 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_bow"
 	
 	# Small guns
-	weapon_preferences = { weapon_type_kinetic }
+	weapon_preferences = { weapon_role_short_range }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -302,12 +297,12 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "medium_gun_01"
 	}
-
+	
 	component_slot = {
 		name = "MEDIUM_GUN_02"
 		slot_size = medium
 		slot_type = weapon
-		locatorname = "medium_gun_01"
+		locatorname = "medium_gun_02"
 	}
 
 	component_slot = {
@@ -352,6 +347,7 @@ ship_section_template = {
 		locatorname = "small_gun_04"
 	}
 	
+	small_utility_slots = 0
 	medium_utility_slots = 4
 	large_utility_slots = 5
 	
@@ -366,7 +362,7 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_bow"
 	
 	# Small lasers
-	weapon_preferences = { weapon_type_energy }
+	weapon_preferences = { weapon_role_anti_armor }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -398,6 +394,20 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "medium_gun_03"
 	}
+
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}
+
+	component_slot = {
+		name = "MEDIUM_GUN_05"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}
 	
 	component_slot = {
 		name = "SMALL_GUN_01"
@@ -412,28 +422,36 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "small_gun_02"
 	}
-
-	component_slot = {
-		name = "SMALL_GUN_03"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_01"
-	}
 	
-	medium_utility_slots = 5
-	large_utility_slots = 4
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
 	
 	cost = 960
 }
 
-#MID
+#MID1
 
 ship_section_template = {
-	key = "Dreadnought_MID_L2S4"
+	key = "Dreadnought_MID1_L2S4"
 	ship_size = Dreadnought
-	fits_on_slot = mid
-	entity = "Dreadnought_mid_L2S4_entity"
+	fits_on_slot = mid1
+	entity = "Dreadnought_mid1_L2S4_entity"
 	icon = "GFX_ship_part_core_mid"
+	
+	# Big lasers
+	weapon_preferences = { weapon_role_anti_armor }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = hegemonic_imperialists			
+				has_ai_personality = fanatic_purifiers								
+				has_ai_personality = ruthless_capitalists	
+				has_ai_personality = metalhead
+			}
+		}
+	}
 	
 	component_slot = {
 		name = "LARGE_GUN_01"
@@ -441,6 +459,7 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
+
 	component_slot = {
 		name = "LARGE_GUN_02"
 		slot_size = large
@@ -452,7 +471,7 @@ ship_section_template = {
 		name = "LARGE_GUN_03"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "large_gun_01"
+		locatorname = "large_gun_02"
 	}
 	
 	component_slot = {
@@ -487,6 +506,7 @@ ship_section_template = {
 
 	}
 	
+	small_utility_slots = 0
 	medium_utility_slots = 4
 	large_utility_slots = 5
 	
@@ -494,14 +514,14 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "Dreadnought_MID_L1M4"
+	key = "Dreadnought_MID1_L1M4"
 	ship_size = Dreadnought
-	fits_on_slot = mid
-	entity = "Dreadnought_mid_L1M4_entity"
+	fits_on_slot = mid1
+	entity = "Dreadnought_mid1_L1M4_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	# Small guns
-	weapon_preferences = { weapon_type_kinetic }
+	weapon_preferences = { weapon_role_short_range }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -554,6 +574,7 @@ ship_section_template = {
 		locatorname = "medium_gun_04"
 	}
 	
+	small_utility_slots = 0
 	medium_utility_slots = 4
 	large_utility_slots = 5
 	
@@ -561,14 +582,14 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "Dreadnought_MID_L2M2"
+	key = "Dreadnought_MID1_L2M2"
 	ship_size = Dreadnought
-	fits_on_slot = mid
-	entity = "Dreadnought_mid_L2M2_entity"
+	fits_on_slot = mid1
+	entity = "Dreadnought_mid1_L2M2_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	# Big missiles
-	weapon_preferences = { weapon_type_explosive }
+	weapon_preferences = { weapon_role_long_range }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -577,7 +598,7 @@ ship_section_template = {
 				has_ai_personality = decadent_hierarchy
 			}
 		}
-	}
+	}	
 
 	component_slot = {
 		name = "LARGE_GUN_01"
@@ -585,6 +606,7 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
+
 	component_slot = {
 		name = "LARGE_GUN_02"
 		slot_size = large
@@ -612,29 +634,23 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "medium_gun_02"
 	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_03"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_01"
-	}
 	
-	medium_utility_slots = 5
-	large_utility_slots = 4
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
 	
 	cost = 960
 }
 
 ship_section_template = {
-	key = "Dreadnought_MID_L3"
+	key = "Dreadnought_MID1_L3"
 	ship_size = Dreadnought
-	fits_on_slot = mid
-	entity = "Dreadnought_mid_L3_entity"
+	fits_on_slot = mid1
+	entity = "Dreadnought_mid1_L3_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	# Big guns
-	weapon_preferences = { weapon_type_kinetic }
+	weapon_preferences = { weapon_role_anti_shield }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -652,57 +668,51 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
-
+	
 	component_slot = {
 		name = "LARGE_GUN_02"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "large_gun_01"
+		locatorname = "large_gun_02"
 	}
 	
 	component_slot = {
 		name = "LARGE_GUN_03"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "large_gun_02"
+		locatorname = "large_gun_03"
 	}
 
 	component_slot = {
 		name = "LARGE_GUN_04"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "large_gun_02"
+		locatorname = "large_gun_01"
 	}
-	
+
 	component_slot = {
 		name = "LARGE_GUN_05"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "large_gun_03"
-	}
-
-	component_slot = {
-		name = "LARGE_GUN_06"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_03"
+		locatorname = "large_gun_02"
 	}
 	
-	medium_utility_slots = 2
-	large_utility_slots = 7
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
 	
 	cost = 960
 }
 
 ship_section_template = {
-	key = "Dreadnought_MID_M4SHB"
+	key = "Dreadnought_MID1_M4SHB"
 	ship_size = Dreadnought
-	fits_on_slot = mid
-	entity = "Dreadnought_mid_M4SHB_entity"
+	fits_on_slot = mid1
+	entity = "Dreadnought_mid1_M4SHB_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	# Lasers & Strike Craft
-	weapon_preferences = { weapon_type_energy }
+	weapon_preferences = { weapon_role_anti_armor }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -741,37 +751,45 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "medium_gun_04"
 	}
-	
+
 	component_slot = {
 		name = "MEDIUM_GUN_05"
 		slot_size = medium
 		slot_type = weapon
-		locatorname = "medium_gun_01"
+		locatorname = "medium_gun_04"
 	}
-	
+
 	component_slot = {
 		name = "MEDIUM_GUN_06"
 		slot_size = medium
 		slot_type = weapon
-		locatorname = "medium_gun_02"
+		locatorname = "medium_gun_04"
 	}
-
 	
-	medium_utility_slots = 5
-	large_utility_slots = 4
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
 	
 	cost = 960
 }
 
 ship_section_template = {
-	key = "Dreadnought_MID_S4LHB"
+	key = "Dreadnought_MID1_S4LHB"
 	ship_size = Dreadnought
-	fits_on_slot = mid
-	entity = "Dreadnought_mid_S4LHB_entity"
+	fits_on_slot = mid1
+	entity = "Dreadnought_mid1_S4LHB_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	# Missiles & Strike Craft
-	weapon_preferences = { weapon_type_explosive }
+	weapon_preferences = { weapon_role_long_range }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -783,6 +801,102 @@ ship_section_template = {
 		}
 	}
 
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_02"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_03"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_03"
+	}
+	
+		component_slot = {
+		name = "SMALL_GUN_04"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_04"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = -90
+		locatorname = "strike_craft_locator_02"
+	}	
+		
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
+	
+	cost = 960
+}
+
+
+#MID2
+
+ship_section_template = {
+	key = "Dreadnought_MID2_L2S4"
+	ship_size = Dreadnought
+	fits_on_slot = mid2
+	entity = "Dreadnought_mid2_L2S4_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Big lasers
+	weapon_preferences = { weapon_role_anti_armor }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = hegemonic_imperialists			
+				has_ai_personality = fanatic_purifiers								
+				has_ai_personality = ruthless_capitalists	
+				has_ai_personality = metalhead
+			}
+		}
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_03"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+	
 	component_slot = {
 		name = "SMALL_GUN_01"
 		slot_size = small
@@ -814,6 +928,329 @@ ship_section_template = {
 		locatorname = "small_gun_04"
 
 	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
+	
+	cost = 960
+}
+
+ship_section_template = {
+	key = "Dreadnought_MID2_L1M4"
+	ship_size = Dreadnought
+	fits_on_slot = mid2
+	entity = "Dreadnought_mid2_L1M4_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Small guns
+	weapon_preferences = { weapon_role_short_range }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = spiritual_seekers
+				has_ai_personality = hive_mind
+			}
+		}
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
+	
+	cost = 960
+}
+
+ship_section_template = {
+	key = "Dreadnought_MID2_L2M2"
+	ship_size = Dreadnought
+	fits_on_slot = mid2
+	entity = "Dreadnought_mid2_L2M2_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Big missiles
+	weapon_preferences = { weapon_role_long_range }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = harmonious_hierarchy
+				has_ai_personality = decadent_hierarchy
+			}
+		}
+	}	
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_03"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
+	
+	cost = 960
+}
+
+ship_section_template = {
+	key = "Dreadnought_MID2_L3"
+	ship_size = Dreadnought
+	fits_on_slot = mid2
+	entity = "Dreadnought_mid2_L3_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Big guns
+	weapon_preferences = { weapon_role_anti_shield }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = honorbound_warriors
+				has_ai_personality = evangelising_zealots
+				has_ai_personality = democratic_crusaders
+			}
+		}
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_03"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_03"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_04"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_05"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+	}
+	
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
+	
+	cost = 960
+}
+
+ship_section_template = {
+	key = "Dreadnought_MID2_M4SHB"
+	ship_size = Dreadnought
+	fits_on_slot = mid2
+	entity = "Dreadnought_mid2_M4SHB_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Lasers & Strike Craft
+	weapon_preferences = { weapon_role_anti_armor }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = federation_builders
+				has_ai_personality = erudite_explorers
+				has_ai_personality = xenophobic_isolationists				
+			}
+		}
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+
+	component_slot = {
+		name = "MEDIUM_GUN_05"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+
+	component_slot = {
+		name = "MEDIUM_GUN_06"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
+	
+	cost = 960
+}
+
+ship_section_template = {
+	key = "Dreadnought_MID2_S4LHB"
+	ship_size = Dreadnought
+	fits_on_slot = mid2
+	entity = "Dreadnought_mid2_S4LHB_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	# Missiles & Strike Craft
+	weapon_preferences = { weapon_role_long_range }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = peaceful_traders
+				has_ai_personality = slaving_despots
+				has_ai_personality = migrating_flock
+			}
+		}
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_02"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_03"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_03"
+	}
+	
+		component_slot = {
+		name = "SMALL_GUN_04"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_04"
+	}
 
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
@@ -822,15 +1259,16 @@ ship_section_template = {
 		rotation = 90
 		locatorname = "strike_craft_locator_01"
 	}
-
+	
 	component_slot = {
 		name = "STRIKE_CRAFT_02"
 		slot_size = large
 		slot_type = strike_craft
-		rotation = 90
-		locatorname = "strike_craft_locator_01"
-	}
+		rotation = -90
+		locatorname = "strike_craft_locator_02"
+	}	
 		
+	small_utility_slots = 0
 	medium_utility_slots = 4
 	large_utility_slots = 5
 	
@@ -847,7 +1285,7 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_stern"
 	
 	# Guns
-	weapon_preferences = { weapon_type_kinetic weapon_type_point_defense }
+	weapon_preferences = { weapon_role_short_range weapon_role_point_defense }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -888,21 +1326,8 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "small_gun_02"
 	}
-
-	component_slot = {
-		name = "SMALL_GUN_03"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_01"
-	}
 	
-	component_slot = {
-		name = "SMALL_GUN_04"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_02"
-	}
-	
+	small_utility_slots = 0
 	medium_utility_slots = 4
 	large_utility_slots = 5
 	
@@ -915,6 +1340,23 @@ ship_section_template = {
 	fits_on_slot = stern
 	entity = "Dreadnought_stern_L1_entity"
 	icon = "GFX_ship_part_core_stern"
+	
+	# Lasers
+	weapon_preferences = { weapon_role_anti_armor }
+	ai_weight = {
+		modifier = {
+			factor = 8.0
+			OR = {
+				has_ai_personality = hegemonic_imperialists
+				has_ai_personality = erudite_explorers
+				has_ai_personality = fanatic_purifiers
+				has_ai_personality = xenophobic_isolationists				
+				has_ai_personality = federation_builders
+				has_ai_personality = ruthless_capitalists
+				has_ai_personality = metalhead
+			}
+		}
+	}
 	
 	component_slot = {
 		name = "LARGE_GUN_01"
@@ -929,37 +1371,10 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
-
-	component_slot = {
-		name = "LARGE_GUN_03"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_01"
-	}
-
-	component_slot = {
-		name = "LARGE_GUN_04"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_01"
-	}
-
-	component_slot = {
-		name = "LARGE_GUN_05"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_01"
-	}
-
-	component_slot = {
-		name = "LARGE_GUN_06"
-		slot_size = large
-		slot_type = weapon
-		locatorname = "large_gun_01"
-	}
 	
-	medium_utility_slots = 3
-	large_utility_slots = 6
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
 	
 	cost = 960
 }
@@ -972,10 +1387,10 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_stern"
 	
 	# Missiles
-	weapon_preferences = { weapon_type_explosive }
+	weapon_preferences = { weapon_role_long_range }
 	ai_weight = {
 		modifier = {
-			factor = 10.0
+			factor = 100.0
 			OR = {
 				has_ai_personality = peaceful_traders
 				has_ai_personality = slaving_despots
@@ -997,8 +1412,7 @@ ship_section_template = {
 		name = "MEDIUM_GUN_02"
 		slot_size = medium
 		slot_type = weapon
-		locatorname = "medium_gun_01"
-				
+		locatorname = "medium_gun_02"
 	}
 
 	component_slot = {
@@ -1006,7 +1420,6 @@ ship_section_template = {
 		slot_size = medium
 		slot_type = weapon
 		locatorname = "medium_gun_01"
-				
 	}
 
 	component_slot = {
@@ -1015,21 +1428,8 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "medium_gun_02"
 	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_05"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_02"
-	}
-
-	component_slot = {
-		name = "MEDIUM_GUN_06"
-		slot_size = medium
-		slot_type = weapon
-		locatorname = "medium_gun_02"
-	}
 	
+	small_utility_slots = 0
 	medium_utility_slots = 4
 	large_utility_slots = 5
 	
@@ -1044,11 +1444,11 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_stern"
 	
 	# Point Defense
-	weapon_preferences = { weapon_type_point_defense }
+	weapon_preferences = { weapon_role_point_defense }
 	ai_weight = {
 		factor = 1
 		modifier = {
-			factor = 10.0
+			factor = 100.0
 			has_ai_personality = migrating_flock
 		}		
 	}
@@ -1078,46 +1478,26 @@ ship_section_template = {
 		name = "SMALL_GUN_04"
 		slot_size = small
 		slot_type = weapon
-		locatorname = "small_gun_03"
+		locatorname = "small_gun_04"
 	}
 
 	component_slot = {
 		name = "SMALL_GUN_05"
 		slot_size = small
 		slot_type = weapon
-		locatorname = "small_gun_04"
+		locatorname = "small_gun_03"
 	}
-
+	
 	component_slot = {
 		name = "SMALL_GUN_06"
 		slot_size = small
 		slot_type = weapon
 		locatorname = "small_gun_04"
 	}
-
-	component_slot = {
-		name = "SMALL_GUN_07"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_01"
-	}
-
-	component_slot = {
-		name = "SMALL_GUN_08"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_02"
-	}
-
-	component_slot = {
-		name = "SMALL_GUN_09"
-		slot_size = small
-		slot_type = weapon
-		locatorname = "small_gun_03"
-	}
 	
-	medium_utility_slots = 5
-	large_utility_slots = 4
+	small_utility_slots = 0
+	medium_utility_slots = 4
+	large_utility_slots = 5
 	
 	cost = 960
 }
