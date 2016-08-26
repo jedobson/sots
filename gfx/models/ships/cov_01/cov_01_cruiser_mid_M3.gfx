@@ -1,0 +1,7 @@
+objectTypes = {
+	pdxmesh = {
+		name = "cov_01_cruiser_mid_M3_mesh"
+		file = "gfx/models/ships/cov_01/cov_01_cruiser_mid_M3.mesh"
+		scale = 1.0
+	}
+}

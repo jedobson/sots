@@ -3,4 +3,4 @@ path="mod/sots"
 tags={
 	"Overhaul"
 }
-supported_version="1.2.3"
+supported_version="1.2.5"

@@ -1,0 +1,23 @@
+UNSC = {
+randomized=no
+    portraits = {
+        "human"
+    }
+
+   
+    graphical_culture = unsc_01
+    move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+Covenant = {
+randomized=no
+    portraits = {
+		"rep1"		
+		"rep2"		
+		"rep3"		
+    }
+
+   
+    graphical_culture = cov_01
+    move_pop_sound_effect = "reptilian_pops_move"
+}

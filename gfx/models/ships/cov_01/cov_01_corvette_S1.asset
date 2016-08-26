@@ -1,0 +1,4 @@
+entity = {
+	name = "cov_01_corvette_S1_entity"
+	pdxmesh = "cov_01_corvette_S1_mesh"
+}

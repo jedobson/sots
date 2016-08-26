@@ -1,0 +1,7 @@
+objectTypes = {
+	pdxmesh = {
+		name = "cov_01_battleship_stern_M2_mesh"
+		file = "gfx/models/ships/cov_01/cov_01_battleship_stern_M2.mesh"
+		scale = 0.035
+	}
+}

@@ -1,0 +1,32 @@
+objectTypes = {
+	pdxmesh = {
+		name = "cov_01_orbital_station_mesh"
+		file = "gfx/models/ships/cov_01/cov_01_orbital_station.mesh"
+		scale = 2.0
+		}
+	}
+
+pdxmesh = {
+			name = "cov_01_orbital_station_assemblyyard_section_mesh"
+			file = "gfx/models/ships/cov_01/cov_01_empty.mesh"
+			scale = 1
+			}
+
+pdxmesh = {
+			name = "cov_01_orbital_station_hangarbay_section_mesh"
+			file = "gfx/models/ships/cov_01/cov_01_empty.mesh"
+			scale = 1
+			}
+
+pdxmesh = {
+			name = "cov_01_orbital_station_refinery_section_mesh"
+			file = "gfx/models/ships/cov_01/cov_01_empty.mesh"
+			scale = 1
+			}
+
+pdxmesh = {
+			name = "cov_01_orbital_station_science_section_mesh"
+			file = "gfx/models/ships/cov_01/cov_01_empty.mesh"
+			scale = 1
+			}
+}

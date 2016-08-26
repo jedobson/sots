@@ -1,0 +1,14 @@
+objectTypes = {
+	pdxmesh = {
+		name = "unsc_01_destroyer_stern_S2_mesh"
+		file = "gfx/models/ships/unsc_01/unsc_01_destroyer_stern_S2.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "|unsc_01_destroyer_stern_S2|unsc_01_destroyer_stern_S2"
+			index = 0
+			texture_diffuse = "temp.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

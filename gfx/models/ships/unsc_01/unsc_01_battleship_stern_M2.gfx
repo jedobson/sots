@@ -1,0 +1,14 @@
+objectTypes = {
+	pdxmesh = {
+		name = "unsc_01_battleship_stern_M2_mesh"
+		file = "gfx/models/ships/unsc_01/unsc_01_battleship_stern_M2.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "pCubeShape1"
+			index = 0
+			texture_diffuse = "ValiantTEX.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

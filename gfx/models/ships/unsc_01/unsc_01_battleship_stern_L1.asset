@@ -1,0 +1,4 @@
+entity = {
+	name = "unsc_01_battleship_stern_L1_entity"
+	pdxmesh = "unsc_01_battleship_stern_L1_mesh"
+}

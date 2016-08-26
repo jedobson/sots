@@ -1,0 +1,16 @@
+objectTypes = {
+	pdxmesh = {
+		name = "cov_01_destroyer_bow_S3_mesh"
+		file = "gfx/models/ships/cov_01/cov_01_destroyer_bow_S3.mesh"
+		scale = 0.7
+
+		meshsettings = {
+			name = "cov_01_destroyer_bow_S3"
+			index = 0
+			texture_diffuse = "cov_01_CPV_diffuse.dds"
+			texture_normal = "cov_01_CPV_normal.dds"
+			texture_specular = "cov_01_CPV_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

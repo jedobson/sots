@@ -1,0 +1,37 @@
+entity = {
+	name = "cov_01_orbital_station_core_entity"
+	pdxmesh = "cov_01_orbital_station_mesh"
+				default_state = "idle" 
+				state = { name = "idle" animation = "idle"
+					start_event = { trigger_once = yes sound = { soundeffect = "spaceport_hum_idle" } }
+				}
+}
+
+entity = {
+			name = "cov_01_orbital_station_assemblyyard_section_entity"
+			pdxmesh = "cov_01_orbital_station_assemblyyard_section_mesh"
+			}
+
+entity = {
+			name = "cov_01_orbital_station_hangarbay_section_entity"
+			pdxmesh = "cov_01_orbital_station_hangarbay_section_mesh"
+			}
+
+entity = {
+			name = "cov_01_orbital_station_refinery_section_entity"
+			pdxmesh = "cov_01_orbital_station_refinery_section_mesh"
+			}
+
+entity = {
+			name = "cov_01_orbital_station_science_section_entity"
+			pdxmesh = "cov_01_orbital_station_science_section_mesh"
+			}
+
+entity = {
+	name = "cov_01_orbital_station_construction_entity"
+	pdxmesh = "cov_01_orbital_station_mesh"	
+		default_state = "idle"
+		state = { name = "idle" animation = "idle" animation_speed = 0
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+}

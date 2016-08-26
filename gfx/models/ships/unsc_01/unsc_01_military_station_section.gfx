@@ -1,0 +1,57 @@
+objectTypes = {
+	pdxmesh = {
+		name = "unsc_01_military_station_section_mesh"
+		file = "gfx/models/ships/unsc_01/unsc_01_military_station_section.mesh"
+	}
+}
+
+objectTypes = {
+	pdxmesh = {
+		name = "unsc_01_military_station_small_mesh"
+		file = "gfx/models/ships/unsc_01/unsc_01_military_station_Small_frame.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "Box08|unsc_01_military_station_section"
+			index = 0
+			texture_diffuse = "unsc_01_ODP_diffuse.dds"
+			texture_normal = "unsc_01_ODP_normal.dds"
+			texture_specular = "unsc_01_ODP_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}
+
+objectTypes = {
+	pdxmesh = {
+		name = "unsc_01_military_station_medium_mesh"
+		file = "gfx/models/ships/unsc_01/unsc_01_military_station_Medium_frame.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "Box08|unsc_01_military_station_section"
+			index = 0
+			texture_diffuse = "unsc_01_ODP_diffuse.dds"
+			texture_normal = "unsc_01_ODP_normal.dds"
+			texture_specular = "unsc_01_ODP_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}
+
+objectTypes = {
+	pdxmesh = {
+		name = "unsc_01_military_station_large_mesh"
+		file = "gfx/models/ships/unsc_01/unsc_01_military_station_Large_frame.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "Box08|unsc_01_military_station_section"
+			index = 0
+			texture_diffuse = "unsc_01_ODP_diffuse.dds"
+			texture_normal = "unsc_01_ODP_normal.dds"
+			texture_specular = "unsc_01_ODP_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

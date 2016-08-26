@@ -1,0 +1,20 @@
+entity = {
+	name = "cov_01_orbital_station_entity"
+	pdxmesh = "cov_01_orbital_station_frame_mesh"
+	
+	state = { name = "idle" state_time = 5 }
+	
+	state = { name = "death" state_time = 5 looping = no	
+		event = { time = 4.9 particle = "large_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_large" } }
+	}
+}
+
+entity = {
+	name = "cov_01_orbital_station_construction_entity"
+	pdxmesh = "cov_01_orbital_station_frame_mesh"
+	
+		default_state = "idle"
+		state = { name = "idle" animation = "idle" animation_speed = 0
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+}

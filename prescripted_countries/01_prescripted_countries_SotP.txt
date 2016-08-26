@@ -1,0 +1,64 @@
+UNSC = {
+	name = "United Nations Space Command"
+	spawn_enabled = yes # yes / no / always
+	
+	name_list = "UNSC"
+	ship_prefix = "UNSC"
+	
+	species_name = "Human"
+	species_plural = "Humans"	#we should localize the names!
+	species_adjective = "Human"
+	species_class = "MAM"
+	trait="trait_intelligent"
+	portrait = "human"
+	adjective = "Human"
+	
+	government = "military_junta"
+	ethic="ethic_fanatic_militarist"
+	ethic="ethic_materialist"
+	
+	weapon = "tech_missiles_1"
+	ftl = warp
+	
+	planet_name="Earth"
+	planet_class="pc_continental"
+	system_name="Sol"
+	initializer="sol_system_initializer"
+	
+	graphical_culture = "unsc_01"
+	city_graphical_culture = "mammalian_01"
+	
+	empire_flag = {
+		icon= {
+			category = "Halo"
+			file = "unsc.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "stripe.dds"
+		}
+		colors={
+			"dark_blue"
+			"dark_blue"
+			"null"
+			"null"
+		}
+	}
+	
+	#leader = {
+	#	name = "Terrence Hood"
+	#	class = ruler
+	#	portrait = "human_male_04"
+	#	experience = 1200.0
+	#}	
+	ruler = {
+		name = "Terrence Hood"
+		portrait= "human_male_01"
+		gender = male
+		texture=0
+		hair=19
+		clothes=2
+		ruler_title="Lord"
+	}
+}
+

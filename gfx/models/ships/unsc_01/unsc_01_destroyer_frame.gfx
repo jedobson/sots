@@ -1,0 +1,14 @@
+objectTypes = {
+	pdxmesh = {
+		name = "unsc_01_destroyer_frame_mesh"
+		file = "gfx/models/ships/unsc_01/unsc_01_destroyer_frame.mesh"
+		scale = 1.0
+
+		meshsettings = {
+			name = "pCubeShape1"
+			index = 0
+			texture_diffuse = "temp.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}
